@@ -45,3 +45,13 @@ aktivacijski e-mail** na ta naslov — dokler Roman ne klikne potrditve, sporoč
 
 Lokalno: `py -3 -m http.server 8765 --bind 127.0.0.1` v korenu, nato brskalnik.
 Preveri vseh 6 strani (namizje + 390 px), konzolo brez napak, skok na sidra (`ponudba/#cenik`).
+
+## Pravni sklop (stanje 11. 10. 2026)
+
+- `pogoji/` — splošni pogoji (ZVPot-1: brez odstopa za pokvarljivo blago po meri, čl. 135;
+  izjava ZIsRPS: ne priznava IRPS; EU ODR platforma je ukinjena od 20. 7. 2025 → brez povezave)
+- `zasebnost/` — GDPR; brez piškotkov/analitike (zato brez pasice — izrecno zapisano)
+- noga vseh strani = ZEPT identiteta (ime, naslov, matična, ID za DDV, e-pošta)
+- Roman JE zavezanec za DDV (SI43849164) → cene »vključujejo DDV«, ne klavzula malega zavezanca
+- obrazec: kljukica »seznanjen s pogoji + soglasje zasebnost« (required)
+- ob uvedbi analitike/Meta piksla → pasica s privolitvijo PREJ
