@@ -37,7 +37,7 @@ rok naročila 3/5 dni; plačilo ob prevzemu; spremembe do 2 dni pred prevzemom.
 
 ## Obrazec za naročilo
 
-`kontakt/` pošilja prek FormSubmit (`https://formsubmit.co/romansvegancakes@gmail.com`),
+`kontakt/` pošilja prek FormSubmit (`https://formsubmit.co/info@romancakes.com`),
 brez captche, s honeypotom, `_next` nazaj na `kontakt/?poslano=1`. **Prva oddaja sproži
 aktivacijski e-mail** na ta naslov — dokler Roman ne klikne potrditve, sporočila ne pridejo.
 
