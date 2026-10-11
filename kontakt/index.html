@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naročilo &amp; kontakt — Roman's Cakes, veganske torte Maribor</title>
+<meta name="description" content="Naročite vegansko torto pri Roman's Cakes v Mariboru: obrazec za naročilo, telefon 040 758 582, e-pošta in naslov za prevzem.">
+<meta property="og:title" content="Naročilo &amp; kontakt — Roman's Cakes">
+<meta property="og:description" content="Obrazec za naročilo veganske torte. Prevzem v Mariboru.">
+<meta property="og:image" content="../slike/web/torta-vse-najboljse.webp">
+<meta name="theme-color" content="#080705">
+<link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../slike/web/icon-512.png" type="image/png"><link rel="apple-touch-icon" href="../slike/web/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start;margin-top:60px}
+.form-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.form-header{padding:28px 36px;border-bottom:1px solid var(--border);background:var(--bg2)}
+.form-header-label{font-family:var(--fm);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.form-header h2{font-family:var(--fd);font-size:clamp(22px,2.5vw,28px);font-weight:500;font-style:italic;color:var(--cream)}
+.form-header p{font-size:13.5px;color:var(--cream2);margin-top:6px;line-height:1.65}
+.form-body{padding:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-label{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream2);margin-bottom:8px;display:block}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:2px;color:var(--cream);font-family:var(--fb);font-size:15px;padding:13px 16px;transition:border-color var(--tr),background var(--tr);outline:none;color-scheme:dark}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--cream3)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);background:var(--bg3)}
+.form-input:user-invalid{border-color:#e07a6a}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c9a84c' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.form-select option{background:var(--bg2);color:var(--cream)}
+.form-textarea{resize:vertical;min-height:130px;line-height:1.65}
+.form-divider{height:1px;background:var(--border);margin:24px 0}
+.form-notice{display:flex;gap:12px;padding:14px 16px;background:var(--golda);border:1px solid rgba(201,168,76,.2);border-radius:2px;margin-bottom:24px}
+.form-notice-icon{color:var(--gold);font-size:16px;flex-shrink:0;line-height:1.4}
+.form-notice p{font-size:13px;color:var(--cream2);line-height:1.65}
+.form-notice strong{color:var(--gold);font-weight:500}
+.form-submit{width:100%;padding:16px 30px;background:var(--gold);color:var(--bg0);font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:none;border-radius:2px;font-weight:500;transition:all var(--tr);cursor:pointer}
+.form-submit:hover{background:var(--gold2)}
+.form-submit:disabled{opacity:.6;cursor:wait}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:12.5px;color:var(--cream2);line-height:1.65;margin-bottom:20px}
+.consent input{margin-top:4px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0}
+.consent a{color:var(--gold)}
+.form-success{display:none;text-align:center;padding:60px 36px}
+.form-success.show{display:block}
+.form-success-icon{font-size:44px;margin-bottom:20px;color:var(--gold)}
+.form-success h2{font-family:var(--fd);font-size:28px;font-style:italic;color:var(--gold);margin-bottom:10px}
+.form-success p{font-size:14.5px;color:var(--cream2);line-height:1.7}
+.contact-sidebar{display:flex;flex-direction:column;gap:2px}
+.contact-block{background:var(--bg1);border:1px solid var(--border);padding:26px 28px;transition:border-color 300ms}
+.contact-block:hover{border-color:var(--border2)}
+.contact-block-icon{width:44px;height:44px;border:1px solid var(--border2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px;transition:border-color 250ms,background 250ms}
+.contact-block:hover .contact-block-icon{border-color:var(--gold);background:var(--golda)}
+.contact-block-label{font-family:var(--fm);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.contact-block-val{font-family:var(--fd);font-size:18px;font-style:italic;color:var(--cream);margin-bottom:4px;word-break:break-word}
+.contact-block-sub{font-size:13px;color:var(--cream2);line-height:1.6}
+.contact-block-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:2px;transition:border-color 200ms}
+.contact-block-link:hover{border-color:var(--gold)}
+.lt{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold);padding:20px 24px}
+.lt-title{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lt-item{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;padding:5px 0}
+.lt-item span:first-child{color:var(--cream2)}.lt-item span:last-child{color:var(--cream);font-family:var(--fm);font-size:10.5px;white-space:nowrap}
+.map-area{margin-top:64px;background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.map-area iframe{display:block;width:100%;height:360px;border:0;filter:grayscale(1) invert(.92) contrast(.9) hue-rotate(180deg) sepia(.25)}
+.map-footer{padding:18px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.map-footer-addr{font-size:13.5px;color:var(--cream2)}
+@media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}.form-body{padding:24px 20px}.form-header{padding:22px 20px}.map-area iframe{height:260px}}
+</style>
+</head>
+<body>
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="grain"></div>
+<div id="pg-overlay"></div>
+
+<nav id="nav" aria-label="Glavna navigacija">
+  <div class="nav-i">
+    <a href="../" class="nav-logo" aria-label="Roman's Cakes — domov"><img src="../slike/web/logo-gold.png" alt=""><div class="nav-logo-text">Roman's Cakes<span>Veganske torte · Maribor</span></div></a>
+    <ul class="nav-links">
+      <li><a href="../ponudba/">Ponudba &amp; cenik</a></li>
+      <li><a href="../narocilo/">Kako naročiti</a></li>
+      <li><a href="../o-nas/">O meni</a></li>
+      <li><a href="../kontakt/" class="active">Kontakt</a></li>
+    </ul>
+    <a href="#obrazec" class="nav-cta" style="background:var(--gold);color:var(--bg0)">Naroči torto</a>
+    <button class="nav-mb" aria-label="Odpri meni" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mnav"><a href="../ponudba/">Ponudba &amp; cenik</a><a href="../narocilo/">Kako naročiti</a><a href="../o-nas/">O meni</a><a href="../kontakt/" class="active">Kontakt</a><a href="#obrazec" class="nav-cta">Naroči torto</a></div>
+
+<main>
+<div class="page-hero">
+  <div class="page-hero-num" aria-hidden="true">04</div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../">Domov</a><span>/</span><span class="cur">Naročilo &amp; kontakt</span></div>
+    <div class="lbl">Stopite v stik</div>
+    <h1 class="hd">Naročite <em>svojo torto</em></h1>
+    <p>Izpolnite obrazec ali me pokličite. Naročilo potrdim v enem dnevu — z datumom, ceno in uro prevzema.</p>
+  </div>
+</div>
+
+<section class="sec" style="padding-top:40px">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- OBRAZEC -->
+      <div id="obrazec" style="scroll-margin-top:90px">
+        <div class="form-card rv">
+          <div class="form-header">
+            <div class="form-header-label">Obrazec za naročilo</div>
+            <h2>Povejte mi, kaj si želite</h2>
+            <p>Datum, število kosov in okus so dovolj. Vse ostalo uskladiva po telefonu ali e-pošti.</p>
+          </div>
+          <div class="form-body" id="form-body">
+            <div class="form-notice">
+              <span class="form-notice-icon">✦</span>
+              <p>Naročite <strong>vsaj 3 dni vnaprej</strong>, za jedilno sliko ali brezglutensko torto <strong>vsaj 5 dni</strong>. Nujno? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+            </div>
+
+            <form id="order-form" action="https://formsubmit.co/romansvegancakes@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Novo naročilo s spletne strani — Roman's Cakes">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" id="next-url" value="">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="form-row">
+                <div><label class="form-label" for="ime">Ime in priimek *</label><input class="form-input" type="text" id="ime" name="Ime in priimek" autocomplete="name" required></div>
+                <div><label class="form-label" for="telefon">Telefon *</label><input class="form-input" type="tel" id="telefon" name="Telefon" autocomplete="tel" placeholder="040 123 456" required></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="email">E-pošta *</label><input class="form-input" type="email" id="email" name="E-posta" autocomplete="email" required></div>
+
+              <div class="form-divider"></div>
+
+              <div class="form-row">
+                <div>
+                  <label class="form-label" for="vrsta">Kaj naročate *</label>
+                  <select class="form-input form-select" id="vrsta" name="Vrsta" required>
+                    <option value="" disabled selected>Izberite</option>
+                    <option>Torta po naročilu</option>
+                    <option>Brezglutenska torta</option>
+                    <option>Torta z jedilno sliko</option>
+                    <option>Rezine / pecivo</option>
+                    <option>Več tort / dogodek</option>
+                    <option>Drugo / vprašanje</option>
+                  </select>
+                </div>
+                <div><label class="form-label" for="datum">Datum prevzema *</label><input class="form-input" type="date" id="datum" name="Datum prevzema" required></div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label class="form-label" for="kosi">Velikost</label>
+                  <select class="form-input form-select" id="kosi" name="Velikost">
+                    <option value="" disabled selected>Število kosov</option>
+                    <option>8 kosov</option><option>10 kosov</option><option>12 kosov</option><option>16 kosov</option><option>24 kosov</option><option>Rezine po kosih</option><option>Še ne vem</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="okus">Okus</label>
+                  <select class="form-input form-select" id="okus" name="Okus">
+                    <option value="" disabled selected>Izberite okus</option>
+                    <optgroup label="Čokoladni biskvit"><option>Čokolada</option><option>Temna čokolada</option><option>Nutela</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Hruška čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Oreo</option><option>Črni gozdiček</option><option>Snickers (+4 €)</option><option>Kinder (+4 €)</option><option>Kinder Bueno (+4 €)</option></optgroup>
+                    <optgroup label="Beli biskvit"><option>Vanili</option><option>Bela čokolada</option><option>Malina vanili</option><option>Jagoda vanili</option><option>Ananas</option><option>Pistacija (+5 €)</option><option>Pasijonka / marakuja (+5 €)</option><option>Mango (+5 €)</option><option>Rafaelo (+4 €)</option><option>Rafaelo malina (+4 €)</option><option>Rafaelo jagoda (+4 €)</option><option>Rafaelo bela čokolada (+4 €)</option></optgroup>
+                    <optgroup label="Oreščkov biskvit"><option>Lešnikova torta</option><option>Orehova torta</option></optgroup>
+                    <option>Svetujte mi</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="alergeni">Alergije ali posebne želje</label>
+                <select class="form-input form-select" id="alergeni" name="Alergeni">
+                  <option value="" disabled selected>Izberite</option>
+                  <option>Brez posebnih zahtev</option>
+                  <option>Brez glutena</option>
+                  <option>Brez oreščkov</option>
+                  <option>Brez soje</option>
+                  <option>Več alergij — opišem spodaj</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sporocilo">Sporočilo</label>
+                <textarea class="form-input form-textarea" id="sporocilo" name="Sporocilo" placeholder="Priložnost, napis na torti, želje glede dekoracije, prevzem ali dostava … Jedilno sliko pošljite po e-pošti po oddaji obrazca."></textarea>
+              </div>
+
+              <div class="form-divider"></div>
+
+              <label class="consent"><input type="checkbox" name="Soglasje" value="da" required><span>Strinjam se, da Roman Adler s.p. moje podatke uporabi za pripravo in izvedbo naročila, kot je opisano v <a href="../zasebnost/">politiki zasebnosti</a>. *</span></label>
+
+              <button type="submit" class="form-submit" id="submit-btn">Pošlji naročilo &nbsp;→</button>
+              <p class="note" style="margin-top:14px;text-align:center">Obrazec ne deluje? Pišite na <a href="mailto:romansvegancakes@gmail.com?subject=Naro%C4%8Dilo%20torte" style="color:var(--gold)">romansvegancakes@gmail.com</a> ali pokličite.</p>
+            </form>
+          </div>
+          <div class="form-success" id="form-success" role="status">
+            <div class="form-success-icon">✦</div>
+            <h2>Naročilo prejeto!</h2>
+            <p>Hvala. Odgovorim v <strong style="color:var(--gold)">enem dnevu</strong> s potrditvijo datuma, cene in ure prevzema.<br>Če je nujno, me pokličite na <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+            <a href="../ponudba/" class="btn btn-o" style="margin-top:28px">Nazaj na ponudbo →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- STRANSKI STOLPEC -->
+      <div>
+        <div class="contact-sidebar">
+          <div class="contact-block rv">
+            <div class="contact-block-icon">📞</div>
+            <div class="contact-block-label">Telefon</div>
+            <div class="contact-block-val">040 758 582</div>
+            <div class="contact-block-sub">Klic, SMS, WhatsApp ali Viber. Če ne dvignem, sem v pečici — pokličem nazaj.</div>
+            <a href="tel:+38640758582" class="contact-block-link">Pokliči →</a>
+          </div>
+          <div class="contact-block rv" data-d="80">
+            <div class="contact-block-icon">✉️</div>
+            <div class="contact-block-label">E-pošta</div>
+            <div class="contact-block-val">romansvegancakes@gmail.com</div>
+            <div class="contact-block-sub">Za jedilne slike in daljša naročila. Priložite sliko za navdih.</div>
+            <a href="mailto:romansvegancakes@gmail.com" class="contact-block-link">Piši →</a>
+          </div>
+          <div class="contact-block rv" data-d="160">
+            <div class="contact-block-icon">📍</div>
+            <div class="contact-block-label">Prevzem</div>
+            <div class="contact-block-val">Ulica heroja Šaranoviča 36, Maribor</div>
+            <div class="contact-block-sub">Prevzem ob dogovorjeni uri. Dostava možna po dogovoru.</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ulica+heroja+%C5%A0aranovi%C4%8Da+36%2C+2000+Maribor" target="_blank" rel="noopener" class="contact-block-link">Google Zemljevidi →</a>
+          </div>
+          <div class="contact-block rv" data-d="240">
+            <div class="contact-block-icon">👍</div>
+            <div class="contact-block-label">Facebook</div>
+            <div class="contact-block-val">Roman's cakes</div>
+            <div class="contact-block-sub">Sveže fotografije, novi okusi, zakulisje. Tudi Messenger sporočila preberem.</div>
+            <a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener" class="contact-block-link">facebook.com/romanvegancakes →</a>
+          </div>
+          <div class="lt rv" data-d="320">
+            <div class="lt-title">⏱ Priporočeni roki</div>
+            <div class="lt-item"><span>Torte &amp; rezine</span><span>3+ dni</span></div>
+            <div class="lt-item"><span>Jedilna slika, brez glutena</span><span>5+ dni</span></div>
+            <div class="lt-item"><span>Več tort / dogodki</span><span>1–2 tedna</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZEMLJEVID -->
+    <div class="map-area rv">
+      <iframe title="Zemljevid: Ulica heroja Šaranoviča 36, Maribor" src="https://www.google.com/maps?q=Ulica+heroja+%C5%A0aranovi%C4%8Da+36,+2000+Maribor&output=embed&hl=sl" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="map-footer">
+        <span class="map-footer-addr">PE Roman's Cake · Ulica heroja Šaranoviča 36, 2000 Maribor</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ulica+heroja+%C5%A0aranovi%C4%8Da+36%2C+2000+Maribor" target="_blank" rel="noopener" class="btn btn-o">Navodila za pot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><img src="../slike/web/logo-gold.png" alt=""><b>Roman's Cakes</b></div><p class="footer-desc">Veganska slaščičarna v Mariboru. Torte po naročilu, rezine in brezglutenske torte — brez živalskih sestavin, brez kompromisov pri okusu.</p><div style="margin-top:16px"><span class="vegan-badge">🌱 100 % vegansko</span></div></div>
+      <div><div class="footer-h">Ponudba</div><ul class="footer-links"><li><a href="../ponudba/#torte">Torte po naročilu</a></li><li><a href="../ponudba/#okusi">Okusi</a></li><li><a href="../ponudba/#rezine">Rezine &amp; pecivo</a></li><li><a href="../ponudba/#brezglutensko">Brez glutena</a></li><li><a href="../ponudba/#alergeni">Alergeni</a></li></ul></div>
+      <div><div class="footer-h">Info</div><ul class="footer-links"><li><a href="../narocilo/">Kako naročiti</a></li><li><a href="../o-nas/">O meni</a></li><li><a href="../kontakt/">Kontakt</a></li><li><a href="../zasebnost/">Zasebnost</a></li></ul></div>
+      <div><div class="footer-h">Kontakt</div><ul class="footer-links"><li><a href="tel:+38640758582">040 758 582</a></li><li><a href="mailto:romansvegancakes@gmail.com">romansvegancakes@gmail.com</a></li><li>Ulica heroja Šaranoviča 36<br>2000 Maribor</li><li><a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© <span data-year>2026</span> Roman Adler s.p., proizvodnja slaščic · Radvanjska cesta 10A, 2000 Maribor · ID za DDV: SI43849164<br><a href="../zasebnost/">Politika zasebnosti</a></div><div class="vegan-badge">🌱 Narejeno z ljubeznijo v Mariboru</div></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+<script>
+(function(){
+  // Povratni naslov po uspešni oddaji (FormSubmit preusmeri sem z ?poslano=1)
+  var base=location.origin+location.pathname.replace(/[^/]*$/,'');
+  document.getElementById('next-url').value=base+'?poslano=1';
+  // Najzgodnejši datum prevzema: čez 3 dni
+  var d=document.getElementById('datum');
+  if(d){var min=new Date();min.setDate(min.getDate()+3);d.min=min.toISOString().split('T')[0]}
+  // Stanje »poslano«
+  if(/[?&]poslano=1/.test(location.search)){
+    document.getElementById('form-body').style.display='none';
+    document.getElementById('form-success').classList.add('show');
+    document.getElementById('obrazec').scrollIntoView({block:'start'});
+  }
+  var f=document.getElementById('order-form');
+  f.addEventListener('submit',function(){var b=document.getElementById('submit-btn');b.disabled=true;b.textContent='Pošiljam …'});
+})();
+</script>
+</body>
+</html>

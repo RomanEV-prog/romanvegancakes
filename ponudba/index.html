@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponudba &amp; cenik — Roman's Cakes, veganske torte Maribor</title>
+<meta name="description" content="Okusi in cenik veganskih tort Roman's Cakes: torte za 8–24 oseb od 24 €, več kot 25 okusov, rezine, brezglutenske torte in torte z jedilno sliko. Alergeni za vsak okus.">
+<meta property="og:title" content="Ponudba &amp; cenik — Roman's Cakes">
+<meta property="og:description" content="Torte po naročilu od 24 €, 25+ okusov, rezine in brezglutenske torte. Maribor.">
+<meta property="og:image" content="../slike/web/torta-karamela-arasidi.webp">
+<meta name="theme-color" content="#080705">
+<link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../slike/web/icon-512.png" type="image/png"><link rel="apple-touch-icon" href="../slike/web/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* hitri skoki */
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.jump a{font-family:var(--fm);font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--border2);border-radius:2px;color:var(--cream2);transition:all var(--tr)}
+.jump a:hover{border-color:var(--gold);color:var(--gold)}
+/* vrstice izdelkov */
+.prod-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;scroll-margin-top:90px}
+.prod-row.flip .prod-img-col{order:2}
+.prod-img-col{overflow:hidden;position:relative;min-height:480px}
+.prod-img-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78) saturate(.9);transition:transform 700ms cubic-bezier(.22,1,.36,1),filter 700ms}
+.prod-row:hover .prod-img-col img{transform:scale(1.04);filter:brightness(.9) saturate(1)}
+.prod-text-col{background:var(--bg2);padding:60px 56px;display:flex;flex-direction:column;justify-content:center}
+.prod-num{font-family:var(--fd);font-size:56px;font-weight:800;color:rgba(201,168,76,.08);line-height:1;margin-bottom:12px}
+.prod-cat{font-family:var(--fm);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.prod-name{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);font-weight:500;font-style:italic;color:var(--cream);line-height:1.15;margin-bottom:16px}
+.prod-desc{font-size:14.5px;color:var(--cream2);line-height:1.78;margin-bottom:20px}
+.prod-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.prod-price{font-family:var(--fm);font-size:11px;letter-spacing:.12em;color:var(--gold);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.prod-includes{list-style:none;margin-bottom:32px}
+.prod-includes li{font-size:13.5px;color:var(--cream2);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.prod-includes li::before{content:'✦';color:var(--gold);font-size:8px;flex-shrink:0;margin-top:7px}
+/* cenik */
+.pt{margin-top:48px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560px}
+.cenik th,.cenik td{background:var(--bg2);padding:16px 20px;font-size:14px;color:var(--cream2);text-align:center;vertical-align:middle}
+.cenik th{background:var(--bg3);font-family:var(--fm);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--cream3);font-weight:400}
+.cenik th:first-child,.cenik td:first-child{text-align:left}
+.cenik td:first-child{font-family:var(--fd);font-style:italic;font-size:16px;color:var(--cream)}
+.cenik td:first-child small{display:block;font-family:var(--fb);font-style:normal;font-size:12px;color:var(--cream3);margin-top:2px}
+.cenik td.p{font-family:var(--fm);color:var(--gold);font-size:14px;white-space:nowrap}
+.cenik tr:hover td{background:var(--bg3)}
+.cenik .hl th{color:var(--gold)}
+.dop{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px}
+.dop div{background:var(--bg2);padding:22px 24px}
+.dop b{display:block;font-family:var(--fd);font-style:italic;font-size:18px;color:var(--cream);margin-bottom:6px}
+.dop span{font-family:var(--fm);font-size:10px;letter-spacing:.12em;color:var(--gold);display:block;margin-bottom:8px}
+.dop p{font-size:12.5px;color:var(--cream3);line-height:1.65}
+/* okusi */
+.okusi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.ok-group{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:28px 28px 20px;scroll-margin-top:90px}
+.ok-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.ok-head h3{font-family:var(--fd);font-size:22px;font-style:italic;font-weight:500;color:var(--cream)}
+.ok-head span{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.ok-sub{font-size:12.5px;color:var(--cream3);margin-bottom:16px;line-height:1.6}
+.ok-list{list-style:none}
+.ok-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14.5px;color:var(--cream)}
+.ok-list li:last-child{border-bottom:none}
+.ok-list .al{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.ok-list .pr{font-family:var(--fm);font-size:10.5px;color:var(--gold);white-space:nowrap;letter-spacing:.08em}
+.ok-list .name{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.leg{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.leg .tag{cursor:default}
+/* alergeni */
+.al-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:var(--r);padding:28px 32px;margin-top:40px;scroll-margin-top:90px}
+.al-box h3{font-family:var(--fd);font-style:italic;font-size:22px;color:var(--cream);margin-bottom:12px}
+.al-box p{font-size:14px;color:var(--cream2);line-height:1.75;margin-bottom:10px}
+.al-box ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--cream2);line-height:1.8}
+/* galerija */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:48px}
+.gal-item{overflow:hidden;aspect-ratio:1;position:relative;background:var(--bg2)}
+.gal-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(.9);transition:transform 600ms,filter 500ms}
+.gal-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.05)}
+.gal-item:nth-child(1),.gal-item:nth-child(6){grid-column:span 2;aspect-ratio:2/1}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(8,7,5,.85));font-family:var(--fm);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--cream2)}
+@media(max-width:1024px){.okusi-grid{grid-template-columns:1fr}.dop{grid-template-columns:1fr}}
+@media(max-width:768px){.prod-row{grid-template-columns:1fr}.prod-row.flip .prod-img-col{order:0}.prod-img-col{min-height:260px}.prod-text-col{padding:36px 24px}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1),.gal-item:nth-child(6){grid-column:auto;aspect-ratio:1}.ok-group{padding:20px 18px 12px}.ok-list li{flex-direction:column;align-items:flex-start;gap:6px}.ok-list .al{justify-content:flex-start}.al-box{padding:22px 20px}}
+</style>
+</head>
+<body>
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="grain"></div>
+<div id="pg-overlay"></div>
+
+<nav id="nav" aria-label="Glavna navigacija">
+  <div class="nav-i">
+    <a href="../" class="nav-logo" aria-label="Roman's Cakes — domov"><img src="../slike/web/logo-gold.png" alt=""><div class="nav-logo-text">Roman's Cakes<span>Veganske torte · Maribor</span></div></a>
+    <ul class="nav-links">
+      <li><a href="../ponudba/" class="active">Ponudba &amp; cenik</a></li>
+      <li><a href="../narocilo/">Kako naročiti</a></li>
+      <li><a href="../o-nas/">O meni</a></li>
+      <li><a href="../kontakt/">Kontakt</a></li>
+    </ul>
+    <a href="../kontakt/" class="nav-cta">Naroči torto</a>
+    <button class="nav-mb" aria-label="Odpri meni" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mnav"><a href="../ponudba/" class="active">Ponudba &amp; cenik</a><a href="../narocilo/">Kako naročiti</a><a href="../o-nas/">O meni</a><a href="../kontakt/">Kontakt</a><a href="../kontakt/" class="nav-cta">Naroči torto</a></div>
+
+<main>
+<div class="page-hero">
+  <div class="page-hero-num" aria-hidden="true">01</div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../">Domov</a><span>/</span><span class="cur">Ponudba &amp; cenik</span></div>
+    <div class="lbl">Ponudba</div>
+    <h1 class="hd">Okusi, velikosti <em>in cene.</em></h1>
+    <p>Vsaka torta nastane sveže za vaše naročilo. Izberete velikost (8 do 24 kosov), biskvit in okus — cena je jasna vnaprej, brez skritih dodatkov.</p>
+    <div class="jump"><a href="#torte">Torte</a><a href="#cenik">Cenik</a><a href="#okusi">Okusi</a><a href="#rezine">Rezine</a><a href="#brezglutensko">Brez glutena</a><a href="#otroske">Jedilna slika</a><a href="#alergeni">Alergeni</a><a href="#galerija">Galerija</a></div>
+  </div>
+</div>
+
+<!-- IZDELKI -->
+<section class="sec" style="padding-top:80px;padding-bottom:0">
+  <div class="prod-row rv" id="torte">
+    <div class="prod-img-col"><img src="../slike/web/torta-karamela-arasidi.webp" alt="Karamelna torta z arašidi in čokoladnim prelivom" loading="lazy" width="1400" height="1243"></div>
+    <div class="prod-text-col">
+      <div class="prod-num">01</div>
+      <div class="prod-cat">Rojstni dnevi · obletnice · praznovanja</div>
+      <h2 class="prod-name">Torte po naročilu</h2>
+      <p class="prod-desc">Okrogla torta v treh plasteh biskvita s kremo in prelivom. Izberete število kosov, biskvit (čokoladni, beli, lešnikov ali orehov) in okus. Po želji dodam napis ali dekoracijo po dogovoru.</p>
+      <div class="prod-tags"><span class="tag tag-g">8–24 kosov</span><span class="tag tag-v">25+ okusov</span><span class="tag tag-g">Napis po želji</span></div>
+      <div class="prod-price">Od 24 € za 8 kosov · premium okusi +4 do +5 €</div>
+      <ul class="prod-includes">
+        <li>Sveže pečena za vaš datum, ne iz zamrzovalnika</li>
+        <li>Deklaracija s sestavinami in alergeni priložena</li>
+        <li>Shranjevanje v hladilniku, najbolje v 3 dneh</li>
+      </ul>
+      <a href="../kontakt/" class="btn btn-g">Naroči torto →</a>
+    </div>
+  </div>
+
+  <div class="prod-row flip rv" id="rezine">
+    <div class="prod-img-col"><img src="../slike/web/torte-rezine.webp" alt="Štiri narezane torte: vanilijeva, čokoladna, lešnikova" loading="lazy" width="1050" height="1400"></div>
+    <div class="prod-text-col">
+      <div class="prod-num">02</div>
+      <div class="prod-cat">Po kosih</div>
+      <h2 class="prod-name">Rezine &amp; pecivo</h2>
+      <p class="prod-desc">Ko ne rabite cele torte: posamezne rezine za manjše praznovanje, obisk ali pisarno. Okusi se menjajo — Bounty (kokos), čokoladna, bela čokolada, ananas, vanilija, sadne rezine.</p>
+      <div class="prod-tags"><span class="tag tag-g">4,50–6 € / kos</span><span class="tag tag-v">Različni okusi</span></div>
+      <div class="prod-price">Rezina 4,50–6 € · npr. 12 rezin Bounty = 60 €</div>
+      <ul class="prod-includes">
+        <li>Naročilo po kosih, tudi mešano</li>
+        <li>Primerno za pisarne, sestanke in manjše dogodke</li>
+      </ul>
+      <a href="../kontakt/" class="btn btn-g">Naroči rezine →</a>
+    </div>
+  </div>
+
+  <div class="prod-row rv" id="brezglutensko">
+    <div class="prod-img-col"><img src="../slike/web/torta-malina-bela.webp" alt="Bela torta z malinami" loading="lazy" width="1082" height="1011"></div>
+    <div class="prod-text-col">
+      <div class="prod-num">03</div>
+      <div class="prod-cat">Brez glutena</div>
+      <h2 class="prod-name">Brezglutenske torte</h2>
+      <p class="prod-desc">Za tiste, ki se izogibajo glutenu: čokoladna torta, belo čokoladna torta in sadna torta v brezglutenski izvedbi. Enak okus, drugačen biskvit.</p>
+      <div class="prod-tags"><span class="tag tag-v">Brez glutena</span><span class="tag tag-g">100 % vegansko</span></div>
+      <div class="prod-price">Čokoladna · belo čokoladna · sadna — cena po ceniku</div>
+      <ul class="prod-includes">
+        <li>Ob naročilu povejte, da želite brezglutensko izvedbo</li>
+        <li>Izdelano v obratu, kjer se uporablja tudi pšenična moka — glejte <a href="#alergeni" style="color:var(--gold)">alergene</a></li>
+      </ul>
+      <a href="../kontakt/" class="btn btn-g">Naroči brezglutensko →</a>
+    </div>
+  </div>
+
+  <div class="prod-row flip rv" id="otroske">
+    <div class="prod-img-col"><img src="../slike/web/torta-unicorn.webp" alt="Otroška torta z jedilno sliko samoroga" loading="lazy" width="1050" height="1400"></div>
+    <div class="prod-text-col">
+      <div class="prod-num">04</div>
+      <div class="prod-cat">Za otroške rojstne dneve</div>
+      <h2 class="prod-name">Torte z jedilno sliko</h2>
+      <p class="prod-desc">Najljubši junak, fotografija ali logotip na torti — jedilni tisk na okusu po izbiri. Pošljete sliko, jaz poskrbim za ostalo.</p>
+      <div class="prod-tags"><span class="tag tag-g">Jedilni tisk</span><span class="tag tag-v">Okus po izbiri</span></div>
+      <div class="prod-price">Cena torte po ceniku + jedilna slika po dogovoru</div>
+      <ul class="prod-includes">
+        <li>Sliko pošljite ob naročilu (e-pošta ali obrazec)</li>
+        <li>Otroški favoriti: čokolada, vanili, jagoda, Kinder</li>
+      </ul>
+      <a href="../kontakt/" class="btn btn-g">Naroči otroško torto →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CENIK -->
+<section class="sec" id="cenik" style="background:var(--bg1);border-top:1px solid var(--border);scroll-margin-top:60px">
+  <div class="wrap">
+    <div class="lbl rv">Cenik</div>
+    <h2 class="hd rv">Cena po <em>velikosti</em></h2>
+    <p class="sub rv" style="margin-top:12px">Cene veljajo za osebni prevzem v Mariboru in vključujejo DDV. K osnovni ceni se prišteje doplačilo za premium okus, če ga izberete.</p>
+    <div class="pt rv">
+      <table class="cenik">
+        <thead><tr><th>Biskvit</th><th>8 kosov</th><th>10 kosov</th><th>12 kosov</th><th>16 kosov</th><th>24 kosov</th></tr></thead>
+        <tbody>
+          <tr><td>Čokoladni ali beli biskvit<small>Čokolada, vanili, jagoda, malina, Bounty, Jafa, Oreo, …</small></td><td class="p">24 €</td><td class="p">30 €</td><td class="p">36 €</td><td class="p">46 €</td><td class="p">66 €</td></tr>
+          <tr><td>Lešnikov ali orehov biskvit<small>Lešnikova torta, orehova torta</small></td><td class="p">26 €</td><td class="p">32 €</td><td class="p">38 €</td><td class="p">48 €</td><td class="p">68 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dop rv">
+      <div><span>Doplačilo +4 €</span><b>Premium okusi</b><p>Snickers, Kinder, Kinder Bueno, Rafaelo (klasični, malina, jagoda, bela čokolada).</p></div>
+      <div><span>Doplačilo +5 €</span><b>Premium okusi</b><p>Pistacija, pasijonka (marakuja), mango.</p></div>
+      <div><span>Po dogovoru</span><b>Dodatki</b><p>Jedilna slika, posebna dekoracija, dostava. Napis na torto je brez doplačila.</p></div>
+    </div>
+    <p class="note rv" style="margin-top:20px">Primer: Snickers torta za 12 kosov = 36 € + 4 € = 40 €. Pistacijeva torta za 8 kosov = 24 € + 5 € = 29 €.</p>
+  </div>
+</section>
+
+<!-- OKUSI -->
+<section class="sec" id="okusi" style="scroll-margin-top:60px">
+  <div class="wrap">
+    <div class="lbl rv">Okusi</div>
+    <h2 class="hd rv">Izberite <em>svoj okus</em></h2>
+    <p class="sub rv" style="margin-top:12px">Okus določa biskvit in kremo. Pri vsakem je označen glavni alergen; vse torte vsebujejo gluten (razen brezglutenskih) in so lahko v stiku z oreščki.</p>
+    <div class="leg rv"><span class="tag tag-a">🌰 lešniki</span><span class="tag tag-a">🌰 orehi</span><span class="tag tag-a">🥜 arašidi</span><span class="tag tag-a">🌰 mandlji</span><span class="tag tag-a">🌰 pistacija</span><span class="tag tag-v">🥥 kokos</span><span class="tag tag-g">premium</span></div>
+
+    <div class="okusi-grid">
+      <div class="ok-group rv">
+        <div class="ok-head"><h3>Čokoladni biskvit</h3><span>14 okusov</span></div>
+        <p class="ok-sub">Temen, sočen biskvit s kakavom v treh plasteh. Osnova za čokoladne klasike.</p>
+        <ul class="ok-list">
+          <li><span class="name">Čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Temna čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Nutela</span><span class="al"><span class="tag tag-a">lešniki</span></span></li>
+          <li><span class="name">Jagoda čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Malina čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Višnja čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Hruška čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Jafa (pomaranča)</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Bounty (kokos)</span><span class="al"><span class="tag tag-v">kokos</span></span></li>
+          <li><span class="name">Oreo</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Črni gozdiček</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Snickers <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">arašidi</span><span class="pr">+4 €</span></span></li>
+          <li><span class="name">Kinder <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">lešniki</span><span class="pr">+4 €</span></span></li>
+          <li><span class="name">Kinder Bueno <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">lešniki</span><span class="pr">+4 €</span></span></li>
+        </ul>
+      </div>
+
+      <div class="ok-group rv" data-d="80">
+        <div class="ok-head"><h3>Beli biskvit</h3><span>12 okusov</span></div>
+        <p class="ok-sub">Svetel vanilijev biskvit z ovsenim mlekom. Osnova za sadne in kremne okuse.</p>
+        <ul class="ok-list">
+          <li><span class="name">Vanili</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Bela čokolada</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Malina vanili</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Jagoda vanili</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Ananas</span><span class="al"><span class="pr">osnovna cena</span></span></li>
+          <li><span class="name">Pistacija <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">pistacija</span><span class="pr">+5 €</span></span></li>
+          <li><span class="name">Pasijonka (marakuja) <span class="tag tag-g">premium</span></span><span class="al"><span class="pr">+5 €</span></span></li>
+          <li><span class="name">Mango <span class="tag tag-g">premium</span></span><span class="al"><span class="pr">+5 €</span></span></li>
+          <li><span class="name">Rafaelo <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">mandlji</span><span class="tag tag-v">kokos</span><span class="pr">+4 €</span></span></li>
+          <li><span class="name">Rafaelo malina <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">mandlji</span><span class="tag tag-v">kokos</span><span class="pr">+4 €</span></span></li>
+          <li><span class="name">Rafaelo jagoda <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">mandlji</span><span class="tag tag-v">kokos</span><span class="pr">+4 €</span></span></li>
+          <li><span class="name">Rafaelo bela čokolada <span class="tag tag-g">premium</span></span><span class="al"><span class="tag tag-a">mandlji</span><span class="tag tag-v">kokos</span><span class="pr">+4 €</span></span></li>
+        </ul>
+      </div>
+
+      <div class="ok-group rv">
+        <div class="ok-head"><h3>Lešnikov biskvit</h3><span>+2 €</span></div>
+        <p class="ok-sub">Biskvit iz lešnikove moke in lešnikova krema. Najbolj naročena torta med ljubitelji oreščkov.</p>
+        <ul class="ok-list">
+          <li><span class="name">Lešnikova torta</span><span class="al"><span class="tag tag-a">lešniki</span><span class="pr">od 26 €</span></span></li>
+        </ul>
+      </div>
+
+      <div class="ok-group rv" data-d="80">
+        <div class="ok-head"><h3>Orehov biskvit</h3><span>+2 €</span></div>
+        <p class="ok-sub">Biskvit z mletimi orehi in orehova krema. Domač okus, kot ga poznate od babice.</p>
+        <ul class="ok-list">
+          <li><span class="name">Orehova torta</span><span class="al"><span class="tag tag-a">orehi</span><span class="pr">od 26 €</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="al-box rv" id="alergeni">
+      <h3>Alergeni in sestavine</h3>
+      <p>Vse torte so <strong style="color:var(--cream)">100 % veganske</strong>: brez jajc, mleka, masla, smetane živalskega izvora in medu. Osnovne sestavine so pšenična moka, ovseno in kokosovo mleko, rastlinska smetana, sladkor, kakav, sadni pireji in oreščki.</p>
+      <ul>
+        <li><strong>Gluten:</strong> vsebujejo ga vse torte in rezine, razen brezglutenskih. Tudi brezglutenske so izdelane v obratu, kjer se uporablja pšenična moka, zato lahko vsebujejo sledi glutena.</li>
+        <li><strong>Oreščki in arašidi:</strong> lešniki, orehi, mandlji, pistacija in arašidi so v okusih, označenih zgoraj. Zaradi skupne proizvodnje lahko vsak izdelek vsebuje sledi oreščkov.</li>
+        <li><strong>Soja:</strong> nekatere rastlinske smetane in čokolade vsebujejo sojo. Če imate alergijo na sojo, povejte ob naročilu.</li>
+      </ul>
+      <p style="margin-top:14px">Vsaki torti priložim deklaracijo z natančnimi sestavinami in alergeni. Pri alergijah me prosim obvestite že ob naročilu, da prilagodim recept ali svetujem varen okus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJA -->
+<section class="sec" id="galerija" style="background:var(--bg1);border-top:1px solid var(--border);scroll-margin-top:60px">
+  <div class="wrap">
+    <div class="lbl rv">Galerija</div>
+    <h2 class="hd rv">Iz moje <em>kuhinje</em></h2>
+    <div class="gal-grid">
+      <div class="gal-item rv"><img src="../slike/web/bistro-kroznik.webp" alt="Tri torte na krožnikih na mizi" loading="lazy" width="1400" height="1050"><div class="gal-cap">Ananas · čokolada · pistacija</div></div>
+      <div class="gal-item rv" data-d="60"><img src="../slike/web/torta-cokoladna-drip.webp" alt="Čokoladna torta s prelivom in rozetami" loading="lazy" width="933" height="787"><div class="gal-cap">Čokoladna</div></div>
+      <div class="gal-item rv" data-d="120"><img src="../slike/web/torta-malina.webp" alt="Torta z malinami" loading="lazy" width="1050" height="1400"><div class="gal-cap">Malina vanili</div></div>
+      <div class="gal-item rv" data-d="180"><img src="../slike/web/torta-visnja-cokolada.webp" alt="Čokoladna torta z višnjami in belo kremo" loading="lazy" width="1050" height="1400"><div class="gal-cap">Višnja čokolada</div></div>
+      <div class="gal-item rv" data-d="240"><img src="../slike/web/rezina-lesnik.webp" alt="Rezina lešnikove torte" loading="lazy" width="859" height="654"><div class="gal-cap">Lešnikova rezina</div></div>
+      <div class="gal-item rv" data-d="300"><img src="../slike/web/rezine-malina.webp" alt="Narezane sadne torte z malinami" loading="lazy" width="1050" height="1400"><div class="gal-cap">Sadne rezine</div></div>
+      <div class="gal-item rv" data-d="360"><img src="../slike/web/torta-smetana-cokolada.webp" alt="Torta s smetano in čokoladnim prelivom" loading="lazy" width="1050" height="1400"><div class="gal-cap">Bela čokolada</div></div>
+      <div class="gal-item rv" data-d="420"><img src="../slike/web/torta-vse-najboljse.webp" alt="Torta z napisom Vse najboljše" loading="lazy" width="1400" height="1050"><div class="gal-cap">Z napisom</div></div>
+    </div>
+    <p class="note rv" style="margin-top:20px">Več fotografij in svežih kreacij na <a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener" style="color:var(--gold)">Facebooku</a>.</p>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Ste se <em>odločili?</em></h2>
+    <p>Pošljite naročilo prek obrazca ali me pokličite — potrdim ga v enem dnevu.</p>
+    <div class="acts"><a href="../kontakt/" class="btn btn-g">Naroči zdaj →</a><a href="../narocilo/" class="btn btn-o">Kako poteka naročilo</a></div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><img src="../slike/web/logo-gold.png" alt=""><b>Roman's Cakes</b></div><p class="footer-desc">Veganska slaščičarna v Mariboru. Torte po naročilu, rezine in brezglutenske torte — brez živalskih sestavin, brez kompromisov pri okusu.</p><div style="margin-top:16px"><span class="vegan-badge">🌱 100 % vegansko</span></div></div>
+      <div><div class="footer-h">Ponudba</div><ul class="footer-links"><li><a href="#torte">Torte po naročilu</a></li><li><a href="#okusi">Okusi</a></li><li><a href="#rezine">Rezine &amp; pecivo</a></li><li><a href="#brezglutensko">Brez glutena</a></li><li><a href="#alergeni">Alergeni</a></li></ul></div>
+      <div><div class="footer-h">Info</div><ul class="footer-links"><li><a href="../narocilo/">Kako naročiti</a></li><li><a href="../o-nas/">O meni</a></li><li><a href="../kontakt/">Kontakt</a></li><li><a href="../zasebnost/">Zasebnost</a></li></ul></div>
+      <div><div class="footer-h">Kontakt</div><ul class="footer-links"><li><a href="tel:+38640758582">040 758 582</a></li><li><a href="mailto:romansvegancakes@gmail.com">romansvegancakes@gmail.com</a></li><li>Ulica heroja Šaranoviča 36<br>2000 Maribor</li><li><a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© <span data-year>2026</span> Roman Adler s.p., proizvodnja slaščic · Radvanjska cesta 10A, 2000 Maribor · ID za DDV: SI43849164<br><a href="../zasebnost/">Politika zasebnosti</a></div><div class="vegan-badge">🌱 Narejeno z ljubeznijo v Mariboru</div></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

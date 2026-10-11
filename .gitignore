@@ -1,0 +1,15 @@
+# Izvorne fotografije (800+ MB) in interni dokumenti ne gredo na GitHub Pages.
+# Na strani se uporabljajo samo optimizirane slike v slike/web/.
+slike/*
+!slike/web/
+!slike/web/**
+
+# Interni dokumenti in surovi logotipi
+*.pdf
+*.docx
+/*.png
+!favicon.ico
+
+# Sistemsko
+Thumbs.db
+.DS_Store
