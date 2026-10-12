@@ -75,13 +75,16 @@ Lokalno: `py -3 -m http.server 8765 --bind 127.0.0.1` v korenu, nato brskalnik.
 Preveri vseh 7 strani (namizje + 390 px), konzolo brez napak, skok na sidra (`ponudba/#cenik`).
 V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/romanvegancakes/pages`.
 
-## Pravni sklop (stanje 11. 10. 2026)
+## Pravni sklop (stanje 12. 10. 2026)
 
 - `pogoji/` — splošni pogoji (ZVPot-1: brez odstopa za pokvarljivo blago po meri, čl. 135;
   izjava ZIsRPS: ne priznava IRPS; EU ODR platforma je ukinjena od 20. 7. 2025 → brez povezave)
 - `zasebnost/` — GDPR; brez piškotkov/analitike (zato brez pasice — izrecno zapisano)
-- noga vseh strani = ZEPT identiteta (ime, naslov, matična, ID za DDV, e-pošta)
-- Roman JE zavezanec za DDV (SI43849164) → cene »vključujejo DDV«, ne klavzula malega zavezanca
+- noga vseh strani = ZEPT 5. člen (firma, sedež, matična, davčna št., e-pošta); pogoji §1 še UVHVVR in nadzorna organa
+- reklamacije po ZVPot-1: obvestilo v 2 mesecih (84. čl.), pisni odgovor v 8 dneh če prereka (85. čl.), odstop v 30 dneh (83. čl.); rokov ni dovoljeno krajšati (79. čl.)
+- »brez glutena« = Uredba (EU) 828/2014, ≤ 20 mg/kg glutena v prodanem izdelku — Roman mora to zagotoviti ali preimenovati
+- Roman NI zavezanec za DDV (mali davčni zavezanec, 94. člen ZDDV-1; davčna št. 43849164, brez predpone SI) → cene so »končne«,
+  klavzula »DDV ni obračunan na podlagi 1. odstavka 94. člena ZDDV-1«; NIKOLI »vključujejo DDV« ali »ID za DDV«. (Popravljeno 12. 10. 2026, prej napačno.)
 - obrazec: kljukica »seznanjen s pogoji + soglasje zasebnost« (required)
 - ob uvedbi analitike/Meta piksla → pasica s privolitvijo PREJ
 
