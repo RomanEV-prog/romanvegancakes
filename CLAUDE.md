@@ -22,7 +22,7 @@ slaščičarno **Roman Adler s.p.**, Maribor. Komunikacija v slovenščini.
   MX/mail/webmail/cpanel zapisi ostajajo na 152.89.235.155 (pošta info@romancakes.com je pri Neoservu).
   SPF: `v=spf1 ip4:152.89.235.155 include:_spf.mail-neoserv.si +mx ~all` (brez `+a`, 12. 10. 2026).
 - `git push` na `master` je varen (ni objava); objava je samo prek veje `live`.
-- Veja `main` na GitHubu je stara (le README + prvotni index) in se ne uporablja.
+- Privzeta veja na GitHubu je `master` (od 12. 10. 2026). Veja `main` je stara (le README + prvotni index) in se ne uporablja.
 
 ## Struktura
 
