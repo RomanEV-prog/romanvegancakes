@@ -10,7 +10,7 @@
   var allergens = document.getElementById('alergeni');
   var date = document.getElementById('datum');
   var hint = document.getElementById('datum-hint');
-  var gfFlavors = ['', 'Čokolada', 'Malina čokolada', 'Bounty (kokos)', 'Pistacija', 'Svetujte mi'];
+  var gfFlavors = ['', 'Čokoladna', 'Malina čokolada', 'Bounty (kokos)', 'Pistacija', 'Svetujte mi'];
 
   function update() {
     var gfRequired = type.value === 'Brezglutenska torta' || allergens.value === 'Brez glutena';

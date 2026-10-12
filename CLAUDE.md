@@ -42,7 +42,9 @@ zahteva PIN (mobil login). Zadnja lokalna kopija: `C:\Users\adler\Desktop\ARHIV-
 ## Potrjeno z Romanom 12. 10. 2026
 
 Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026:
-- Veljavni cenik na kos: 4,50 / 4,90 / 5 / 5,50 / 6 € glede na okus, kot v `ponudba/index.html`.
+- Na strani so SAMO torte, aktivne v blagajni: `GET /api/artikli` (tip torta, aktiven=1) — 20 tort 12. 10. 2026.
+  Cena na kos = `artikli.cena_kos` (tiramisu 4,00; čokoladna 4,50; 4,90; 5; 5,50; pistacija in bela malina 6 €).
+  Okusi brez artikla (Nutela, Oreo, Rafaelo, vanilija, ananas, lešnikova, orehova …) NISO na strani; ob dodajanju artikla v blagajni dodaj tudi tu.
 - Torte: 8, 10 ali 12 kosov, večje po dogovoru. Brezglutenske do 10 kosov.
 - BG: čokoladna 4,50 €/kos, čokolada–malina in Bounty 5 €/kos, pistacija 6 €/kos; ista cena tudi za 10 kosov.
 - Biskvit in krema se izbirata poljubno. Lešnikov in orehov biskvit: doplačilo na CELO torto po dogovoru; znesek še ni določen.
@@ -56,9 +58,8 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
 - Vegan od 2013, peče od 2018.
 - Alergeni na strani so iz ERP receptur (12. 10. 2026): `GET /api/recepture` (polje `sest`, poly → rekurzivno)
   + `GET /api/surovine` (polje `alergeni`, šifrant `GET /api/alergeni`). Oznaka pri okusu = krema/polnilo (torta minus biskvit),
-  tabela `#biskviti` = alergeni biskvitov. Okusi brez oznake nimajo recepture v ERP (Čokolada, Temna čokolada, Nutela, Hruška,
-  Oreo, Črni gozdiček, Kinder, Vanilija, Bela čokolada, Malina/Jagoda–vanilija, Ananas, Rafaelo ×4, Orehova; BG čokoladna in
-  BG pistacija imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
+  tabela `#biskviti` = alergeni biskvitov. Okusi brez oznake nimajo recepture v ERP (Čokoladna, Kinder; BG čokoladna in BG pistacija
+  imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
 
 ## Obrazec za naročilo
