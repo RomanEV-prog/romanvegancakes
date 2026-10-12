@@ -69,3 +69,8 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 - Roman JE zavezanec za DDV (SI43849164) → cene »vključujejo DDV«, ne klavzula malega zavezanca
 - obrazec: kljukica »seznanjen s pogoji + soglasje zasebnost« (required)
 - ob uvedbi analitike/Meta piksla → pasica s privolitvijo PREJ
+
+## Skilli
+
+- `.claude/commands/github-pages-domena.md` — selitev domene, veja `live`, objava prave strani
+- `~/.claude/commands/neoserv-domenca-dns.md` — kje so domene (Domenca) in DNS zona (cPanel Neoserv), UAPI recepti
