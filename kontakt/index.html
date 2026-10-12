@@ -114,7 +114,7 @@
           <div class="form-body" id="form-body">
             <div class="form-notice">
               <span class="form-notice-icon">✦</span>
-              <p>Naročite <strong>vsaj 3 dni vnaprej</strong>, za jedilno sliko ali brezglutensko torto <strong>vsaj 5 dni</strong>. Nujno? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+              <p>Naročite <strong>vsaj 10 dni pred prevzemom</strong>, za jedilno sliko, brezglutensko torto ali premium okuse <strong>vsaj 14 dni</strong>. Krajših rokov ne sprejemam. Vprašanja? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
             </div>
 
             <form id="order-form" action="https://formsubmit.co/info@romancakes.com" method="POST">
@@ -145,7 +145,7 @@
                     <option>Drugo / vprašanje</option>
                   </select>
                 </div>
-                <div><label class="form-label" for="datum">Datum prevzema *</label><input class="form-input" type="date" id="datum" name="Datum prevzema" required></div>
+                <div><label class="form-label" for="datum">Datum prevzema * <span style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" required></div>
               </div>
 
               <div class="form-row">
@@ -209,7 +209,7 @@
             <div class="contact-block-icon">📞</div>
             <div class="contact-block-label">Telefon</div>
             <div class="contact-block-val">040 758 582</div>
-            <div class="contact-block-sub">Klic, SMS, WhatsApp ali Viber. Če ne dvignem, sem v pečici — pokličem nazaj.</div>
+            <div class="contact-block-sub">Klic, SMS ali WhatsApp. Če ne dvignem, sem v pečici — pokličem nazaj.</div>
             <a href="tel:+38640758582" class="contact-block-link">Pokliči →</a>
           </div>
           <div class="contact-block rv" data-d="80">
@@ -234,10 +234,10 @@
             <a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener" class="contact-block-link">facebook.com/romanvegancakes →</a>
           </div>
           <div class="lt rv" data-d="320">
-            <div class="lt-title">⏱ Priporočeni roki</div>
-            <div class="lt-item"><span>Torte &amp; rezine</span><span>3+ dni</span></div>
-            <div class="lt-item"><span>Jedilna slika, brez glutena</span><span>5+ dni</span></div>
-            <div class="lt-item"><span>Več tort / dogodki</span><span>1–2 tedna</span></div>
+            <div class="lt-title">⏱ Roki za naročilo</div>
+            <div class="lt-item"><span>Torte &amp; rezine</span><span>10+ dni</span></div>
+            <div class="lt-item"><span>Jedilna slika, brez glutena</span><span>14+ dni</span></div>
+            <div class="lt-item"><span>Več tort / dogodki</span><span>3 tedne</span></div>
           </div>
         </div>
       </div>
@@ -272,9 +272,9 @@
   // Povratni naslov po uspešni oddaji (FormSubmit preusmeri sem z ?poslano=1)
   var base=location.origin+location.pathname.replace(/[^/]*$/,'');
   document.getElementById('next-url').value=base+'?poslano=1';
-  // Najzgodnejši datum prevzema: čez 3 dni
+  // Najzgodnejši datum prevzema: čez 10 dni
   var d=document.getElementById('datum');
-  if(d){var min=new Date();min.setDate(min.getDate()+3);d.min=min.toISOString().split('T')[0]}
+  if(d){var min=new Date();min.setDate(min.getDate()+10);d.min=min.toISOString().split('T')[0]}
   // Stanje »poslano«
   if(/[?&]poslano=1/.test(location.search)){
     document.getElementById('form-body').style.display='none';
