@@ -43,7 +43,8 @@ zahteva PIN (mobil login). Zadnja lokalna kopija: `C:\Users\adler\Desktop\ARHIV-
 
 Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026:
 - Na strani so SAMO torte, aktivne v blagajni: `GET /api/artikli` (tip torta, aktiven=1) — 20 tort 12. 10. 2026.
-  Cena na kos = `artikli.cena_kos` (tiramisu 4,00; čokoladna 4,50; 4,90; 5; 5,50; pistacija in bela malina 6 €).
+  Cena na kos = `artikli.cena_kos` (čokoladna 4,50; 4,90; 5; 5,50; pistacija in bela malina 6 €). Tiramisu je v blagajni
+  vpisan 4,00, Roman potrdil 4,90 (12. 10. 2026) — na strani 4,90, blagajno popravi Roman.
   Okusi brez artikla (Nutela, Oreo, Rafaelo, vanilija, ananas, lešnikova, orehova …) NISO na strani; ob dodajanju artikla v blagajni dodaj tudi tu.
 - Torte: 8, 10 ali 12 kosov, večje po dogovoru. Brezglutenske do 10 kosov.
 - BG: čokoladna 4,50 €/kos, čokolada–malina in Bounty 5 €/kos, pistacija 6 €/kos; ista cena tudi za 10 kosov.
