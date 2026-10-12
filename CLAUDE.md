@@ -5,9 +5,17 @@ slaščičarno **Roman Adler s.p.**, Maribor. Komunikacija v slovenščini.
 
 ## Gostovanje
 
-- GitHub Pages iz veje `master`, mapa `/`: https://romanev-prog.github.io/romanvegancakes/
-- Stran živi pod podpotjo `/romanvegancakes/` → **vse povezave so relativne**
-  (`../assets/…`, `./`), nikoli absolutne `/…`.
+- GitHub Pages iz veje `master`, mapa `/`, lastna domena **https://romancakes.com**
+  (datoteka `CNAME` v korenu, HTTPS vsiljen; stari naslov
+  romanev-prog.github.io/romanvegancakes/ preusmerja). Od 12. 10. 2026.
+- Povezave ostanejo **relativne** (`../assets/…`, `./`), nikoli absolutne `/…` —
+  stran mora delovati tudi pod podpotjo, če se domena kdaj odklopi.
+- DNS: zona je v **cPanelu gostovanja adlerhub.eu pri Neoservu** (sh37.neoserv.si, romancakes.com
+  je tam dodana domena; vstop prek moj.neoserv.si → Modri paket → cPanel → Zone Editor).
+  Domena je registrirana pri **Domenci** (isti račun adlerrroman@gmail.com), ne v Neoserv panelu.
+  Apex A → 185.199.108–111.153 (GitHub Pages), `www` CNAME → romanev-prog.github.io.
+  MX/mail/webmail/cpanel zapisi ostajajo na 152.89.235.155 (pošta info@romancakes.com je pri Neoservu).
+  SPF še vsebuje `+a` (zdaj pooblašča GitHub IP-je) → odstraniti, ko bo dovoljeno.
 - `git push` na `master` = objava na produkcijo → **vprašaj prej**.
 - Veja `main` na GitHubu je stara (le README + prvotni index) in se ne uporablja.
 
@@ -44,7 +52,8 @@ aktivacijski e-mail** na ta naslov — dokler Roman ne klikne potrditve, sporoč
 ## Preverjanje
 
 Lokalno: `py -3 -m http.server 8765 --bind 127.0.0.1` v korenu, nato brskalnik.
-Preveri vseh 6 strani (namizje + 390 px), konzolo brez napak, skok na sidra (`ponudba/#cenik`).
+Preveri vseh 7 strani (namizje + 390 px), konzolo brez napak, skok na sidra (`ponudba/#cenik`).
+V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/romanvegancakes/pages`.
 
 ## Pravni sklop (stanje 11. 10. 2026)
 
