@@ -39,14 +39,23 @@ Okusi, cene, alergeni prihajajo iz ERP-ja `C:\Users\adler\Desktop\proizvodnja\ze
 zahteva PIN (mobil login). Zadnja lokalna kopija: `C:\Users\adler\Desktop\ARHIV-romans-cake-podatki-20260908\db\romans-cake.db`
 (beri z `py -3 -I`, `sqlite3.connect('file:...?mode=ro', uri=True)`).
 
-Kaj je iz baze (stanje 8. 9. 2026):
-- cenik `receptura_variante.cena_prevzem` za 8/10/12/16/24 kosov: čokoladna 24/30/36/46/66 €, lešnikova in orehova 26/32/38/48/68 €
-- okusi + `doplacilo` (premium +4 € Snickers/Kinder/Kinder Bueno/Rafaelo*, +5 € pistacija/pasijonka/mango)
-- rezine 4,50–6 € / kos; DDV 9,5 %
-- alergeni v bazi so vneseni le za moko (gluten) — oreščki na strani so dodeljeni po imenu okusa, ne iz baze
+## Potrjeno z Romanom 12. 10. 2026
 
-Kaj je **predpostavka** (preveri z Romanom): beli biskvit po isti ceni kot čokoladni;
-rok naročila 3/5 dni; plačilo ob prevzemu; spremembe do 2 dni pred prevzemom.
+Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026:
+- Veljavni cenik na kos: 4,50 / 4,90 / 5 / 5,50 / 6 € glede na okus, kot v `ponudba/index.html`.
+- Torte: 8, 10 ali 12 kosov, večje po dogovoru. Brezglutenske do 10 kosov.
+- BG: čokoladna 4,50 €/kos, čokolada–malina in Bounty 5 €/kos, pistacija 6 €/kos; ista cena tudi za 10 kosov.
+- Biskvit in krema se izbirata poljubno. Lešnikov in orehov biskvit: doplačilo na CELO torto po dogovoru; znesek še ni določen.
+- Napis brezplačen. Jedilna slika 8 € na torto. Posebna dekoracija po dogovoru.
+- Plačilo z gotovino ali kartico pri vseh naročilih, tudi ob dostavi. Obvezno predplačilo nad 100 € ni potrjeno.
+- Dostava po dogovoru, cena glede na lokacijo, potrjena ob naročilu.
+- Odgovor na povpraševanje v treh dneh (ne le delovnih); to še ni samodejna potrditev naročila.
+- Roki naročanja: 10 dni; jedilna slika, BG in posebni okusi 14 dni; večja naročila in dogodki 3 tedne.
+- Brezplačna sprememba (če izvedljiva) ali odpoved najpozneje 3 dni pred prevzemom.
+- Prevzem Ulica heroja Šaranoviča 36, Maribor; telefon 040 758 582.
+- Vegan od 2013, peče od 2018.
+- Alergene in sestavine bomo popisali ločeno po okusih IN različicah biskvita, kreme, ganachea in dekoracije. Ne sklepaj o sestavi po imenu okusa; obstaja več ganacheev. Prejšnje nepopolne oznake so umaknjene do preverjenega popisa.
+- Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
 
 ## Obrazec za naročilo
 

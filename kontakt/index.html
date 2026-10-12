@@ -5,7 +5,7 @@
 <title>Naročilo &amp; kontakt — Roman's Cakes, veganske torte Maribor</title>
 <meta name="description" content="Naročite vegansko torto pri Roman's Cakes v Mariboru: obrazec za naročilo, telefon 040 758 582, e-pošta in naslov za prevzem.">
 <meta property="og:title" content="Naročilo &amp; kontakt — Roman's Cakes">
-<meta property="og:description" content="Obrazec za naročilo veganske torte. Prevzem v Mariboru.">
+<meta property="og:description" content="Obrazec za povpraševanje veganske torte. Prevzem v Mariboru.">
 <meta property="og:image" content="../slike/web/torta-vse-najboljse.webp">
 <meta name="theme-color" content="#080705">
 <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../slike/web/icon-512.png" type="image/png"><link rel="apple-touch-icon" href="../slike/web/apple-touch-icon.png">
@@ -82,11 +82,11 @@
       <li><a href="../o-nas/">O meni</a></li>
       <li><a href="../kontakt/" class="active">Kontakt</a></li>
     </ul>
-    <a href="#obrazec" class="nav-cta" style="background:var(--gold);color:var(--bg0)">Naroči torto</a>
+    <a href="#obrazec" class="nav-cta" style="background:var(--gold);color:var(--bg0)">Naročite torto</a>
     <button class="nav-mb" aria-label="Odpri meni" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div id="mnav"><a href="../ponudba/">Ponudba &amp; cenik</a><a href="../narocilo/">Kako naročiti</a><a href="../o-nas/">O meni</a><a href="../kontakt/" class="active">Kontakt</a><a href="#obrazec" class="nav-cta">Naroči torto</a></div>
+<div id="mnav"><a href="../ponudba/">Ponudba &amp; cenik</a><a href="../narocilo/">Kako naročiti</a><a href="../o-nas/">O meni</a><a href="../kontakt/" class="active">Kontakt</a><a href="#obrazec" class="nav-cta">Naročite torto</a></div>
 
 <main>
 <div class="page-hero">
@@ -95,7 +95,7 @@
     <div class="breadcrumb"><a href="../">Domov</a><span>/</span><span class="cur">Naročilo &amp; kontakt</span></div>
     <div class="lbl">Stopite v stik</div>
     <h1 class="hd">Naročite <em>svojo torto</em></h1>
-    <p>Izpolnite obrazec ali me pokličite. Naročilo potrdim v enem dnevu — z datumom, ceno in uro prevzema.</p>
+    <p>Izpolnite obrazec ali me pokličite. Na povpraševanje odgovorim v treh dneh. Naročilo velja po dogovoru in potrditvi vseh podrobnosti.</p>
   </div>
 </div>
 
@@ -107,18 +107,18 @@
       <div id="obrazec" style="scroll-margin-top:90px">
         <div class="form-card rv">
           <div class="form-header">
-            <div class="form-header-label">Obrazec za naročilo</div>
+            <div class="form-header-label">Obrazec za povpraševanje</div>
             <h2>Povejte mi, kaj si želite</h2>
-            <p>Datum, število kosov in okus so dovolj. Vse ostalo uskladiva po telefonu ali e-pošti.</p>
+            <p>Navedite datum, velikost, biskvit in kremo. Če še niste odločeni, vam pomagam pri izbiri.</p>
           </div>
           <div class="form-body" id="form-body">
             <div class="form-notice">
               <span class="form-notice-icon">✦</span>
-              <p>Naročite <strong>vsaj 10 dni pred prevzemom</strong>, za jedilno sliko, brezglutensko torto ali posebne okuse <strong>vsaj 14 dni</strong>. Krajših rokov ne sprejemam. Vprašanja? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+              <p>Naročite <strong>vsaj 10 dni pred prevzemom</strong>, za jedilno sliko, brezglutensko torto ali posebne okuse <strong>vsaj 14 dni</strong>, za večja naročila in dogodke <strong>vsaj 3 tedne</strong>. Krajših rokov ne sprejemam. Vprašanja? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
             </div>
 
             <form id="order-form" action="https://formsubmit.co/info@romancakes.com" method="POST">
-              <input type="hidden" name="_subject" value="Novo naročilo s spletne strani — Roman's Cakes">
+              <input type="hidden" name="_subject" value="Novo povpraševanje s spletne strani — Roman's Cakes">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_next" id="next-url" value="">
@@ -140,12 +140,13 @@
                     <option>Torta po naročilu</option>
                     <option>Brezglutenska torta</option>
                     <option>Torta z jedilno sliko</option>
+                    <option>Poseben okus po dogovoru</option>
                     <option>Rezine / pecivo</option>
                     <option>Več tort / dogodek</option>
                     <option>Drugo / vprašanje</option>
                   </select>
                 </div>
-                <div><label class="form-label" for="datum">Datum prevzema * <span style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" required></div>
+                <div><label class="form-label" for="datum">Datum prevzema * <span id="datum-hint" style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" aria-describedby="datum-hint" required></div>
               </div>
 
               <div class="form-row">
@@ -157,16 +158,36 @@
                   </select>
                 </div>
                 <div>
-                  <label class="form-label" for="okus">Okus</label>
+                  <label class="form-label" for="okus">Okus kreme</label>
                   <select class="form-input form-select" id="okus" name="Okus">
                     <option value="" disabled selected>Izberite okus</option>
-                    <optgroup label="Čokoladni biskvit"><option>Čokolada</option><option>Temna čokolada</option><option>Nutela</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Hruška čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Oreo</option><option>Črni gozdiček</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option></optgroup>
-                    <optgroup label="Beli biskvit"><option>Vanili</option><option>Bela čokolada</option><option>Malina vanili</option><option>Jagoda vanili</option><option>Ananas</option><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Rafaelo</option><option>Rafaelo malina</option><option>Rafaelo jagoda</option><option>Rafaelo bela čokolada</option></optgroup>
-                    <optgroup label="Oreščkov biskvit"><option>Lešnikova torta</option><option>Orehova torta</option></optgroup>
+                    <optgroup label="Čokoladni okusi"><option>Čokolada</option><option>Temna čokolada</option><option>Nutela</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Hruška čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Oreo</option><option>Črni gozdiček</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option></optgroup>
+                    <optgroup label="Sadni in kremni okusi"><option>Vanilija</option><option>Bela čokolada</option><option>Malina–vanilija</option><option>Jagoda–vanilija</option><option>Ananas</option><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Rafaelo</option><option>Rafaelo malina</option><option>Rafaelo jagoda</option><option>Rafaelo bela čokolada</option></optgroup>
+                    <optgroup label="Lešnik in oreh"><option>Lešnikova torta</option><option>Orehova torta</option></optgroup>
                     <optgroup label="Posebne torte"><option>Tiramisu</option><option>Matilda</option><option>Maxi King</option><option>Višnjeva torta</option><option>Bela malina</option></optgroup>
                     <option>Svetujte mi</option>
                   </select>
                 </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="biskvit">Biskvit</label>
+                <select class="form-input form-select" id="biskvit" name="Biskvit" aria-describedby="biskvit-hint">
+                  <option value="" selected>Izberite biskvit</option>
+                  <option>Čokoladni</option><option>Beli</option>
+                  <option>Lešnikov — doplačilo na torto po dogovoru</option>
+                  <option>Orehov — doplačilo na torto po dogovoru</option>
+                  <option>Brezglutenski</option><option>Svetujte mi</option>
+                </select>
+                <p class="note" id="biskvit-hint">Biskvit in kremo lahko poljubno kombinirate. Brezglutenske torte pripravljam do 10 kosov v okusih čokolada, čokolada–malina, Bounty in pistacija.</p>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="dekoracija">Napis in dekoracija</label>
+                <select class="form-input form-select" id="dekoracija" name="Dekoracija">
+                  <option>Brez dodatkov</option><option>Napis — brezplačno</option>
+                  <option>Jedilna slika — 8 € na torto</option><option>Posebna dekoracija — po dogovoru</option>
+                </select>
+                <p class="note">Več želja lahko združite v sporočilu. Sliko pošljite po e-pošti na info@romancakes.com.</p>
               </div>
 
               <div class="form-group">
@@ -190,14 +211,14 @@
 
               <label class="consent"><input type="checkbox" name="Soglasje" value="da" required><span>Seznanjen/a sem s <a href="../pogoji/">splošnimi pogoji</a> in soglašam, da Roman Adler s.p. moje podatke uporabi za pripravo in izvedbo naročila, kot je opisano v <a href="../zasebnost/">politiki zasebnosti</a>. *</span></label>
 
-              <button type="submit" class="form-submit" id="submit-btn">Pošlji naročilo &nbsp;→</button>
+              <button type="submit" class="form-submit" id="submit-btn">Pošljite povpraševanje &nbsp;→</button>
               <p class="note" style="margin-top:14px;text-align:center">Obrazec ne deluje? Pišite na <a href="mailto:info@romancakes.com?subject=Naro%C4%8Dilo%20torte" style="color:var(--gold)">info@romancakes.com</a> ali pokličite.</p>
             </form>
           </div>
           <div class="form-success" id="form-success" role="status">
             <div class="form-success-icon">✦</div>
-            <h2>Naročilo prejeto!</h2>
-            <p>Hvala. Odgovorim v <strong style="color:var(--gold)">enem dnevu</strong> s potrditvijo datuma, cene in ure prevzema.<br>Če je nujno, me pokličite na <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+            <h2>Povpraševanje poslano</h2>
+            <p>Hvala. Odgovorim v <strong style="color:var(--gold)">treh dneh</strong> in uskladim datum, končno ceno ter prevzem ali dostavo. Naročilo velja, ko dogovorjene podrobnosti potrdite.<br>Za dodatna vprašanja me pokličite na <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
             <a href="../ponudba/" class="btn btn-o" style="margin-top:28px">Nazaj na ponudbo →</a>
           </div>
         </div>
@@ -210,21 +231,21 @@
             <div class="contact-block-icon">📞</div>
             <div class="contact-block-label">Telefon</div>
             <div class="contact-block-val">040 758 582</div>
-            <div class="contact-block-sub">Klic, SMS ali WhatsApp. Če ne dvignem, sem v pečici — pokličem nazaj.</div>
-            <a href="tel:+38640758582" class="contact-block-link">Pokliči →</a>
+            <div class="contact-block-sub">Klic, SMS ali WhatsApp. Če se ne oglasim, ravno pečem — pokličem nazaj.</div>
+            <a href="tel:+38640758582" class="contact-block-link">Pokličite →</a>
           </div>
           <div class="contact-block rv" data-d="80">
             <div class="contact-block-icon">✉️</div>
             <div class="contact-block-label">E-pošta</div>
             <div class="contact-block-val">info@romancakes.com</div>
             <div class="contact-block-sub">Za jedilne slike in daljša naročila. Priložite sliko za navdih.</div>
-            <a href="mailto:info@romancakes.com" class="contact-block-link">Piši →</a>
+            <a href="mailto:info@romancakes.com" class="contact-block-link">Pišite →</a>
           </div>
           <div class="contact-block rv" data-d="160">
             <div class="contact-block-icon">📍</div>
             <div class="contact-block-label">Prevzem</div>
             <div class="contact-block-val">Ulica heroja Šaranoviča 36, Maribor</div>
-            <div class="contact-block-sub">Prevzem ob dogovorjeni uri. Dostava možna po dogovoru.</div>
+            <div class="contact-block-sub">Prevzem ob dogovorjeni uri. Dostava po dogovoru; ceno potrdim glede na lokacijo. Plačate lahko z gotovino ali kartico.</div>
             <a href="https://www.google.com/maps/search/?api=1&query=Ulica+heroja+%C5%A0aranovi%C4%8Da+36%2C+2000+Maribor" target="_blank" rel="noopener" class="contact-block-link">Google Zemljevidi →</a>
           </div>
           <div class="contact-block rv" data-d="240">
@@ -237,7 +258,7 @@
           <div class="lt rv" data-d="320">
             <div class="lt-title">⏱ Roki za naročilo</div>
             <div class="lt-item"><span>Torte &amp; rezine</span><span>10+ dni</span></div>
-            <div class="lt-item"><span>Jedilna slika, brez glutena</span><span>14+ dni</span></div>
+            <div class="lt-item"><span>Jedilna slika, brez glutena, posebni okusi</span><span>14+ dni</span></div>
             <div class="lt-item"><span>Več tort / dogodki</span><span>3 tedne</span></div>
           </div>
         </div>
@@ -248,7 +269,7 @@
     <div class="map-area rv">
       <iframe title="Zemljevid: Ulica heroja Šaranoviča 36, Maribor" src="https://www.google.com/maps?q=Ulica+heroja+%C5%A0aranovi%C4%8Da+36,+2000+Maribor&output=embed&hl=sl" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       <div class="map-footer">
-        <span class="map-footer-addr">PE Roman's Cake · Ulica heroja Šaranoviča 36, 2000 Maribor</span>
+        <span class="map-footer-addr">PE Roman's Cakes · Ulica heroja Šaranoviča 36, 2000 Maribor</span>
         <a href="https://www.google.com/maps/search/?api=1&query=Ulica+heroja+%C5%A0aranovi%C4%8Da+36%2C+2000+Maribor" target="_blank" rel="noopener" class="btn btn-o">Navodila za pot →</a>
       </div>
     </div>
@@ -268,14 +289,12 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/order-form.js" defer></script>
 <script>
 (function(){
   // Povratni naslov po uspešni oddaji (FormSubmit preusmeri sem z ?poslano=1)
   var base=location.origin+location.pathname.replace(/[^/]*$/,'');
   document.getElementById('next-url').value=base+'?poslano=1';
-  // Najzgodnejši datum prevzema: čez 10 dni
-  var d=document.getElementById('datum');
-  if(d){var min=new Date();min.setDate(min.getDate()+10);d.min=min.toISOString().split('T')[0]}
   // Stanje »poslano«
   if(/[?&]poslano=1/.test(location.search)){
     document.getElementById('form-body').style.display='none';
