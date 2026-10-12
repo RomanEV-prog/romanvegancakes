@@ -1,7 +1,7 @@
 # Roman's Cakes — spletna stran
 
 Statična stran (HTML/CSS/JS, brez ogrodja in brez build koraka) za vegansko
-slaščičarno **Roman Adler s.p.**, Maribor. Komunikacija v slovenščini.
+proizvodnjo slaščic **Roman Adler s.p.**, Maribor (AJPES: proizvodnja slaščic, NE slaščičarna — tako tudi na strani). Komunikacija v slovenščini.
 
 ## Gostovanje
 
