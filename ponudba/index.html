@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ponudba &amp; cenik — Roman's Cakes, veganske torte Maribor</title>
-<meta name="description" content="Okusi in cenik veganskih tort Roman's Cakes: torte za 8–12 oseb od 4,50 € na kos, več kot 25 okusov, rezine, brezglutenske torte in torte z jedilno sliko. Alergeni za vsak okus.">
+<meta name="description" content="Okusi in cenik veganskih tort Roman's Cakes: torte za 8–12 oseb od 4,50 € na kos, več kot 25 okusov, rezine, brezglutenske torte in torte z jedilno sliko. Alergeni po okusih in biskvitih.">
 <meta property="og:title" content="Ponudba &amp; cenik — Roman's Cakes">
 <meta property="og:description" content="Torte po naročilu od 4,50 € na kos, 25+ okusov, rezine in brezglutenske torte. Maribor.">
 <meta property="og:image" content="../slike/web/torta-karamela-arasidi.webp">
@@ -62,6 +62,12 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
 .ok-list .al{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
 .ok-list .pr{font-family:var(--fm);font-size:10.5px;color:var(--gold);white-space:nowrap;letter-spacing:.08em}
 .ok-list .name{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag-a{background:transparent;border:1px solid var(--border);color:var(--cream2);font-weight:400}
+.bisk{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0 0}
+.bisk div{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.bisk b{display:block;font-size:14px;color:var(--cream);margin-bottom:6px}
+.bisk span{font-family:var(--fm);font-size:10.5px;letter-spacing:.08em;color:var(--cream2)}
+@media(max-width:1024px){.bisk{grid-template-columns:repeat(2,1fr)}}
 .leg{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
 .leg .tag{cursor:default}
 /* alergeni */
@@ -216,7 +222,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   <div class="wrap">
     <div class="lbl rv">Okusi</div>
     <h2 class="hd rv">Izberite <em>svoj okus</em></h2>
-    <p class="sub rv" style="margin-top:12px">Biskvit in kremo izberete neodvisno drug od drugega. Spodnje skupine olajšajo izbiro okusa. Pri okusih brez navedene cene pripravim ponudbo. Sestavine in alergene preverimo za izbrano kombinacijo pred potrditvijo naročila.</p>
+    <p class="sub rv" style="margin-top:12px">Biskvit in kremo izberete neodvisno drug od drugega. Spodnje skupine olajšajo izbiro okusa. Pri okusih brez navedene cene pripravim ponudbo. Oznake alergenov pri okusih veljajo za kremo oziroma polnilo in so vzete iz receptur v mojem sistemu (stanje 12. 10. 2026); alergene biskvita dodajte iz spodnje tabele. Okusi brez oznake še nimajo popisane sestave — preverimo jo ob naročilu.</p>
 
     <div class="okusi-grid">
       <div class="ok-group rv">
@@ -226,17 +232,17 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
           <li><span class="name">Čokolada</span><span class="al"><span class="pr">4,50 € / kos</span></span></li>
           <li><span class="name">Temna čokolada</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
           <li><span class="name">Nutela</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Jagoda čokolada</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Malina čokolada</span><span class="al"><span class="pr">5,50 € / kos</span></span></li>
-          <li><span class="name">Višnja čokolada</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Jagoda čokolada</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Malina čokolada</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">5,50 € / kos</span></span></li>
+          <li><span class="name">Višnja čokolada</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
           <li><span class="name">Hruška čokolada</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
-          <li><span class="name">Jafa (pomaranča)</span><span class="al"><span class="pr">5,50 € / kos</span></span></li>
-          <li><span class="name">Bounty (kokos)</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Jafa (pomaranča)</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">5,50 € / kos</span></span></li>
+          <li><span class="name">Bounty (kokos)</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
           <li><span class="name">Oreo</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
           <li><span class="name">Črni gozdiček</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
-          <li><span class="name">Snickers</span><span class="al"><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Snickers</span><span class="al"><span class="tag tag-a">arašidi</span><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Kinder</span><span class="al"><span class="pr">5,50 € / kos</span></span></li>
-          <li><span class="name">Kinder Bueno</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Kinder Bueno</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
         </ul>
       </div>
 
@@ -249,9 +255,9 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
           <li><span class="name">Malina–vanilija</span><span class="al"><span class="pr">4,50 € / kos</span></span></li>
           <li><span class="name">Jagoda–vanilija</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
           <li><span class="name">Ananas</span><span class="al"><span class="pr">4,50 € / kos</span></span></li>
-          <li><span class="name">Pistacija</span><span class="al"><span class="pr">6,00 € / kos</span></span></li>
-          <li><span class="name">Pasijonka (marakuja)</span><span class="al"><span class="pr">5,50 € / kos</span></span></li>
-          <li><span class="name">Mango</span><span class="al"><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Pistacija</span><span class="al"><span class="tag tag-a">pistacija</span><span class="tag tag-a">soja</span><span class="pr">6,00 € / kos</span></span></li>
+          <li><span class="name">Pasijonka (marakuja)</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">5,50 € / kos</span></span></li>
+          <li><span class="name">Mango</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Rafaelo</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
           <li><span class="name">Rafaelo malina</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
           <li><span class="name">Rafaelo jagoda</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
@@ -263,7 +269,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <div class="ok-head"><h3>Lešnik in oreh</h3><span>2 okusa</span></div>
         <p class="ok-sub">Lešnikova ali orehova krema z biskvitom po izbiri. Lešnikov in orehov biskvit se doplačata na celo torto po dogovoru.</p>
         <ul class="ok-list">
-          <li><span class="name">Lešnikova torta</span><span class="al"><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Lešnikova torta</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Orehova torta</span><span class="al"><span class="pr">po povpraševanju</span></span></li>
         </ul>
       </div>
@@ -272,28 +278,38 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <div class="ok-head"><h3>Posebne in brezglutenske torte</h3><span>9 različic</span></div>
         <p class="ok-sub">Posebni okusi in štiri brezglutenske različice. Brezglutenske torte pripravljam do 10 kosov; označene so spodaj.</p>
         <ul class="ok-list">
-          <li><span class="name">Tiramisu</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Matilda</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Maxi King</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Višnjeva torta</span><span class="al"><span class="pr">4,90 € / kos</span></span></li>
-          <li><span class="name">Bela malina</span><span class="al"><span class="pr">6,00 € / kos</span></span></li>
+          <li><span class="name">Tiramisu</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Matilda</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Maxi King</span><span class="al"><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Višnjeva torta</span><span class="al"><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Bela malina</span><span class="al"><span class="tag tag-a">mandlji</span><span class="tag tag-a">soja</span><span class="pr">6,00 € / kos</span></span></li>
           <li><span class="name">Čokoladna</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="pr">4,50 € / kos</span></span></li>
-          <li><span class="name">Čokolada–malina</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="pr">5,00 € / kos</span></span></li>
-          <li><span class="name">Bounty</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Čokolada–malina</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Bounty</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="tag tag-a">lešniki</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Pistacija</span><span class="al"><span class="tag tag-g">brez glutena</span><span class="pr">6,00 € / kos</span></span></li>
         </ul>
       </div>
+    </div>
+
+    <div class="bisk rv" id="biskviti">
+      <div><b>Čokoladni biskvit</b><span>gluten · soja</span></div>
+      <div><b>Beli biskvit</b><span>gluten</span></div>
+      <div><b>Lešnikov biskvit</b><span>gluten · lešniki</span></div>
+      <div><b>Orehov biskvit</b><span>gluten · orehi</span></div>
+      <div><b>Brezglutenski biskvit</b><span>mandlji · orehi</span></div>
     </div>
 
     <div class="al-box rv" id="alergeni">
       <h3>Alergeni in sestavine</h3>
       <p>Vse torte so <strong style="color:var(--cream)">100 % veganske</strong>: brez jajc, mleka, masla, smetane živalskega izvora in medu. Osnovne sestavine so pšenična moka, ovseno in kokosovo mleko, rastlinska smetana, sladkor, kakav, sadni pireji in oreščki.</p>
       <ul>
-        <li><strong>Gluten:</strong> vsebujejo ga vse torte in rezine, razen brezglutenskih. Tudi brezglutenske so izdelane v obratu, kjer se uporablja pšenična moka, zato lahko vsebujejo sledi glutena.</li>
-        <li><strong>Oreščki in arašidi:</strong> sestava je odvisna od biskvita, kreme, ganachea in dekoracije. Uporabljam več različic čokoladnega ganachea, zato alergene preverimo za konkretno naročilo. Brezglutenski biskvit vsebuje mandlje, orehe in kokos. Zaradi skupne proizvodnje lahko vsak izdelek vsebuje sledi oreščkov.</li>
-        <li><strong>Soja:</strong> nekatere rastlinske smetane in čokolade vsebujejo sojo. Če imate alergijo na sojo, povejte ob naročilu.</li>
+        <li><strong>Gluten:</strong> vsebujejo ga čokoladni, beli, lešnikov in orehov biskvit ter tiramisu in Matilda. Brezglutenski biskvit je brez moke, a je izdelan v obratu, kjer se uporablja pšenična moka, zato lahko vsebuje sledi glutena.</li>
+        <li><strong>Soja:</strong> rastlinska smetana za stepanje in temna čokolada vsebujeta sojin lecitin, zato je soja v skoraj vseh kremah in v čokoladnem biskvitu.</li>
+        <li><strong>Lešniki in mandlji:</strong> čokoladna krema (Joycream) vsebuje lešnike in mandlje — v okusih Jafa, Bounty, jagoda čokolada, Kinder Bueno, Maxi King in Snickers. Bela čokolada vsebuje mandlje (bela malina). Lešnikova krema in lešnikov biskvit vsebujeta lešnike.</li>
+        <li><strong>Orehi, pistacija, arašidi:</strong> orehov biskvit in brezglutenski biskvit (mleti mandlji in orehi); pistacija v pistacijevi kremi; arašidi in arašidovo maslo v Snickersu.</li>
+        <li><strong>Sledi:</strong> zaradi skupne proizvodnje lahko vsak izdelek vsebuje sledi glutena, oreščkov, arašidov in soje.</li>
       </ul>
-      <p style="margin-top:14px">Vsaki torti priložim deklaracijo z natančnimi sestavinami in alergeni. Pri alergijah me prosim obvestite že ob naročilu, da pred potrditvijo preverimo sestavine in možnosti priprave. Seznam okusov ni popoln seznam alergenov posameznega izdelka.</p>
+      <p style="margin-top:14px">Vsaki torti priložim deklaracijo z natančnimi sestavinami in alergeni. Pri alergijah me prosim obvestite že ob naročilu, da pred potrditvijo preverimo sestavine izbrane kombinacije in možnosti priprave. Dekoracija in jedilna slika lahko dodata alergene, ki tu niso navedeni.</p>
     </div>
   </div>
 </section>

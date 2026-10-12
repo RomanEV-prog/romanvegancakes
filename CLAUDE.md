@@ -54,7 +54,11 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
 - Brezplačna sprememba (če izvedljiva) ali odpoved najpozneje 3 dni pred prevzemom.
 - Prevzem Ulica heroja Šaranoviča 36, Maribor; telefon 040 758 582.
 - Vegan od 2013, peče od 2018.
-- Alergene in sestavine bomo popisali ločeno po okusih IN različicah biskvita, kreme, ganachea in dekoracije. Ne sklepaj o sestavi po imenu okusa; obstaja več ganacheev. Prejšnje nepopolne oznake so umaknjene do preverjenega popisa.
+- Alergeni na strani so iz ERP receptur (12. 10. 2026): `GET /api/recepture` (polje `sest`, poly → rekurzivno)
+  + `GET /api/surovine` (polje `alergeni`, šifrant `GET /api/alergeni`). Oznaka pri okusu = krema/polnilo (torta minus biskvit),
+  tabela `#biskviti` = alergeni biskvitov. Okusi brez oznake nimajo recepture v ERP (Čokolada, Temna čokolada, Nutela, Hruška,
+  Oreo, Črni gozdiček, Kinder, Vanilija, Bela čokolada, Malina/Jagoda–vanilija, Ananas, Rafaelo ×4, Orehova; BG čokoladna in
+  BG pistacija imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
 
 ## Obrazec za naročilo
