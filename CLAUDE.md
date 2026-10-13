@@ -137,4 +137,7 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 ## Skilli
 
 - `.claude/commands/github-pages-domena.md` — selitev domene, veja `live`, objava prave strani
+- `.claude/commands/erp-alergeni-dump.md` — žive deklaracije iz ERP (PIN, HttpOnly, prenos iz MCP zavihka), osvežitev `alergeni/`
+- `.claude/commands/formsubmit-obrazec.md` — aktivacija, `_cc` v Gmail, priloge, prava testna oddaja; past `curl -F` + šumniki
+- `.claude/commands/headless-chrome-test.md` — posnetki in testi brez Chrome MCP, mobilni pogled prek iframe
 - `~/.claude/commands/neoserv-domenca-dns.md` — kje so domene (Domenca) in DNS zona (cPanel Neoserv), UAPI recepti
