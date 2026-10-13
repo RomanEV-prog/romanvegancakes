@@ -63,6 +63,16 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
   imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
 
+## Pošta info@romancakes.com (stanje 13. 10. 2026)
+
+- Predal je pri Neoservu (cPanel `adlerhub`, kvota 250 MB). **Posredovanje** info@ → **romanvegancakes@gmail.com**
+  (cPanel UAPI `Email/add_forwarder`, 13. 10. 2026); predal hrani tudi kopijo → občasno izprazni.
+- V Gmailu romanvegancakes je info@romancakes.com dodan pod »Pošlji e-poštno sporočilo kot« (SMTP mail.romancakes.com:465 SSL,
+  potrjeno 13. 10. 2026) in nastavljeno »Odgovori z istega naslova, na katerega je bilo poslano sporočilo«.
+  Privzeti pošiljatelj ostaja romanvegancakes@gmail.com (račun služi tudi greenheart@adlerhub.eu).
+- SPF in DKIM za romancakes.com veljavna (cPanel EmailAuth); testno sporočilo iz Gmaila kot info@ pristane v Prejetem, ne v vsiljeni pošti.
+- Gmail MCP v Claude Code je povezan z računom **romanvegancakes@gmail.com** (ne adlerrroman).
+
 ## Obrazec za naročilo
 
 `kontakt/` pošilja prek FormSubmit (`https://formsubmit.co/info@romancakes.com`),
