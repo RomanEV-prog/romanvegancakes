@@ -98,8 +98,19 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
 ## Obrazec za naročilo
 
 `kontakt/` pošilja prek FormSubmit (`https://formsubmit.co/info@romancakes.com`),
-brez captche, s honeypotom, `_next` nazaj na `kontakt/?poslano=1`. **Prva oddaja sproži
-aktivacijski e-mail** na ta naslov — dokler Roman ne klikne potrditve, sporočila ne pridejo.
+brez captche, s honeypotom, `_next` nazaj na `kontakt/?poslano=1`, `enctype=multipart/form-data`
+(priloga `attachment` za jedilno sliko, skupaj do 10 MB).
+- **Aktivacija:** testna oddaja 13. 10. 2026 je sprožila e-mail »Action Required: Activate FormSubmit« —
+  v Gmailu romanvegancakes je v zavihku **Posodobitve**. Dokler Roman ne klikne »Activate Form«, sporočila ne pridejo.
+  Po aktivaciji še preveri, ali priloga slike prispe.
+- Logika je v `assets/order-form.js` (naloženo kot `?v=N` — ob spremembi povečaj N, Chrome je držal staro skripto).
+  Vrsta določa polja: torta iz ponudbe (okus, biskvit), torta po naročilu (biskvit, krema 1, krema 2),
+  BG (4 okusi, ≤ 10 kosov), presna, rezine po kosih (4 vrstice okus + kosov), dogodek, vprašanje. Skrita polja so `disabled`.
+  Rok: 10 dni za vse, 21 za dogodek/več kosov; opozorilo takoj ob vnosu datuma, oddaja blokirana. Dekoracija ločeno,
+  polje za napis in polje za sliko se pokažeta po izbiri.
+- Testiranje brez Chrome MCP: headless Chrome (`chrome.exe --headless=new --dump-dom/--screenshot`) na pomožni strani
+  z iframe 390 px (`--window-size` pod ~500 px ne deluje); testna stran MORA imeti `<meta charset="utf-8">`.
+  Lokalni strežnik raje z `Cache-Control: no-store` (Roman je videl stare strani iz predpomnilnika).
 
 ## Preverjanje
 
