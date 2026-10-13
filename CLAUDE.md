@@ -63,6 +63,9 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
   imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
 - **»Brez glutena« na strani NE piše** (Uredba 828/2014 zahteva ≤ 20 mg/kg, Roman tega ne zagotavlja). Od 13. 10. 2026 povsod
   »brez glutenskih sestavin« / »torte brez glutenskih sestavin« + opomba o sledeh iz skupnega obrata. Sidro `#brezglutensko` ostaja.
+- **Presne torte** (13. 10. 2026, Romanova želja): sekcija `ponudba/#presne` in vrsta v obrazcu, rok 14 dni. V ERP ni artiklov ne receptur
+  (le postopek »Presna sladica«), zato na strani BREZ cen, okusov in alergenov — vse »po dogovoru«. Ko Roman doda artikle, dopolni cenik.
+  Sum: recepturi »Malina čokolada« in »Bounty BG« (mandlji, orehi, datelji, kokosovo olje, brez moke) sta morda presni torti.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
 
 ## Stran `alergeni/` in QR koda (od 13. 10. 2026)
