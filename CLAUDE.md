@@ -53,7 +53,7 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
 - Plačilo z gotovino ali kartico pri vseh naročilih, tudi ob dostavi. Obvezno predplačilo nad 100 € ni potrjeno.
 - Dostava po dogovoru, cena glede na lokacijo, potrjena ob naročilu.
 - Odgovor na povpraševanje v treh dneh (ne le delovnih); to še ni samodejna potrditev naročila.
-- Roki naročanja: 10 dni; jedilna slika, BG in posebni okusi 14 dni; večja naročila in dogodki 3 tedne.
+- Roki naročanja: vsaka torta 10 dni (tudi jedilna slika, BG, presna — Roman 13. 10. 2026); samo večja naročila in dogodki 3 tedne.
 - Brezplačna sprememba (če izvedljiva) ali odpoved najpozneje 3 dni pred prevzemom.
 - Prevzem Ulica heroja Šaranoviča 36, Maribor; telefon 040 758 582.
 - Vegan od 2013, peče od 2018.
@@ -63,7 +63,7 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
   imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
 - **»Brez glutena« na strani NE piše** (Uredba 828/2014 zahteva ≤ 20 mg/kg, Roman tega ne zagotavlja). Od 13. 10. 2026 povsod
   »brez glutenskih sestavin« / »torte brez glutenskih sestavin« + opomba o sledeh iz skupnega obrata. Sidro `#brezglutensko` ostaja.
-- **Presne torte** (13. 10. 2026, Romanova želja): sekcija `ponudba/#presne` in vrsta v obrazcu, rok 14 dni. V ERP ni artiklov ne receptur
+- **Presne torte** (13. 10. 2026, Romanova želja): sekcija `ponudba/#presne` in vrsta v obrazcu, rok 10 dni. V ERP ni artiklov ne receptur
   (le postopek »Presna sladica«), zato na strani BREZ cen, okusov in alergenov — vse »po dogovoru«. Ko Roman doda artikle, dopolni cenik.
   Sum: recepturi »Malina čokolada« in »Bounty BG« (mandlji, orehi, datelji, kokosovo olje, brez moke) sta morda presni torti.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.

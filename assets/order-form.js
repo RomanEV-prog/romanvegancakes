@@ -36,8 +36,7 @@
 
   function minDays() {
     var days = 10;
-    var gf = type.value === V.bg || sponge.value === GF_SPONGE || allergens.value === 'Brez glutenskih sestavin';
-    if (gf || type.value === V.presna || decoration.value.indexOf('edilna slika') >= 0) days = 14;
+    // Vsaka torta 10 dni; samo dogodek ali več tort 21 dni (Roman, 13. 10. 2026).
     if (type.value === V.dogodek || size.value === 'Več kosov (po dogovoru)') days = 21;
     return days;
   }
