@@ -22,6 +22,9 @@
 .form-body{padding:36px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-group{margin-bottom:16px}
+.form-warn{margin-top:8px;padding:10px 12px;font-size:13px;line-height:1.6;color:#f0c9b4;background:rgba(192,80,50,.14);border:1px solid rgba(192,80,50,.45);border-radius:2px}
+.form-input.je-napaka{border-color:rgba(192,80,50,.8)}
+[hidden]{display:none!important}
 .form-label{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream2);margin-bottom:8px;display:block}
 .form-input,.form-select,.form-textarea{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:2px;color:var(--cream);font-family:var(--fb);font-size:15px;padding:13px 16px;transition:border-color var(--tr),background var(--tr);outline:none;color-scheme:dark}
 .form-input::placeholder,.form-textarea::placeholder{color:var(--cream3)}
@@ -109,7 +112,7 @@
           <div class="form-header">
             <div class="form-header-label">Obrazec za povpraševanje</div>
             <h2>Povejte mi, kaj si želite</h2>
-            <p>Navedite datum, velikost, biskvit in kremo. Če še niste odločeni, vam pomagam pri izbiri.</p>
+            <p>Navedite datum, velikost in okus. Pri torti po naročilu izberete biskvit in do dve kremi. Če še niste odločeni, vam pomagam pri izbiri.</p>
           </div>
           <div class="form-body" id="form-body">
             <div class="form-notice">
@@ -137,16 +140,16 @@
                   <label class="form-label" for="vrsta">Kaj naročate *</label>
                   <select class="form-input form-select" id="vrsta" name="Vrsta" required>
                     <option value="" disabled selected>Izberite</option>
-                    <option>Torta po naročilu</option>
-                    <option>Brezglutenska torta</option>
-                    <option>Torta z jedilno sliko</option>
-                    <option>Poseben okus po dogovoru</option>
+                    <option>Torta iz ponudbe (izbran okus)</option>
+                    <option>Torta po naročilu (sestavim sam)</option>
+                    <option>Torta brez glutenskih sestavin</option>
+                    <option>Presna torta</option>
                     <option>Rezine / pecivo</option>
                     <option>Več tort / dogodek</option>
                     <option>Drugo / vprašanje</option>
                   </select>
                 </div>
-                <div><label class="form-label" for="datum">Datum prevzema * <span id="datum-hint" style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" aria-describedby="datum-hint" required></div>
+                <div><label class="form-label" for="datum">Datum prevzema * <span id="datum-hint" style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" aria-describedby="datum-hint datum-opozorilo" required><p class="form-warn" id="datum-opozorilo" role="alert" hidden></p></div>
               </div>
 
               <div class="form-row">
@@ -157,35 +160,68 @@
                     <option>8 kosov</option><option>10 kosov</option><option>12 kosov</option><option>Več kosov (po dogovoru)</option><option>Rezine po kosih</option><option>Še ne vem</option>
                   </select>
                 </div>
-                <div>
-                  <label class="form-label" for="okus">Okus kreme</label>
+                <div id="polje-okus">
+                  <label class="form-label" for="okus">Okus</label>
                   <select class="form-input form-select" id="okus" name="Okus">
                     <option value="" disabled selected>Izberite okus</option>
                     <optgroup label="Čokoladni okusi"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadni in kremni okusi"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva torta</option><option>Tiramisu</option></optgroup>
                     <option>Svetujte mi</option>
                   </select>
+                  <p class="note" id="okus-hint">Torta iz ponudbe ima kremo po receptu, izberete le biskvit.</p>
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-row" id="polje-kreme" hidden>
+                <div>
+                  <label class="form-label" for="krema1">Krema 1 *</label>
+                  <select class="form-input form-select" id="krema1" name="Krema 1">
+                    <option value="" disabled selected>Izberite kremo</option>
+                    <optgroup label="Čokoladne kreme"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
+                    <optgroup label="Sadne in kremne"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva</option><option>Tiramisu</option></optgroup>
+                    <option>Svetujte mi</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="krema2">Krema 2 <span style="color:var(--cream3);font-weight:400">(neobvezno)</span></label>
+                  <select class="form-input form-select" id="krema2" name="Krema 2">
+                    <option value="" selected>Samo ena krema</option>
+                    <optgroup label="Čokoladne kreme"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
+                    <optgroup label="Sadne in kremne"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva</option><option>Tiramisu</option></optgroup>
+                    <option>Svetujte mi</option>
+                  </select>
+                  <p class="note">Torta po naročilu ima lahko do dve kremi (dve polnili).</p>
+                </div>
+              </div>
+
+              <div class="form-group" id="polje-biskvit">
                 <label class="form-label" for="biskvit">Biskvit</label>
                 <select class="form-input form-select" id="biskvit" name="Biskvit" aria-describedby="biskvit-hint">
                   <option value="" selected>Izberite biskvit</option>
                   <option>Čokoladni</option><option>Beli</option>
                   <option>Lešnikov — doplačilo na torto po dogovoru</option>
                   <option>Orehov — doplačilo na torto po dogovoru</option>
-                  <option>Brezglutenski</option><option>Svetujte mi</option>
+                  <option>Brez glutenskih sestavin</option><option>Svetujte mi</option>
                 </select>
                 <p class="note" id="biskvit-hint">Biskvit in kremo lahko poljubno kombinirate. Torte brez glutenskih sestavin pripravljam do 10 kosov v okusih čokolada, čokolada–malina, Bounty in pistacija.</p>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="dekoracija">Napis in dekoracija</label>
-                <select class="form-input form-select" id="dekoracija" name="Dekoracija">
-                  <option>Brez dodatkov</option><option>Napis — brezplačno</option>
-                  <option>Jedilna slika — 8 € na torto</option><option>Posebna dekoracija — po dogovoru</option>
-                </select>
-                <p class="note">Več želja lahko združite v sporočilu. Sliko pošljite po e-pošti na info@romancakes.com.</p>
+
+              <div class="form-row">
+                <div>
+                  <label class="form-label" for="dekoracija">Dekoracija</label>
+                  <select class="form-input form-select" id="dekoracija" name="Dekoracija">
+                    <option>Brez dodatkov</option>
+                    <option>Napis — brezplačno</option>
+                    <option>Jedilna slika — 8 € na torto</option>
+                    <option>Napis in jedilna slika</option>
+                    <option>Posebna dekoracija — po dogovoru</option>
+                  </select>
+                  <p class="note" id="dekoracija-hint">Sliko za jedilno sliko pošljite po e-pošti na info@romancakes.com po oddaji obrazca.</p>
+                </div>
+                <div id="polje-napis" hidden>
+                  <label class="form-label" for="napis">Besedilo napisa</label>
+                  <input class="form-input" type="text" id="napis" name="Napis" maxlength="80" placeholder="npr. Vse najboljše, Ana!">
+                </div>
               </div>
 
               <div class="form-group">

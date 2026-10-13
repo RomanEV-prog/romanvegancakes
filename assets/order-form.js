@@ -1,52 +1,118 @@
-// Roki in velikosti sledijo izbiri v povpraševanju; končno ponudbo potrdi Roman.
+// Logika povpraševanja: polja sledijo izbiri »Kaj naročate«, rok prevzema takoj opozori stranko.
+// Končno ponudbo (ceno, rok, izvedljivost) potrdi Roman.
 (function () {
   var form = document.getElementById('order-form');
   if (!form) return;
-  var type = document.getElementById('vrsta');
-  var size = document.getElementById('kosi');
-  var flavor = document.getElementById('okus');
-  var sponge = document.getElementById('biskvit');
-  var decoration = document.getElementById('dekoracija');
-  var allergens = document.getElementById('alergeni');
-  var date = document.getElementById('datum');
-  var hint = document.getElementById('datum-hint');
+  var $ = function (id) { return document.getElementById(id); };
+  var type = $('vrsta'), size = $('kosi'), flavor = $('okus'), cream1 = $('krema1'), cream2 = $('krema2');
+  var sponge = $('biskvit'), decoration = $('dekoracija'), inscription = $('napis'), allergens = $('alergeni');
+  var date = $('datum'), hint = $('datum-hint'), warn = $('datum-opozorilo');
+  var boxFlavor = $('polje-okus'), boxCreams = $('polje-kreme'), boxSponge = $('polje-biskvit'), boxInscription = $('polje-napis');
+  var flavorHint = $('okus-hint');
+
+  var V = {
+    ponudba: 'Torta iz ponudbe (izbran okus)',
+    narocilo: 'Torta po naročilu (sestavim sam)',
+    bg: 'Torta brez glutenskih sestavin',
+    presna: 'Presna torta',
+    pecivo: 'Rezine / pecivo',
+    dogodek: 'Več tort / dogodek',
+    drugo: 'Drugo / vprašanje'
+  };
+  var GF_SPONGE = 'Brez glutenskih sestavin';
   var gfFlavors = ['', 'Čokoladna', 'Malina čokolada', 'Bounty (kokos)', 'Pistacija', 'Svetujte mi'];
 
-  function update() {
-    var gfRequired = type.value === 'Brezglutenska torta' || allergens.value === 'Brez glutena';
-    // Izrecna izbira brezglutenske torte zahteva ustrezen biskvit.
-    if (gfRequired) sponge.value = 'Brezglutenski';
-    var gf = gfRequired || sponge.value === 'Brezglutenski';
-    Array.from(sponge.options).forEach(function (option) {
-      option.disabled = gfRequired && option.value !== 'Brezglutenski';
-    });
-    Array.from(size.options).forEach(function (option) {
-      if (!option.value) return;
-      option.disabled = gf && ['12 kosov', 'Več kosov (po dogovoru)', 'Rezine po kosih'].includes(option.value);
-    });
-    if (size.selectedOptions[0] && size.selectedOptions[0].disabled && size.value) size.value = '';
-    Array.from(flavor.options).forEach(function (option) {
-      if (!option.value) return;
-      option.disabled = gf && !gfFlavors.includes(option.value);
-    });
-    if (flavor.selectedOptions[0] && flavor.selectedOptions[0].disabled && flavor.value) flavor.value = '';
+  // Skrito polje se ne pošlje (disabled), da v e-pošti ni praznih ali nesmiselnih vrstic.
+  function show(box, on) {
+    if (!box) return;
+    box.hidden = !on;
+    Array.prototype.forEach.call(box.querySelectorAll('select,input,textarea'), function (el) { el.disabled = !on; });
+  }
 
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function isoLocal(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function slDate(d) { return d.getDate() + '. ' + (d.getMonth() + 1) + '. ' + d.getFullYear(); }
+  function parseLocal(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+
+  function minDays() {
     var days = 10;
-    if (gf || type.value === 'Torta z jedilno sliko' || type.value === 'Poseben okus po dogovoru' || decoration.value.startsWith('Jedilna slika')) days = 14;
-    if (type.value === 'Več tort / dogodek' || size.value === 'Več kosov (po dogovoru)') days = 21;
-    var question = type.value === 'Drugo / vprašanje';
+    var gf = type.value === V.bg || sponge.value === GF_SPONGE || allergens.value === 'Brez glutenskih sestavin';
+    if (gf || type.value === V.presna || decoration.value.indexOf('edilna slika') >= 0) days = 14;
+    if (type.value === V.dogodek || size.value === 'Več kosov (po dogovoru)') days = 21;
+    return days;
+  }
+
+  // Varovalka za rok: opozori takoj ob vnosu datuma in prepreči oddajo prekratkega roka.
+  function checkDate() {
+    var question = type.value === V.drugo;
     date.required = !question;
     if (question) {
       date.removeAttribute('min');
       hint.textContent = '(neobvezno za vprašanja)';
+      date.setCustomValidity(''); date.classList.remove('je-napaka'); warn.hidden = true;
+      return;
+    }
+    var days = minDays();
+    var min = new Date(); min.setHours(0, 0, 0, 0); min.setDate(min.getDate() + days);
+    date.min = isoLocal(min);
+    hint.textContent = '(najmanj ' + days + ' dni vnaprej, od ' + slDate(min) + ')';
+    if (date.value && parseLocal(date.value) < min) {
+      var msg = 'Za ta datum naročila ne morem sprejeti: za izbrano vrsto potrebujem najmanj ' + days + ' dni, najzgodnejši prevzem je ' + slDate(min) + '. Za nujno naročilo me pokličite na 040 758 582.';
+      warn.textContent = msg; warn.hidden = false;
+      date.classList.add('je-napaka');
+      date.setCustomValidity('Najzgodnejši prevzem je ' + slDate(min) + '.');
     } else {
-      var min = new Date();
-      min.setDate(min.getDate() + days);
-      // Lokalni koledarski datum, brez premika zaradi UTC.
-      date.min = min.getFullYear() + '-' + String(min.getMonth() + 1).padStart(2, '0') + '-' + String(min.getDate()).padStart(2, '0');
-      hint.textContent = '(najmanj ' + days + ' dni vnaprej)';
+      warn.hidden = true; date.classList.remove('je-napaka'); date.setCustomValidity('');
     }
   }
-  [type, size, flavor, sponge, decoration, allergens].forEach(function (field) { field.addEventListener('change', update); });
+
+  function update() {
+    var t = type.value;
+    var cake = t === V.ponudba || t === V.narocilo || t === V.bg;
+    var gf = t === V.bg || allergens.value === 'Brez glutenskih sestavin';
+
+    // Okus: torta iz ponudbe in BG torta; torta po naročilu ima kreme namesto okusa.
+    show(boxFlavor, t === V.ponudba || t === V.bg || t === V.presna || t === V.pecivo || t === V.dogodek || t === '');
+    show(boxCreams, t === V.narocilo);
+    show(boxSponge, t === V.ponudba || t === V.narocilo || t === '');
+    flavor.required = t === V.ponudba || t === V.bg;
+    cream1.required = t === V.narocilo;
+    if (flavorHint) {
+      flavorHint.textContent = t === V.bg ? 'Brez glutenskih sestavin pripravljam čokoladno, čokolada–malino, Bounty in pistacijo, do 10 kosov.'
+        : t === V.presna ? 'Presne torte po dogovoru; želeni okus opišite v sporočilu.'
+        : t === V.pecivo || t === V.dogodek ? 'Izberite okus ali želje opišite v sporočilu.'
+        : 'Torta iz ponudbe ima kremo po receptu, izberete le biskvit.';
+    }
+
+    // BG: samo štirje okusi, največ 10 kosov, biskvit je fiksen.
+    Array.prototype.forEach.call(flavor.options, function (o) { if (o.value) o.disabled = gf && gfFlavors.indexOf(o.value) < 0; });
+    if (flavor.selectedOptions[0] && flavor.selectedOptions[0].disabled) flavor.value = '';
+    if (gf && !boxSponge.hidden) sponge.value = GF_SPONGE;
+    Array.prototype.forEach.call(sponge.options, function (o) { o.disabled = gf && o.value !== GF_SPONGE; });
+    var gfSize = gf || sponge.value === GF_SPONGE;
+    Array.prototype.forEach.call(size.options, function (o) {
+      if (!o.value) return;
+      o.disabled = gfSize && ['12 kosov', 'Več kosov (po dogovoru)', 'Rezine po kosih'].indexOf(o.value) >= 0;
+    });
+    if (size.selectedOptions[0] && size.selectedOptions[0].disabled && size.value) size.value = '';
+    if (!cake && sponge.value === GF_SPONGE && t !== '') sponge.value = '';
+
+    // Krema 2 ne sme biti enaka kremi 1.
+    Array.prototype.forEach.call(cream2.options, function (o) { if (o.value) o.disabled = o.value === cream1.value && o.value !== 'Svetujte mi'; });
+    if (cream2.selectedOptions[0] && cream2.selectedOptions[0].disabled) cream2.value = '';
+
+    // Napis: polje za besedilo samo, ko je izbran.
+    show(boxInscription, decoration.value.indexOf('Napis') === 0);
+
+    checkDate();
+  }
+
+  [type, size, flavor, cream1, cream2, sponge, decoration, allergens].forEach(function (f) { f.addEventListener('change', update); });
+  date.addEventListener('input', checkDate);
+  date.addEventListener('change', checkDate);
+  form.addEventListener('submit', function (e) {
+    checkDate();
+    if (!date.validity.valid) { e.preventDefault(); date.focus(); date.reportValidity(); }
+  });
   update();
 })();
