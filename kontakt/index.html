@@ -131,10 +131,10 @@
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="form-row">
-                <div><label class="form-label" for="ime">Ime in priimek *</label><input class="form-input" type="text" id="ime" name="Ime in priimek" autocomplete="name" required></div>
+                <div><label class="form-label" for="ime">Ime in priimek *</label><input class="form-input" type="text" id="ime" name="Ime" autocomplete="name" required></div>
                 <div><label class="form-label" for="telefon">Telefon *</label><input class="form-input" type="tel" id="telefon" name="Telefon" autocomplete="tel" placeholder="040 123 456" required></div>
               </div>
-              <div class="form-group"><label class="form-label" for="email">E-pošta *</label><input class="form-input" type="email" id="email" name="E-posta" autocomplete="email" required></div>
+              <div class="form-group"><label class="form-label" for="email">E-pošta *</label><input class="form-input" type="email" id="email" name="Eposta" autocomplete="email" required></div>
 
               <div class="form-divider"></div>
 
@@ -152,7 +152,7 @@
                     <option>Drugo / vprašanje</option>
                   </select>
                 </div>
-                <div><label class="form-label" for="datum">Datum prevzema * <span id="datum-hint" style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum prevzema" aria-describedby="datum-hint datum-opozorilo" required><p class="form-warn" id="datum-opozorilo" role="alert" hidden></p></div>
+                <div><label class="form-label" for="datum">Datum prevzema * <span id="datum-hint" style="color:var(--cream3);font-weight:400">(najmanj 10 dni vnaprej)</span></label><input class="form-input" type="date" id="datum" name="Datum" aria-describedby="datum-hint datum-opozorilo" required><p class="form-warn" id="datum-opozorilo" role="alert" hidden></p></div>
               </div>
 
               <div class="form-row">
@@ -178,39 +178,39 @@
               <div id="polje-kosi" hidden>
                 <p class="note" style="margin-bottom:10px">Naročilo po kosih: izberite okus in število rezin, lahko tudi več okusov. Cena rezine je enaka kosu iste torte.</p>
                 <div class="form-row kos-vrstica">
-                  <div><label class="form-label" for="rez1">Rezina 1 *</label><select class="form-input form-select" id="rez1" name="Rezina 1"><option value="" disabled selected>Izberite okus</option>
+                  <div><label class="form-label" for="rez1">Rezina 1 *</label><select class="form-input form-select" id="rez1" name="Rezina1"><option value="" disabled selected>Izberite okus</option>
                     <optgroup label="Čokoladni okusi"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadni in kremni okusi"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva torta</option><option>Tiramisu</option></optgroup>
                   </select></div>
-                  <div><label class="form-label" for="rez1n">Število kosov</label><input class="form-input" type="number" id="rez1n" name="Rezina 1 kosov" min="1" max="200" step="1" placeholder="npr. 6"></div>
+                  <div><label class="form-label" for="rez1n">Število kosov</label><input class="form-input" type="number" id="rez1n" name="Kosov1" min="1" max="200" step="1" placeholder="npr. 6"></div>
                 </div>
                 <div class="form-row kos-vrstica">
-                  <div><label class="form-label" for="rez2">Rezina 2</label><select class="form-input form-select" id="rez2" name="Rezina 2"><option value="" selected>Še en okus (neobvezno)</option>
+                  <div><label class="form-label" for="rez2">Rezina 2</label><select class="form-input form-select" id="rez2" name="Rezina2"><option value="" selected>Še en okus (neobvezno)</option>
                     <optgroup label="Čokoladni okusi"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadni in kremni okusi"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva torta</option><option>Tiramisu</option></optgroup>
                   </select></div>
-                  <div><label class="form-label" for="rez2n">Število kosov</label><input class="form-input" type="number" id="rez2n" name="Rezina 2 kosov" min="1" max="200" step="1" placeholder="npr. 6"></div>
+                  <div><label class="form-label" for="rez2n">Število kosov</label><input class="form-input" type="number" id="rez2n" name="Kosov2" min="1" max="200" step="1" placeholder="npr. 6"></div>
                 </div>
                 <div class="form-row kos-vrstica">
-                  <div><label class="form-label" for="rez3">Rezina 3</label><select class="form-input form-select" id="rez3" name="Rezina 3"><option value="" selected>Še en okus (neobvezno)</option>
+                  <div><label class="form-label" for="rez3">Rezina 3</label><select class="form-input form-select" id="rez3" name="Rezina3"><option value="" selected>Še en okus (neobvezno)</option>
                     <optgroup label="Čokoladni okusi"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadni in kremni okusi"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva torta</option><option>Tiramisu</option></optgroup>
                   </select></div>
-                  <div><label class="form-label" for="rez3n">Število kosov</label><input class="form-input" type="number" id="rez3n" name="Rezina 3 kosov" min="1" max="200" step="1" placeholder="npr. 6"></div>
+                  <div><label class="form-label" for="rez3n">Število kosov</label><input class="form-input" type="number" id="rez3n" name="Kosov3" min="1" max="200" step="1" placeholder="npr. 6"></div>
                 </div>
                 <div class="form-row kos-vrstica">
-                  <div><label class="form-label" for="rez4">Rezina 4</label><select class="form-input form-select" id="rez4" name="Rezina 4"><option value="" selected>Še en okus (neobvezno)</option>
+                  <div><label class="form-label" for="rez4">Rezina 4</label><select class="form-input form-select" id="rez4" name="Rezina4"><option value="" selected>Še en okus (neobvezno)</option>
                     <optgroup label="Čokoladni okusi"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadni in kremni okusi"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva torta</option><option>Tiramisu</option></optgroup>
                   </select></div>
-                  <div><label class="form-label" for="rez4n">Število kosov</label><input class="form-input" type="number" id="rez4n" name="Rezina 4 kosov" min="1" max="200" step="1" placeholder="npr. 6"></div>
+                  <div><label class="form-label" for="rez4n">Število kosov</label><input class="form-input" type="number" id="rez4n" name="Kosov4" min="1" max="200" step="1" placeholder="npr. 6"></div>
                 </div>
               </div>
 
               <div class="form-row" id="polje-kreme" hidden>
                 <div>
                   <label class="form-label" for="krema1">Krema 1 *</label>
-                  <select class="form-input form-select" id="krema1" name="Krema 1">
+                  <select class="form-input form-select" id="krema1" name="Krema1">
                     <option value="" disabled selected>Izberite kremo</option>
                     <optgroup label="Čokoladne kreme"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadne in kremne"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva</option><option>Tiramisu</option></optgroup>
@@ -219,7 +219,7 @@
                 </div>
                 <div>
                   <label class="form-label" for="krema2">Krema 2 <span style="color:var(--cream3);font-weight:400">(neobvezno)</span></label>
-                  <select class="form-input form-select" id="krema2" name="Krema 2">
+                  <select class="form-input form-select" id="krema2" name="Krema2">
                     <option value="" selected>Samo ena krema</option>
                     <optgroup label="Čokoladne kreme"><option>Čokoladna</option><option>Jagoda čokolada</option><option>Malina čokolada</option><option>Višnja čokolada</option><option>Jafa (pomaranča)</option><option>Bounty (kokos)</option><option>Snickers</option><option>Kinder</option><option>Kinder Bueno</option><option>Maxi King</option><option>Matilda</option></optgroup>
                     <optgroup label="Sadne in kremne"><option>Pistacija</option><option>Pasijonka / marakuja</option><option>Mango</option><option>Bela malina</option><option>Višnjeva</option><option>Tiramisu</option></optgroup>
@@ -260,7 +260,7 @@
               </div>
               <div class="form-group" id="polje-slika" hidden>
                 <label class="form-label" for="slika">Slika za jedilni tisk</label>
-                <input class="form-input" type="file" id="slika" name="attachment" accept="image/png,image/jpeg,image/webp,image/heic,.pdf">
+                <input class="form-input" type="file" id="slika" name="Slika" accept="image/png,image/jpeg,image/webp,image/heic,.pdf">
                 <p class="note" id="slika-hint">Priložite fotografijo, logotip ali motiv (JPG, PNG, PDF, do 10 MB). Če je nimate pri roki, jo lahko pošljete tudi pozneje na info@romancakes.com.</p>
               </div>
 
@@ -363,7 +363,7 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
-<script src="../assets/order-form.js?v=4" defer></script>
+<script src="../assets/order-form.js?v=5" defer></script>
 <script>
 (function(){
   // Povratni naslov po uspešni oddaji (FormSubmit preusmeri sem z ?poslano=1)

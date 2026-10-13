@@ -115,9 +115,17 @@
   [type, size, flavor, cream1, cream2, sponge, decoration, allergens].forEach(function (f) { f.addEventListener('change', update); });
   date.addEventListener('input', checkDate);
   date.addEventListener('change', checkDate);
+  // Zadeva e-pošte iz podatkov: »Povpraševanje: Torta iz ponudbe · 2. 11. 2026 · Ana Novak«
+  function subject() {
+    var deli = ['Povpraševanje: ' + (type.value || 'splošno').replace(/\s*\(.*\)$/, '')];
+    if (date.value) { var d = parseLocal(date.value); deli.push(slDate(d)); }
+    var ime = $('ime').value.trim(); if (ime) deli.push(ime);
+    return deli.join(' · ');
+  }
   form.addEventListener('submit', function (e) {
     checkDate();
-    if (!date.validity.valid) { e.preventDefault(); date.focus(); date.reportValidity(); }
+    if (!date.validity.valid) { e.preventDefault(); date.focus(); date.reportValidity(); return; }
+    form.querySelector('input[name=_subject]').value = subject();
   });
   update();
 })();
