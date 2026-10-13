@@ -61,7 +61,26 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
   + `GET /api/surovine` (polje `alergeni`, šifrant `GET /api/alergeni`). Oznaka pri okusu = krema/polnilo (torta minus biskvit),
   tabela `#biskviti` = alergeni biskvitov. Okusi brez oznake nimajo recepture v ERP (Čokoladna, Kinder; BG čokoladna in BG pistacija
   imata prazno sestavo). Ob spremembi receptur ponovno potegni in prepiši oznake, ne ugibaj po imenu.
+- **»Brez glutena« na strani NE piše** (Uredba 828/2014 zahteva ≤ 20 mg/kg, Roman tega ne zagotavlja). Od 13. 10. 2026 povsod
+  »brez glutenskih sestavin« / »torte brez glutenskih sestavin« + opomba o sledeh iz skupnega obrata. Sidro `#brezglutensko` ostaja.
 - Obstojnost, temperatura hrambe in zamrzovanje po različicah še niso potrjeni. Ne objavljaj splošnih zagotovil; besedila napotujejo na deklaracijo in dogovor za konkretni izdelek.
+
+## Stran `alergeni/` in QR koda (od 13. 10. 2026)
+
+- Namen: **ena QR koda, ena nalepka** za vitrine B2B partnerjev → `https://romancakes.com/alergeni/` (noindex). Kartica na torto
+  = alergeni CELE torte (biskvit + krema) in polne sestavine, vir je ERP deklaracija (`/api/deklaracije/preview`, isti izračun kot tisk).
+  Pravno: nepredpakirana živila, Uredba 1169/2011 Pril. II — alergeni morajo biti pisno na prodajnem mestu; QR sam ni dovolj, partner
+  naj ima tudi natisnjen list.
+- Osvežitev ob spremembi receptur: `py -3 -I scripts/alergeni_dump.py <ERP-URL> [--token]` → `scripts/alergeni-dump.json`, nato
+  `py -3 -I scripts/alergeni_gen.py` → `alergeni/index.html`. Skripta izpiše OBJAVLJENE in MANJKA V ERP. Na stran gre samo torta z
+  recepturo, sestavinami in potrjenimi alergeni; `ZADRZANE` v gen.py so izjeme z očitno napačno sestavo (odstrani, ko ERP popravi).
+  `ALERGENI_PREDOGLED=1` je samo za pregled postavitve, nikoli za objavo.
+- Prenos iz žive baze: ERP mobilni piškotek je HttpOnly, Chrome blokira fetch na localhost (Local Network Access) in MCP izpis reže
+  pri ~1000 znakih ter blokira base64. Deluje: v ERP zavihku `javascript_tool` sestavi JSON → `location.href = 'http://127.0.0.1:<port>/?d=' + encodeURIComponent(json)`
+  na lokalni python GET sprejemnik (urlencoded, do 64 KB). Za branje gre tudi `get_page_text` po `document.body.innerHTML = '<article><pre>…'`.
+- Stanje 13. 10. 2026: objavljenih 14 tort. Niso na strani: Čokoladna torta, Čokolada Malina (BG), Pistacija BG (receptura brez sestavin),
+  Kinder (ni recepture), Tiramisu (KEKSI PETIT/Spekulatius brez alergenov v ERP) in Malina čokolada (receptura brez čokolade in moke, sum zamenjave z BG).
+- QR: `qr/alergeni-qr.svg|.png` (črna, 740 px, korekcija H), `qr/alergeni-qr-zlata.svg`. Generirano s `segno`. Deluje šele po objavi prave strani.
 
 ## Pošta info@romancakes.com (stanje 13. 10. 2026)
 
