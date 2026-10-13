@@ -8,6 +8,7 @@
   var sponge = $('biskvit'), decoration = $('dekoracija'), inscription = $('napis'), allergens = $('alergeni');
   var date = $('datum'), hint = $('datum-hint'), warn = $('datum-opozorilo');
   var boxFlavor = $('polje-okus'), boxCreams = $('polje-kreme'), boxSponge = $('polje-biskvit'), boxInscription = $('polje-napis');
+  var boxPieces = $('polje-kosi'), boxPicture = $('polje-slika'), boxSize = size.parentNode, piece1 = $('rez1'), piece1n = $('rez1n');
   var flavorHint = $('okus-hint');
 
   var V = {
@@ -15,7 +16,7 @@
     narocilo: 'Torta po naročilu (sestavim sam)',
     bg: 'Torta brez glutenskih sestavin',
     presna: 'Presna torta',
-    pecivo: 'Rezine / pecivo',
+    pecivo: 'Rezine / pecivo (po kosih)',
     dogodek: 'Več tort / dogodek',
     drugo: 'Drugo / vprašanje'
   };
@@ -71,7 +72,11 @@
     var gf = t === V.bg || allergens.value === 'Brez glutenskih sestavin';
 
     // Okus: torta iz ponudbe in BG torta; torta po naročilu ima kreme namesto okusa.
-    show(boxFlavor, t === V.ponudba || t === V.bg || t === V.presna || t === V.pecivo || t === V.dogodek || t === '');
+    show(boxFlavor, t === V.ponudba || t === V.bg || t === V.presna || t === V.dogodek || t === '');
+    // Rezine: okusi in število kosov po vrsticah namesto velikosti torte.
+    show(boxPieces, t === V.pecivo);
+    show(boxSize, t !== V.pecivo);
+    piece1.required = t === V.pecivo; piece1n.required = t === V.pecivo;
     show(boxCreams, t === V.narocilo);
     show(boxSponge, t === V.ponudba || t === V.narocilo || t === '');
     flavor.required = t === V.ponudba || t === V.bg;
@@ -79,7 +84,7 @@
     if (flavorHint) {
       flavorHint.textContent = t === V.bg ? 'Brez glutenskih sestavin pripravljam čokoladno, čokolada–malino, Bounty in pistacijo, do 10 kosov.'
         : t === V.presna ? 'Presne torte po dogovoru; želeni okus opišite v sporočilu.'
-        : t === V.pecivo || t === V.dogodek ? 'Izberite okus ali želje opišite v sporočilu.'
+        : t === V.dogodek ? 'Izberite okus ali želje opišite v sporočilu.'
         : 'Torta iz ponudbe ima kremo po receptu, izberete le biskvit.';
     }
 
@@ -100,8 +105,9 @@
     Array.prototype.forEach.call(cream2.options, function (o) { if (o.value) o.disabled = o.value === cream1.value && o.value !== 'Svetujte mi'; });
     if (cream2.selectedOptions[0] && cream2.selectedOptions[0].disabled) cream2.value = '';
 
-    // Napis: polje za besedilo samo, ko je izbran.
+    // Napis: polje za besedilo samo, ko je izbran; jedilna slika: priloga kar v obrazcu.
     show(boxInscription, decoration.value.indexOf('Napis') === 0);
+    show(boxPicture, decoration.value.indexOf('edilna slika') >= 0);
 
     checkDate();
   }
