@@ -100,9 +100,12 @@ Ti podatki nadomestijo stare cene in predpostavke iz kopije ERP z dne 8. 9. 2026
 `kontakt/` pošilja prek FormSubmit (`https://formsubmit.co/info@romancakes.com`),
 brez captche, s honeypotom, `_next` nazaj na `kontakt/?poslano=1`, `enctype=multipart/form-data`
 (priloga `attachment` za jedilno sliko, skupaj do 10 MB).
-- **Aktivacija:** testna oddaja 13. 10. 2026 je sprožila e-mail »Action Required: Activate FormSubmit« —
-  v Gmailu romanvegancakes je v zavihku **Posodobitve**. Dokler Roman ne klikne »Activate Form«, sporočila ne pridejo.
-  Po aktivaciji še preveri, ali priloga slike prispe.
+- **Aktivirano 13. 10. 2026** (Roman kliknil »Activate Form«). Preverjeno z oddajo iz brskalnika (headless Chrome):
+  vsa polja s šumniki + priloga slike prispejo. Sporočila pristanejo v Gmailu v zavihku **Posodobitve**.
+- Skriti `_cc=romanvegancakes@gmail.com`: FormSubmit pošlje kopijo neposredno v Gmail, mimo Neoserv posredovanja
+  (Neoservov filter je oddaje dal med smeti in jih ni posredoval; kopija pride v ~1 min).
+- Past pri testiranju: `curl -F` z vrednostmi s šumniki → FormSubmit izgubi VSA besedilna polja (ostane le priloga).
+  Brskalnik tega problema nima. Za test uporabi `formsubmit.co/ajax/...` z JSON ali pravo oddajo iz headless Chroma.
 - Logika je v `assets/order-form.js` (naloženo kot `?v=N` — ob spremembi povečaj N, Chrome je držal staro skripto).
   Vrsta določa polja: torta iz ponudbe (okus, biskvit), torta po naročilu (biskvit, krema 1, krema 2),
   BG (4 okusi, ≤ 10 kosov), presna, rezine po kosih (4 vrstice okus + kosov), dogodek, vprašanje. Skrita polja so `disabled`.
