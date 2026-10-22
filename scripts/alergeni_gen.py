@@ -24,6 +24,14 @@ def slug(s):
 
 PREDOGLED = os.environ.get('ALERGENI_PREDOGLED') == '1'   # samo za pregled postavitve, NIKOLI za objavo
 
+# Popravi tipkarske napake v imenih artiklov v ERP-u (dokler Roman ne popravi v blagajni)
+IME_POPRAVKI = {
+    'Snikers': 'Snickers',
+}
+for t in dump['torte']:
+    if t['ime'] in IME_POPRAVKI:
+        t['ime'] = IME_POPRAVKI[t['ime']]
+
 # Torte, ki jih ERP sicer označi kot popolne, a je sestava očitno napačna. Odstrani vnos, ko Roman popravi recepturo.
 ZADRZANE = {
     'Tiramisu torta': 'KEKSI PETIT in Spekulatius v ERP brez alergenov (keksi vsebujejo pšenico/gluten)',
@@ -108,10 +116,10 @@ page = f'''<!DOCTYPE html>
 </style>
 </head>
 <body>
-<div class="cursor" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
+<div id="cur-dot" class="cursor" aria-hidden="true"></div><div id="cur-ring" class="cursor-ring" aria-hidden="true"></div>
+<div id="grain" class="grain" aria-hidden="true"></div>
 
-<nav>
+<nav id="nav">
   <div class="nav-inner">
     <a href="../" class="nav-logo" aria-label="Roman's Cakes — domov"><img src="../slike/web/logo-gold.png" alt=""><div class="nav-logo-text">Roman's Cakes<span>Veganske torte · Maribor</span></div></a>
     <ul class="nav-links">
