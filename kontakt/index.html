@@ -113,10 +113,23 @@
         <div class="form-card rv">
           <div class="form-header">
             <div class="form-header-label">Obrazec za povpraševanje</div>
-            <h2>Povejte mi, kaj si želite</h2>
-            <p>Navedite datum, velikost in okus. Pri torti po naročilu izberete biskvit in do dve kremi. Če še niste odločeni, vam pomagam pri izbiri.</p>
+            <h2>Spletno naročanje kmalu.</h2>
+            <p>Spletni obrazec je začasno nedostopen. Za naročilo me pokličite ali pišite — odgovorim v treh dneh.</p>
           </div>
           <div class="form-body" id="form-body">
+            <div style="padding:8px 0 32px">
+              <div class="form-notice" style="margin-bottom:0;align-items:flex-start">
+                <span class="form-notice-icon" style="font-size:20px">⏳</span>
+                <div>
+                  <p style="margin-bottom:10px"><strong>Spletni obrazec je začasno onemogočen.</strong> Čakamo na odobritev pristojnega inšpektorata.</p>
+                  <p>Medtem me kontaktirajte neposredno:</p>
+                  <p style="margin-top:10px"><strong style="color:var(--cream)">Telefon:</strong> <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a><br>
+                  <strong style="color:var(--cream)">E-pošta:</strong> <a href="mailto:info@romancakes.com" style="color:var(--gold)">info@romancakes.com</a></p>
+                  <p style="margin-top:10px;font-size:12px;color:var(--cream3)">Na povpraševanje odgovorim v treh dneh.</p>
+                </div>
+              </div>
+            </div>
+            <div hidden id="form-disabled-content">
             <div class="form-notice">
               <span class="form-notice-icon">✦</span>
               <p>Naročite <strong>vsaj 10 dni pred prevzemom</strong>, za večja naročila in dogodke <strong>vsaj 3 tedne</strong>. Krajših rokov ne sprejemam. Vprašanja? Pokličite <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
@@ -288,6 +301,7 @@
               <button type="submit" class="form-submit" id="submit-btn">Pošljite povpraševanje &nbsp;→</button>
               <p class="note" style="margin-top:14px;text-align:center">Obrazec ne deluje? Pišite na <a href="mailto:info@romancakes.com?subject=Naro%C4%8Dilo%20torte" style="color:var(--gold)">info@romancakes.com</a> ali pokličite.</p>
             </form>
+            </div><!-- /form-disabled-content -->
           </div>
           <div class="form-success" id="form-success" role="status">
             <div class="form-success-icon">✦</div>
