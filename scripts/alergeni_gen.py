@@ -36,6 +36,8 @@ for t in dump['torte']:
 ZADRZANE = {
     'Tiramisu torta': 'KEKSI PETIT in Spekulatius v ERP brez alergenov (keksi vsebujejo pšenico/gluten)',
     'Malina čokolada': 'receptura brez čokolade in moke (mandlji, orehi, kokosova moka) – verjetno zamenjana z BG različico',
+    'Beli mufin': 'napaka tipa v ERP (tip=torta, a je muffin) — ne sodi na stran tort',
+    'Čokoladni mufin': 'napaka tipa v ERP (tip=torta, a je muffin) — ne sodi na stran tort',
 }
 
 def ok(t):
