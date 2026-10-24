@@ -88,7 +88,12 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
 .gal-item:nth-child(1),.gal-item:nth-child(6){grid-column:span 2;aspect-ratio:2/1}
 .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(8,7,5,.85));font-family:var(--fm);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--cream2)}
 @media(max-width:1024px){.okusi-grid{grid-template-columns:1fr}.dop{grid-template-columns:1fr}}
-@media(max-width:768px){.prod-row{grid-template-columns:1fr}.prod-row.flip .prod-img-col{order:0}.prod-img-col{min-height:260px}.prod-text-col{padding:36px 24px}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1),.gal-item:nth-child(6){grid-column:auto;aspect-ratio:1}.ok-group{padding:20px 18px 12px}.ok-list li{flex-direction:column;align-items:flex-start;gap:6px}.ok-list .al{justify-content:flex-start}.al-box{padding:22px 20px}}
+.tisk-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.tisk-it{position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg2)}
+.tisk-it img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.tisk-it:hover img{transform:scale(1.04)}
+.tisk-it span{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(8,7,5,.82));font-size:11px;font-family:var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--cream2)}
+@media(max-width:768px){.prod-row{grid-template-columns:1fr}.prod-row.flip .prod-img-col{order:0}.prod-img-col{min-height:260px}.prod-text-col{padding:36px 24px}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1),.gal-item:nth-child(6){grid-column:auto;aspect-ratio:1}.ok-group{padding:20px 18px 12px}.ok-list li{flex-direction:column;align-items:flex-start;gap:6px}.ok-list .al{justify-content:flex-start}.al-box{padding:22px 20px}.tisk-gal{grid-template-columns:1fr 1fr}}
 </style>
 <script type="application/ld+json">
 {
@@ -217,7 +222,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   </div>
 
   <div class="prod-row rv" id="brezglutensko">
-    <div class="prod-img-col"><img src="../slike/web/bistro-kroznik.webp" alt="Štiri torte brez glutenskih sestavin: čokolada–malina, čokoladna, jagodna in pistacijeva" loading="lazy" width="1400" height="1050"></div>
+    <div class="prod-img-col"><img src="../slike/web/bg/%C4%8Cokolada%20malina%20BG.webp" alt="Torta brez glutenskih sestavin — čokolada in malina" loading="lazy" width="1155" height="622"></div>
     <div class="prod-text-col">
       <div class="prod-num">03</div>
       <div class="prod-cat">Brez glutenskih sestavin</div>
@@ -234,7 +239,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   </div>
 
   <div class="prod-row rv" id="presne">
-    <div class="prod-img-col"><img src="../slike/web/bistro-torte.webp" alt="Torte v vitrini" loading="lazy" width="1050" height="1400"></div>
+    <div class="prod-img-col"><img src="../slike/web/dogotki/dogotki%20bistro%20Eversum5.webp" alt="Torte v delavnici" loading="lazy" width="1050" height="1400"></div>
     <div class="prod-text-col">
       <div class="prod-num">04</div>
       <div class="prod-cat">Brez peke</div>
@@ -251,7 +256,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   </div>
 
   <div class="prod-row flip rv" id="kremne">
-    <div class="prod-img-col"><img src="../slike/web/kremne-tri.webp" alt="Tri kremne torte (Cheese Cake): jagoda, piškot in kokos" loading="lazy" width="1200" height="900"></div>
+    <div class="prod-img-col"><img src="../slike/web/bg/kremne-tri.webp" alt="Tri kremne torte (Cheese Cake): jagoda, piškot in kokos" loading="lazy" width="1200" height="900"></div>
     <div class="prod-text-col">
       <div class="prod-num">05</div>
       <div class="prod-cat">Kremne torte</div>
@@ -269,7 +274,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   </div>
 
   <div class="prod-row rv" id="otroske">
-    <div class="prod-img-col"><img src="../slike/web/torta-unicorn.webp" alt="Otroška torta z jedilno sliko samoroga" loading="lazy" width="1050" height="1400"></div>
+    <div class="prod-img-col"><img src="../slike/web/tisk-frozen.webp" alt="Torta z jedilno sliko Frozen — rastlinska, brez jajc" loading="lazy" width="1050" height="1400"></div>
     <div class="prod-text-col">
       <div class="prod-num">06</div>
       <div class="prod-cat">Za otroške rojstne dneve</div>
@@ -282,6 +287,15 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <li>Otroški favoriti: čokoladna, jagoda čokolada, Kinder, Bounty</li>
       </ul>
       <a href="../kontakt/" class="btn btn-g">Naročite otroško torto →</a>
+    </div>
+  </div>
+
+  <div class="wrap rv" style="padding-top:40px;padding-bottom:64px">
+    <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 18px;font-family:var(--fm)">Primeri jedilnih slik</p>
+    <div class="tisk-gal">
+      <div class="tisk-it"><img src="../slike/web/tisk-frozen.webp" alt="Torta z jedilno sliko Frozen" loading="lazy" width="1050" height="1400"><span>Frozen</span></div>
+      <div class="tisk-it"><img src="../slike/web/tisk-pawpatrol.webp" alt="Torta z jedilno sliko Paw Patrol" loading="lazy" width="743" height="579"><span>Paw Patrol</span></div>
+      <div class="tisk-it"><img src="../slike/web/jedilna-slika-primer.webp" alt="Torta z jedilno sliko in fotografijo otroka" loading="lazy" width="1400" height="1669"><span>Fotografija</span></div>
     </div>
   </div>
 </section>
@@ -403,15 +417,15 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <div class="lbl rv">Galerija</div>
     <h2 class="hd rv">Iz moje <em>kuhinje</em></h2>
     <div class="gal-grid">
-      <div class="gal-item rv"><img src="../slike/web/torta-malina-bela.webp" alt="Torta s kokosom in jagodami" loading="lazy" width="1082" height="1011"><div class="gal-cap">Kokos in jagoda</div></div>
-      <div class="gal-item rv" data-d="60"><img src="../slike/web/torta-cokoladna-drip.webp" alt="Čokoladna torta s prelivom in rozetami" loading="lazy" width="933" height="787"><div class="gal-cap">Čokoladna</div></div>
-      <div class="gal-item rv" data-d="120"><img src="../slike/web/torta-malina.webp" alt="Torta z malinami" loading="lazy" width="1050" height="1400"><div class="gal-cap">Z malinami</div></div>
+      <div class="gal-item rv"><img src="../slike/web/Hi%C5%A1ni%20favoriti/torta-bela-malina.webp" alt="Bela malina torta in Snickers" loading="lazy" width="975" height="1400"><div class="gal-cap">Bela malina</div></div>
+      <div class="gal-item rv" data-d="60"><img src="../slike/web/torta-%C4%8Dokoladna.webp" alt="Čokoladna torta s prelivom in rozetami" loading="lazy" width="1400" height="1016"><div class="gal-cap">Čokoladna</div></div>
+      <div class="gal-item rv" data-d="120"><img src="../slike/web/torta-malina-pistacija.webp" alt="Pistacija-malina torta" loading="lazy" width="1220" height="872"><div class="gal-cap">Pistacija malina</div></div>
       <div class="gal-item rv" data-d="180"><img src="../slike/web/torta-visnja-cokolada.webp" alt="Čokoladna torta z višnjami in belo kremo" loading="lazy" width="1050" height="1400"><div class="gal-cap">Višnja čokolada</div></div>
-      <div class="gal-item rv" data-d="240"><img src="../slike/web/kos-nutella.webp" alt="Kos lešnikove torte z Nutello" loading="lazy" width="1400" height="1050"><div class="gal-cap">Kos iz vitrine</div></div>
-      <div class="gal-item rv" data-d="300"><img src="../slike/web/rezine-malina.webp" alt="Narezane sadne torte z malinami" loading="lazy" width="1050" height="1400"><div class="gal-cap">Sadne rezine</div></div>
+      <div class="gal-item rv" data-d="240"><img src="../slike/web/Hi%C5%A1ni%20favoriti/kos-nutella.webp" alt="Kos lešnikove torte z Nutello" loading="lazy" width="859" height="654"><div class="gal-cap">Kos iz vitrine</div></div>
+      <div class="gal-item rv" data-d="300"><img src="../slike/web/Po%20kosih/kos-piskot-kremna.webp" alt="Kos piškot kremne torte" loading="lazy" width="1400" height="1050"><div class="gal-cap">Kremna torta</div></div>
       <div class="gal-item rv" data-d="360"><img src="../slike/web/torta-smetana-cokolada.webp" alt="Torta s smetano in čokoladnim prelivom" loading="lazy" width="1050" height="1400"><div class="gal-cap">S smetano in čokolado</div></div>
       <div class="gal-item rv" data-d="420"><img src="../slike/web/torta-vse-najboljse.webp" alt="Torta z napisom Vse najboljše" loading="lazy" width="1400" height="1050"><div class="gal-cap">Z napisom</div></div>
-      <div class="gal-item rv" data-d="480"><img src="../slike/web/kos-tiramisu.webp" alt="Kos tiramisu torte s kavnimi zrni" loading="lazy" width="1400" height="1050"><div class="gal-cap">Tiramisu</div></div>
+      <div class="gal-item rv" data-d="480"><img src="../slike/web/Po%20kosih/kos-tiramisu.webp" alt="Kos tiramisu torte s kavnimi zrni" loading="lazy" width="1400" height="1050"><div class="gal-cap">Tiramisu</div></div>
       <div class="gal-item rv" data-d="540"><img src="../slike/web/jedilna-slika-primer.webp" alt="Torta z jedilno sliko po naročilu" loading="lazy" width="1400" height="1669"><div class="gal-cap">Jedilna slika</div></div>
     </div>
     <p class="note rv" style="margin-top:20px">Več fotografij in svežih kreacij na <a href="https://www.facebook.com/romanvegancakes" target="_blank" rel="noopener" style="color:var(--gold)">Facebooku</a>.</p>
