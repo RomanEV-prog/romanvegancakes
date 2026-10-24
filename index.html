@@ -36,7 +36,7 @@
 .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px}
 .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 72% 50%,rgba(201,168,76,.13),transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(201,168,76,.06),transparent 70%)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 30%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 30%,transparent 100%)}
-.hero-c{position:relative;z-index:1;padding:60px 0 90px;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:stretch}
+.hero-c{position:relative;z-index:1;padding:60px 0 90px;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
 .eyebrow-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:dotPulse 2.5s ease infinite}
 @keyframes dotPulse{0%,100%{box-shadow:0 0 0 0 var(--goldg)}50%{box-shadow:0 0 0 7px transparent}}
@@ -50,8 +50,8 @@
 .hero-facts{display:flex;gap:28px;margin-top:48px;flex-wrap:wrap}
 .hf b{display:block;font-family:var(--fd);font-size:26px;font-style:italic;color:var(--gold2);line-height:1}
 .hf span{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream3);display:block;margin-top:6px}
-.hero-art{position:relative;min-height:480px;border-radius:var(--rl);overflow:hidden;border:1px solid var(--border);background:var(--bg2);box-shadow:0 40px 80px rgba(0,0,0,.5)}
-.hero-art img{width:100%;height:100%;object-fit:contain;filter:saturate(.9)}
+.hero-art{position:relative;aspect-ratio:4/3;border-radius:var(--rl);overflow:hidden;border:1px solid var(--border);background:var(--bg2);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.hero-art img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
 .hero-art::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,5,.85))}
 .hero-art-cap{position:absolute;left:24px;right:24px;bottom:22px;z-index:1}
 .hero-art-cap b{font-family:var(--fd);font-style:italic;font-size:20px;color:var(--cream);display:block}
@@ -121,6 +121,23 @@
 .loc-v{font-size:14.5px;color:var(--cream);line-height:1.5}
 .loc-v a:hover{color:var(--gold)}
 .loc-s{font-size:12.5px;color:var(--cream3)}
+/* FOTO BREAK */
+.foto-break{position:relative;height:clamp(260px,38vw,480px);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.foto-break img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52) saturate(.85)}
+.foto-break-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,64px);flex-wrap:wrap;padding:0 24px}
+.fb-num{text-align:center}
+.fb-num b{display:block;font-family:var(--fd);font-size:clamp(34px,5.5vw,68px);font-style:italic;color:var(--cream);line-height:1}
+.fb-num span{font-family:var(--fm);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.fb-div{width:1px;height:clamp(36px,6vw,72px);background:rgba(201,168,76,.3);flex-shrink:0}
+/* ROMAN STMT */
+.roman-stmt{position:relative;overflow:hidden;padding:clamp(72px,11vw,130px) 0;border-top:1px solid var(--border)}
+.roman-stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.15) saturate(.4)}
+.roman-stmt-inner{max-width:660px;position:relative;z-index:1}
+.roman-quote{font-family:var(--fd);font-size:clamp(22px,3.8vw,50px);font-style:italic;color:var(--cream);line-height:1.22;margin:16px 0 28px;padding-left:24px;border-left:2px solid var(--gold)}
+/* BG highlight card */
+.product-card.hl-bg .product-accent{background:var(--gold);transform:scaleX(1)}
+.product-card.hl-bg .product-cat{color:#fff;background:var(--gold);display:inline-block;padding:3px 8px;border-radius:2px;font-size:9px}
+@media(max-width:768px){.fb-div{height:24px}.roman-quote{padding-left:16px}}
 @media(max-width:1024px){.hero-c{grid-template-columns:1fr;gap:40px}.hero-art{max-width:420px;aspect-ratio:1}.products-grid{grid-template-columns:1fr 1fr}.specials-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:40px}.about-img{aspect-ratio:16/10;max-height:360px}.loc-grid{grid-template-columns:1fr}.loc-img{min-height:240px}}
 @media(max-width:768px){.hero-c{padding:40px 0 80px}.products-grid{grid-template-columns:1fr}.product-card{aspect-ratio:4/3}.specials-grid{grid-template-columns:1fr 1fr;gap:10px}.spec-card{padding:12px 12px 16px}.hero-badge{width:100px;height:100px;top:-14px;right:-14px}.loc-body{padding:28px 22px}.hero-facts{gap:20px}}
 @media(max-width:480px){.specials-grid{grid-template-columns:1fr}}
@@ -215,9 +232,9 @@
           <a href="ponudba/" class="btn btn-o">Okusi &amp; cenik</a>
         </div>
         <div class="hero-facts">
-          <div class="hf"><b>20</b><span>okusov</span></div>
-          <div class="hf"><b>od 4,50 €</b><span>na kos</span></div>
-          <div class="hf"><b>2018</b><span>pečem od</span></div>
+          <div class="hf"><b>24</b><span>okusov</span></div>
+          <div class="hf"><b>od 4,90 €</b><span>na kos</span></div>
+          <a href="tel:+38640758582" class="hf" style="text-decoration:none"><b style="font-size:18px">040 758 582</b><span>pokličite zdaj</span></a>
         </div>
       </div>
       <div class="hero-art">
@@ -252,15 +269,15 @@
         <div class="product-overlay"></div><div class="product-accent"></div>
         <div class="product-content"><div class="product-cat">Za rojstne dneve &amp; praznovanja</div><div class="product-name">Torte po naročilu</div><p class="product-desc">Za 8, 10 ali 12 oseb, večje po dogovoru. Biskvit in kremo izberete po želji. Za lešnikov ali orehov biskvit velja doplačilo na celo torto po dogovoru.</p><div class="product-tags"><span class="tag tag-g">od 4,90 € / kos</span><span class="tag tag-v">24 okusov</span></div></div>
       </a>
-      <a href="ponudba/#rezine" class="product-card rv" data-d="80">
+      <a href="ponudba/#brezglutensko" class="product-card hl-bg rv" data-d="80">
+        <img class="product-img" src="slike/web/bg/bg-malina-pistacija.webp" alt="Torta brez glutenskih sestavin — pistacija malina" loading="lazy" width="1050" height="1400">
+        <div class="product-overlay"></div><div class="product-accent"></div>
+        <div class="product-content"><div class="product-cat">Brez glutenskih sestavin</div><div class="product-name">Torte brez glutenskih sestavin</div><p class="product-desc">8 okusov na biskvitu brez glutenskih sestavin: čokoladna, malina, Bounty, pistacija in kombinacije z belo čokolado.</p><div class="product-tags"><span class="tag tag-v">Brez glutenskih sestavin</span><span class="tag tag-g">do 10 kosov</span></div></div>
+      </a>
+      <a href="ponudba/#rezine" class="product-card rv" data-d="160">
         <img class="product-img" src="slike/web/Hi%C5%A1ni%20favoriti/rezina-bounty.webp" alt="Veganska Bounty rezina — brez jajc, brez mleka, brez laktoze" loading="lazy" width="1061" height="682">
         <div class="product-overlay"></div><div class="product-accent"></div>
         <div class="product-content"><div class="product-cat">Po kosih</div><div class="product-name">Rezine &amp; pecivo</div><p class="product-desc">Bounty, čokoladna, višnjeva, sadna … za manjše praznovanje, pisarno ali kar tako.</p><div class="product-tags"><span class="tag tag-g">4,50–6 € / kos</span></div></div>
-      </a>
-      <a href="ponudba/#brezglutensko" class="product-card rv" data-d="160">
-        <img class="product-img" src="slike/web/bg/%C4%8Cokolada%20malina%20BG.webp" alt="Torta brez glutenskih sestavin — čokolada in malina" loading="lazy" width="1155" height="622">
-        <div class="product-overlay"></div><div class="product-accent"></div>
-        <div class="product-content"><div class="product-cat">Brez glutenskih sestavin</div><div class="product-name">Torte brez glutenskih sestavin</div><p class="product-desc">Čokoladna, čokolada–malina, Bounty in pistacija v izvedbi brez glutenskih sestavin do 10 kosov.</p><div class="product-tags"><span class="tag tag-v">Brez glutenskih sestavin</span></div></div>
       </a>
       <a href="ponudba/#otroske" class="product-card rv" data-d="240">
         <img class="product-img" src="slike/web/tisk-frozen.webp" alt="Veganska otroška torta z jedilno sliko — brez jajc, brez mleka, Maribor" loading="lazy" width="1050" height="1400">
@@ -281,6 +298,20 @@
   </div>
   <div class="wrap" style="margin-top:40px;text-align:center"><a href="ponudba/" class="btn btn-o">Vsi okusi &amp; cenik →</a></div>
 </section>
+
+<!-- FOTO BREAK -->
+<div class="foto-break" aria-hidden="true">
+  <img src="slike/web/kosi-panorama.webp" alt="" loading="lazy" width="1400" height="1328">
+  <div class="foto-break-txt">
+    <div class="fb-num"><b>24</b><span>okusov</span></div>
+    <div class="fb-div"></div>
+    <div class="fb-num"><b>100%</b><span>rastlinsko</span></div>
+    <div class="fb-div"></div>
+    <div class="fb-num"><b>od 2018</b><span>pečem</span></div>
+    <div class="fb-div"></div>
+    <div class="fb-num"><b>8</b><span>brez glutenskih sestavin</span></div>
+  </div>
+</div>
 
 <!-- FAVORITI -->
 <section class="sec" id="favoriti" style="background:var(--bg1);border-top:1px solid var(--border)">
@@ -309,30 +340,18 @@
   </div>
 </section>
 
-<!-- NOVICE -->
-<section class="sec" id="novice" style="border-top:1px solid var(--border)">
+<!-- ROMAN STMT -->
+<section class="roman-stmt">
+  <img class="roman-stmt-bg" src="slike/web/kosi-degustacija.webp" alt="" loading="lazy" width="1050" height="1400">
   <div class="wrap">
-    <div class="lbl rv">Novosti</div>
-    <h2 class="hd rv">Kaj je <em>novega</em></h2>
-    <div class="news-grid">
-      <article class="news-card rv">
-        <div class="news-meta"><span class="news-cat">Novost</span><span class="news-date">Oktober 2026</span></div>
-        <div class="news-t">Kremne torte so tu</div>
-        <p class="news-d">Kokos Cheese Cake in Piškot Cheese Cake — nežna kremna masa na piškotni osnovi z glazuro. Naročilo vsaj 10 dni vnaprej, cena 4,00 € / kos.</p>
-        <a href="ponudba/#kremne" class="news-link">Poglej ponudbo →</a>
-      </article>
-      <article class="news-card rv" data-d="80">
-        <div class="news-meta"><span class="news-cat">Novost</span><span class="news-date">Oktober 2026</span></div>
-        <div class="news-t">8 okusov brez glutenskih sestavin</div>
-        <p class="news-d">Ponudba tort brez glutenskih sestavin se je razširila na 8 okusov: malina–bela čokolada, lešnik–bela čokolada, pistacija–bela čokolada in temna čokolada–jagoda.</p>
-        <a href="ponudba/#brezglutensko" class="news-link">Poglej ponudbo →</a>
-      </article>
-      <article class="news-card rv" data-d="160">
-        <div class="news-meta"><span class="news-cat">Info</span><span class="news-date">Oktober 2026</span></div>
-        <div class="news-t">Spletno naročanje kmalu</div>
-        <p class="news-d">Spletni obrazec za naročilo je trenutno v pripravi. V tem času naročila sprejemam po telefonu ali e-pošti — odgovorim v treh dneh.</p>
-        <a href="kontakt/" class="news-link">Kontakt →</a>
-      </article>
+    <div class="roman-stmt-inner">
+      <div class="lbl rv">Zakaj ravno Roman's Cakes</div>
+      <blockquote class="roman-quote rv">"Rastlinsko ne pomeni manj okusa. Pomeni brez kompromisov za tiste, ki jim je vsebina na krožniku važna."</blockquote>
+      <p class="rv" style="font-size:15px;color:var(--cream2);line-height:1.78;margin:0 0 32px;max-width:540px">Vegan od 2013, pečem od 2018. Vsaka torta nastane sveže v registrirani kuhinji v Melju — po vašem naročilu, z deklaracijo in brez skritih sestavin.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="o-nas/" class="btn btn-o">Moja zgodba →</a>
+        <a href="kontakt/" class="btn btn-g">Naročite torto →</a>
+      </div>
     </div>
   </div>
 </section>
