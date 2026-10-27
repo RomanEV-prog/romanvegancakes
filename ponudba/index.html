@@ -180,7 +180,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <div class="lbl">Ponudba</div>
     <h1 class="hd">Rastlinske torte po naročilu <em>v Mariboru</em></h1>
     <p>Vsaka torta nastane sveže za vaše naročilo. Izberete velikost, biskvit in kremo. Osnovna cena je cena na kos × število kosov; dogovorjene dodatke in končno ceno potrdim pred naročilom.</p>
-    <div class="jump"><a href="#torte">Torte</a><a href="#cenik">Cenik</a><a href="#okusi">Okusi</a><a href="#rezine">Rezine</a><a href="#brezglutensko">Brez glutenskih sestavin</a><a href="#presne">Presne torte</a><a href="#kremne">Kremne torte</a><a href="#otroske">Jedilna slika</a><a href="#alergeni">Alergeni</a><a href="#galerija">Galerija</a></div>
+    <div class="jump"><a href="#torte">Torte</a><a href="#kalkulator">Izračun cene</a><a href="#cenik">Cenik</a><a href="#okusi">Okusi</a><a href="#rezine">Rezine</a><a href="#brezglutensko">Brez glutenskih sestavin</a><a href="#presne">Presne torte</a><a href="#kremne">Kremne torte</a><a href="#otroske">Jedilna slika</a><a href="#alergeni">Alergeni</a><a href="#galerija">Galerija</a></div>
   </div>
 </div>
 
@@ -307,6 +307,46 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <span style="font-family:var(--fd);font-size:clamp(28px,5vw,60px);font-style:italic;color:var(--cream);letter-spacing:-.01em">Vsak okus, svoja torta.</span>
   </div>
 </div>
+
+<!-- KALKULATOR -->
+<section class="sec" id="kalkulator" style="background:var(--bg1);border-top:1px solid var(--border);padding-bottom:0;scroll-margin-top:60px">
+  <div class="wrap">
+    <div class="lbl rv">Hitri izračun</div>
+    <h2 class="hd rv">Koliko <em>bo stalo?</em></h2>
+    <p class="sub rv" style="margin-top:12px">Izberite okus in velikost — cena se izračuna takoj. Osnovna cena je za osebni prevzem, brez dostave.</p>
+    <div class="calc-box rv">
+      <div class="calc-row">
+        <span class="calc-lbl">1. Okus</span>
+        <div class="calc-opts" id="calc-okusi">
+          <div class="calc-opt sel" data-price="4.5">Čokoladna BG <small style="opacity:.65;font-size:.85em">4,50 €</small></div>
+          <div class="calc-opt" data-price="4.9">Bounty · Jagoda čok. · Višnja · Kinder Bueno · Maxi King · Tiramisu <small style="opacity:.65;font-size:.85em">4,90 €</small></div>
+          <div class="calc-opt" data-price="5.0">Snickers · Mango · Čok.–malina BG · Bounty BG <small style="opacity:.65;font-size:.85em">5,00 €</small></div>
+          <div class="calc-opt" data-price="5.5">Kinder · Jafa · Malina čok. · Pasijonka <small style="opacity:.65;font-size:.85em">5,50 €</small></div>
+          <div class="calc-opt" data-price="6.0">Pistacija · Bela malina <small style="opacity:.65;font-size:.85em">6,00 €</small></div>
+          <div class="calc-opt" data-price="4.0">Cheese Cake (kremna) <small style="opacity:.65;font-size:.85em">4,00 €</small></div>
+        </div>
+      </div>
+      <div class="calc-row">
+        <span class="calc-lbl">2. Število kosov</span>
+        <div class="calc-opts" id="calc-kosi">
+          <div class="calc-opt" data-kos="8">8 kosov</div>
+          <div class="calc-opt sel" data-kos="10">10 kosov</div>
+          <div class="calc-opt" data-kos="12">12 kosov</div>
+        </div>
+      </div>
+      <div class="calc-row" style="margin-bottom:20px">
+        <span class="calc-lbl">3. Dodatki</span>
+        <label class="calc-chk"><input type="checkbox" id="calc-tisk"><span>Jedilna slika +8 €</span></label>
+      </div>
+      <div class="calc-result">
+        <div class="calc-price" id="calc-total">45,00 €</div>
+        <div class="calc-breakdown" id="calc-info">10 kosov × 4,50 €<br>Skupaj brez dostave</div>
+      </div>
+      <p style="font-size:11.5px;color:var(--cream3);margin-top:14px;line-height:1.7">Cene so končne (DDV ni obračunan, 94. čl. ZDDV-1). Za lešnikov/orehov biskvit, presne torte in posebno dekoracijo uskladimo ceno ob povpraševanju.</p>
+    </div>
+    <div style="margin-top:28px;padding-bottom:80px"><a href="../kontakt/" class="btn btn-g">Naročite to torto →</a></div>
+  </div>
+</section>
 
 <!-- CENIK -->
 <section class="sec" id="cenik" style="background:var(--bg1);border-top:1px solid var(--border);scroll-margin-top:60px">
@@ -461,6 +501,37 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script>
+(function(){
+  var price = 4.5, kos = 10;
+  function sel(group, el) {
+    group.querySelectorAll('.calc-opt').forEach(function(o){ o.classList.remove('sel'); });
+    el.classList.add('sel');
+  }
+  function update() {
+    var tisk = document.getElementById('calc-tisk').checked;
+    var total = price * kos + (tisk ? 8 : 0);
+    document.getElementById('calc-total').textContent = total.toFixed(2).replace('.',',') + ' €';
+    document.getElementById('calc-info').innerHTML = kos + ' kosov × ' + price.toFixed(2).replace('.',',') + ' €' + (tisk ? ' + 8,00 € (slika)' : '') + '<br>Skupaj brez dostave';
+  }
+  document.getElementById('calc-okusi').querySelectorAll('.calc-opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      sel(document.getElementById('calc-okusi'), o);
+      price = parseFloat(o.dataset.price);
+      update();
+    });
+  });
+  document.getElementById('calc-kosi').querySelectorAll('.calc-opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      sel(document.getElementById('calc-kosi'), o);
+      kos = parseInt(o.dataset.kos);
+      update();
+    });
+  });
+  document.getElementById('calc-tisk').addEventListener('change', update);
+  update();
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ed55e5bab9a4c5582dab059dba5359e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
