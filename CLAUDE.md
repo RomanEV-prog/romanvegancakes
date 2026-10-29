@@ -7,8 +7,8 @@ proizvodnjo slaščic **Roman Adler s.p.**, Maribor (AJPES: proizvodnja slašči
 
 - GitHub Pages streže **vejo `live`** (mapa `/`) na lastni domeni **https://romancakes.com**
   (datoteka `CNAME`, HTTPS vsiljen; stari naslov romanev-prog.github.io/romanvegancakes/ preusmerja).
-- **`live` = začasna stran »v pripravi«** (samo index.html, logo, favicon, CNAME; noindex), od 12. 10. 2026.
-  Roman je odločil, da prava vsebina ne sme biti javna, dokler ni urejena.
+- **`live` = polna stran** (od 29. 10. 2026, ko je Roman potrdil objavo). Prejšnja
+  "v pripravi" stran (samo index.html + noindex) je bila zamenjana s celotno vsebino.
 - **`master` = delovna veja**, push nanjo NIČESAR ne objavi. Preverjanje lokalno (`http.server`).
 - Objava prave strani, ko Roman potrdi: `git push origin master:live --force` (veja `live` je orphan,
   zato je force potreben) ali pa Pages source nazaj na `master` prek `gh api -X PUT …/pages`.
@@ -26,7 +26,7 @@ proizvodnjo slaščic **Roman Adler s.p.**, Maribor (AJPES: proizvodnja slašči
 
 ## Struktura
 
-- `index.html`, `ponudba/`, `narocilo/`, `o-nas/`, `kontakt/`, `zasebnost/` — vsaka stran svoj `index.html`
+- `index.html`, `ponudba/`, `narocilo/`, `o-nas/`, `kontakt/`, `zasebnost/`, `b2b/` — vsaka stran svoj `index.html`
 - `assets/site.css` + `assets/site.js` — skupni slog in logika (navigacija, kazalec, zrno, prehodi, `.rv` razkrivanje, skok na sidro). Stran-specifičen CSS ostane inline v `<style>`.
 - `slike/web/` — **edine slike, ki gredo na splet** (WebP ≤ 1400 px, ~40–100 KB; `logo-gold.png`, `icon-512.png`, `apple-touch-icon.png`).
 - `slike/*` (izvorne fotke, 800+ MB, PDF-ji z internimi dokumenti) in korenski PDF/PNG so v `.gitignore`. Nove slike pretvori s Pillow (`py -3`, glej vzorec v zgodovini) in jih poimenuj po vsebini (`torta-lesnik.webp`).
@@ -134,10 +134,18 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 - obrazec: kljukica »seznanjen s pogoji + soglasje zasebnost« (required)
 - ob uvedbi analitike/Meta piksla → pasica s privolitvijo PREJ
 
+## Stanje strani (29. 10. 2026)
+
+- **Navigacija**: index.html + 8 podstrani + b2b/ imajo v nav (desktop + mobilni) in footerju: Ponudba · Naroči · O nas · Dogodki · Za podjetja · Kontakt.
+- **B2B stran** (`b2b/index.html`): hero + prednosti + 3-koraki + kontaktni obrazec. Obrazec je SKRIT (`display:none`) — prikazano je "Obrazec prihaja kmalu" + gumba za e-pošto in telefon. Ko Roman potrdi aktivacijo, odstrani `div style="display:none"` okoli forme.
+- **Pogoji** (`pogoji/index.html`): §10 B2B — partner mora imeti HACCP (Uredba (ES) 852/2004), ZVPot-1 za B2B ne velja, pogoji se dogovorijo pisno.
+- **Poročne torte** (`ponudba/#porocne`): obstoječ prod-row z 2×2 galerijo (torta-porocna-lavanda.webp + torta-porocna-vrtnice-zgoraj.webp + torta-porocna-bela.webp). Brez cen (po dogovoru). Kalkulator naslov spremenjen v "Izračunajte svojo ceno."
+
 ## Skilli
 
 - `.claude/commands/github-pages-domena.md` — selitev domene, veja `live`, objava prave strani
 - `.claude/commands/erp-alergeni-dump.md` — žive deklaracije iz ERP (PIN, HttpOnly, prenos iz MCP zavihka), osvežitev `alergeni/`
 - `.claude/commands/formsubmit-obrazec.md` — aktivacija, `_cc` v Gmail, priloge, prava testna oddaja; past `curl -F` + šumniki
 - `.claude/commands/headless-chrome-test.md` — posnetki in testi brez Chrome MCP, mobilni pogled prek iframe
+- `.claude/commands/batch-nav-update.md` — Python recept za batch posodobitev nav na vseh statičnih straneh; past `re.sub` + footer
 - `~/.claude/commands/neoserv-domenca-dns.md` — kje so domene (Domenca) in DNS zona (cPanel Neoserv), UAPI recepti
