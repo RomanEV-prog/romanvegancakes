@@ -141,6 +141,17 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 - **Pogoji** (`pogoji/index.html`): §10 B2B — partner mora imeti HACCP (Uredba (ES) 852/2004), ZVPot-1 za B2B ne velja, pogoji se dogovorijo pisno.
 - **Poročne torte** (`ponudba/#porocne`): obstoječ prod-row z 2×2 galerijo (torta-porocna-lavanda.webp + torta-porocna-vrtnice-zgoraj.webp + torta-porocna-bela.webp). Brez cen (po dogovoru). Kalkulator naslov spremenjen v "Izračunajte svojo ceno."
 
+## ERP → spletna stran (sync sistem, od 30. 10. 2026)
+
+`.\scripts\sync.ps1 [-api http://100.77.108.53:3000]` — osveži ponudba/ in alergeni/ iz ERP podatkov.
+- Brez `-api`: uporabi zadnji lokalni `scripts/alergeni-dump.json`.
+- Z `-api`: najprej pokliče `alergeni_dump.py` za svež dump iz živega ERP-ja (Tailscale + Roman vpisan).
+- Patchi 5 SYNC blokov v `ponudba/index.html`: `cenik-tbody`, `kalkulator-opts`, `okusi-grid`, `kremne-info`, `kremne-dop`.
+- Pokliče `alergeni_gen.py` → osvežen `alergeni/index.html`.
+- `sync_config.json`: `ime_popravki`, `cena_override`, `kategorija`, `kalkulator_ime`, `cenik_opis`, `kremne`.
+- Dump 30. 10. 2026: 31 tort, 27 objavljenih na strani.
+- Po sync: `git add ponudba/ alergeni/ scripts/alergeni-dump.json` → commit → `git push origin master:live --force`.
+
 ## Skilli
 
 - `.claude/commands/github-pages-domena.md` — selitev domene, veja `live`, objava prave strani
