@@ -34,7 +34,7 @@ by_name = {norm(r['ime']): r for r in recepture}
 out = {'vir': base, 'datum': datetime.date.today().isoformat(), 'torte': []}
 for a in sorted(artikli, key=lambda x: norm(x['ime'])):
     rec = by_art.get(a['id']) or by_name.get(norm(a['ime']))
-    t = {'artikel_id': a['id'], 'ime': a['ime'], 'brezglutensko': 1 if a.get('brezglutensko') else 0,
+    t = {'artikel_id': a['id'], 'ime': a['ime'], 'brezglutensko': 1 if a.get('brezglutensko') else 0, 'skupina': a.get('skupina'),
          'cena_kos': a.get('cena_kos'), 'receptura_id': rec['id'] if rec else None, 'receptura_ime': rec['ime'] if rec else None,
          'artikel_alergeni': a.get('alergeni'), 'artikel_alergeni_potrjeno': a.get('alergeni_potrjeno')}
     if rec:

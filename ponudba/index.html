@@ -270,15 +270,25 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <div class="prod-text-col">
       <div class="prod-num">05</div>
       <div class="prod-cat">Kremne torte</div>
-      <h2 class="prod-name">Cheese Cake</h2>
-      <p class="prod-desc">Kremne torte na podlagi piškotov ali kokosa — brez peke, hladno stavljene. Trenutno v ponudbi Kokos Cheese Cake in Piškot Cheese Cake; okusi se bodo dopolnjevali. Cena na kos je enaka za vse velikosti.</p>
-      <div class="prod-tags"><span class="tag tag-g">Kremna osnova</span><span class="tag tag-v">2 okusa</span></div>
-      <div class="prod-price">4,00 € na kos · naročilo vsaj 10 dni vnaprej</div>
+<!-- SYNC:kremne-info -->
+      <h2 class="prod-name">Kremne torte in Cheese Cake</h2>
+      <p class="prod-desc">Kremne torte z enim slojem biskvita, na piškotni podlagi ali brez glutenskih sestavin — hladno stavljene. Cena na kos je enaka za vse velikosti.</p>
+      <div class="prod-tags"><span class="tag tag-g">Kremna osnova</span><span class="tag tag-v">10 okusov</span></div>
+      <div class="prod-price">od 4,00 € na kos · naročilo vsaj 10 dni vnaprej</div>
       <ul class="prod-includes">
-        <li>Kokos Cheese Cake — kokosova kremna polnitev na podlagi iz piškotov</li>
-        <li>Piškot Cheese Cake — kremna torta na piškotni osnovi</li>
+        <li>Kokos Cheese Cake — 4,00 €</li>
+        <li>Piškot Cheese Cake — 4,00 €</li>
+        <li>Čokoladna (brez glutenskih sestavin) — 4,50 €</li>
+        <li>Tiramisu — 4,90 €</li>
+        <li>Malina — 5,00 €</li>
+        <li>Snickers BG (brez glutenskih sestavin) — 5,00 €</li>
+        <li>Temna čokolada–jagoda (brez glutenskih sestavin) — 5,00 €</li>
+        <li>Temna čokolada–višnja — 5,00 €</li>
+        <li>Čokolada–malina (brez glutenskih sestavin) — 5,00 €</li>
+        <li>Temna čokolada–malina — 5,50 €</li>
         <li>Sestavine in alergeni na deklaraciji ob prevzemu</li>
       </ul>
+<!-- /SYNC:kremne-info -->
       <a href="../kontakt/" class="btn btn-g">Naročite kremno torto →</a>
     </div>
   </div>
@@ -353,12 +363,15 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <span class="calc-lbl">1. Okus</span>
         <div class="calc-opts" id="calc-okusi">
 <!-- SYNC:kalkulator-opts -->
-          <div class="calc-opt sel" data-price="4.5">Čokoladna BG <small style="opacity:.65;font-size:.85em">4,50 €</small></div>
-          <div class="calc-opt" data-price="4.9">Bounty · Jagoda čok. · Kinder Bueno · Matilda · Maxi King · Tiramisu · Višnja · Višnjeva <small style="opacity:.65;font-size:.85em">4,90 €</small></div>
-          <div class="calc-opt" data-price="5.0">Bounty BG · Malina–bela čok. BG · Mango · Snickers · Čok.–malina BG <small style="opacity:.65;font-size:.85em">5,00 €</small></div>
-          <div class="calc-opt" data-price="5.5">Jafa · Kinder · Lešnik–bela čok. BG · Malina čok. · Pasijonka <small style="opacity:.65;font-size:.85em">5,50 €</small></div>
-          <div class="calc-opt" data-price="6.0">Bela malina · Pistacija · Pistacija BG · Pistacija–bela čok. BG <small style="opacity:.65;font-size:.85em">6,00 €</small></div>
+          <div class="calc-opt sel" data-price="4.9">Bounty · Jagoda čok. · Kinder Bueno · Matilda · Maxi King · Višnja · Višnjeva <small style="opacity:.65;font-size:.85em">4,90 €</small></div>
+          <div class="calc-opt" data-price="5.0">Bounty BG · Malina–bela čok. BG · Mango · Snickers <small style="opacity:.65;font-size:.85em">5,00 €</small></div>
+          <div class="calc-opt" data-price="5.5">Jafa · Kinder · Lešnik–bela čok. BG · Malina čok. BG · Pasijonka <small style="opacity:.65;font-size:.85em">5,50 €</small></div>
+          <div class="calc-opt" data-price="6.0">Bela malina · Pistacija · Pistacija BG · Pistacija–bela čok. BG · Pistacija–malina <small style="opacity:.65;font-size:.85em">6,00 €</small></div>
           <div class="calc-opt" data-price="4.0">Kokos Cheese · Piškot Cheese (kremna) <small style="opacity:.65;font-size:.85em">4,00 €</small></div>
+          <div class="calc-opt" data-price="4.5">Čokoladna BG (kremna) <small style="opacity:.65;font-size:.85em">4,50 €</small></div>
+          <div class="calc-opt" data-price="4.9">Tiramisu (kremna) <small style="opacity:.65;font-size:.85em">4,90 €</small></div>
+          <div class="calc-opt" data-price="5.0">Malina · Snickers BG · Čok.–jagoda BG · Čok.–višnja · Čok.–malina BG (kremna) <small style="opacity:.65;font-size:.85em">5,00 €</small></div>
+          <div class="calc-opt" data-price="5.5">Čok.–malina (kremna) <small style="opacity:.65;font-size:.85em">5,50 €</small></div>
 <!-- /SYNC:kalkulator-opts -->
         </div>
       </div>
@@ -395,10 +408,10 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <thead><tr><th>Okusi</th><th>Cena na kos</th><th>8 kosov</th><th>10 kosov</th><th>12 kosov</th></tr></thead>
         <tbody>
 <!-- SYNC:cenik-tbody -->
-          <tr><td>Bounty, Jagoda čokolada, Kinder Bueno, Matilda, Maxi King, Tiramisu, Višnja čokolada, Višnjeva torta<small>Klasike in čokoladne kombinacije</small></td><td class="p">4,90 €</td><td class="p">39,20 €</td><td class="p">49 €</td><td class="p">58,80 €</td></tr>
+          <tr><td>Bounty, Jagoda čokolada, Kinder Bueno, Matilda, Maxi King, Višnja čokolada, Višnjeva torta<small>Klasike in čokoladne kombinacije</small></td><td class="p">4,90 €</td><td class="p">39,20 €</td><td class="p">49 €</td><td class="p">58,80 €</td></tr>
           <tr><td>Mango, Snickers<small>Karamela, arašidi in sadje</small></td><td class="p">5,00 €</td><td class="p">40 €</td><td class="p">50 €</td><td class="p">60 €</td></tr>
-          <tr><td>Jafa (pomaranča), Kinder, Malina čokolada, Pasijonka (marakuja)<small>Bogatejše kreme</small></td><td class="p">5,50 €</td><td class="p">44 €</td><td class="p">55 €</td><td class="p">66 €</td></tr>
-          <tr><td>Bela malina, Pistacija<small>Pistacija in bela čokolada</small></td><td class="p">6,00 €</td><td class="p">48 €</td><td class="p">60 €</td><td class="p">72 €</td></tr>
+          <tr><td>Jafa (pomaranča), Kinder, Pasijonka (marakuja)<small>Bogatejše kreme</small></td><td class="p">5,50 €</td><td class="p">44 €</td><td class="p">55 €</td><td class="p">66 €</td></tr>
+          <tr><td>Bela malina, Pistacija, Pistacija–malina<small>Pistacija in bela čokolada</small></td><td class="p">6,00 €</td><td class="p">48 €</td><td class="p">60 €</td><td class="p">72 €</td></tr>
 <!-- /SYNC:cenik-tbody -->
         </tbody>
       </table>
@@ -406,7 +419,9 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <div class="dop rv">
       <div><span>Rezine</span><b>Ista cena kot kos torte</b><p>Posamezne rezine iz vitrine stanejo toliko kot kos iste torte: 4,50–6 €.</p></div>
       <div><span>Brez glutenskih sestavin</span><b>Torte do 10 kosov</b><p>Čokoladna 4,50 €/kos · čokolada–malina, Bounty, malina–bela čokolada 5 €/kos · lešnik–bela čokolada 5,50 €/kos · pistacija in pistacija–bela čokolada 6 €/kos. Cena velja za vse velikosti do 10 kosov.</p></div>
-      <div><span>Kremne torte</span><b>Cheese Cake 4,00 €/kos</b><p>Kokos Cheese Cake in Piškot Cheese Cake. Naročilo vsaj 10 dni vnaprej.</p></div>
+<!-- SYNC:kremne-dop -->
+      <div><span>Kremne torte</span><b>4,00–5,50 €/kos</b><p>10 okusov kremnih tort in Cheese Cake (seznam v razdelku Kremne torte). Naročilo vsaj 10 dni vnaprej.</p></div>
+<!-- /SYNC:kremne-dop -->
       <div><span>Presne torte</span><b>Po dogovoru</b><p>Torte brez peke pripravim po dogovoru; ceno in okus uskladimo ob povpraševanju, naročilo vsaj 10 dni vnaprej.</p></div>
       <div><span>Dodatki</span><b>Napis brezplačno · jedilna slika 8 €</b><p>Posebna dekoracija je po dogovoru. Za lešnikov ali orehov biskvit velja doplačilo na celo torto, ki ga uskladimo pred potrditvijo naročila.</p></div>
     </div>
@@ -424,7 +439,7 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
     <div class="okusi-grid">
 <!-- SYNC:okusi-grid -->
       <div class="ok-group rv">
-        <div class="ok-head"><h3>Čokoladni okusi</h3><span>10 okusov</span></div>
+        <div class="ok-head"><h3>Čokoladni okusi</h3><span>9 okusov</span></div>
         <p class="ok-sub">Od čokolade in karamele do kokosa in sadnih kombinacij. Biskvit izberete po želji.</p>
         <ul class="ok-list">
           <li><span class="name">Bounty</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="pr">4,90 € / kos</span></span></li>
@@ -436,7 +451,6 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
           <li><span class="name">Snickers</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="tag tag-a">arašidi</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Jafa (pomaranča)</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="pr">5,50 € / kos</span></span></li>
           <li><span class="name">Kinder</span><span class="al"><span class="pr">5,50 € / kos</span></span></li>
-          <li><span class="name">Malina čokolada</span><span class="al"><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="pr">5,50 € / kos</span></span></li>
         </ul>
       </div>
 
@@ -444,25 +458,40 @@ table.cenik{width:100%;border-collapse:separate;border-spacing:2px;min-width:560
         <div class="ok-head"><h3>Sadni in kremni okusi</h3><span>6 okusov</span></div>
         <p class="ok-sub">Sadje, pistacija, bela čokolada in kava — z biskvitom po vaši izbiri.</p>
         <ul class="ok-list">
-          <li><span class="name">Tiramisu</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
           <li><span class="name">Višnjeva torta</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
           <li><span class="name">Mango</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Pasijonka (marakuja)</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">5,50 € / kos</span></span></li>
           <li><span class="name">Bela malina</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="pr">6,00 € / kos</span></span></li>
           <li><span class="name">Pistacija</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">pistacija</span><span class="pr">6,00 € / kos</span></span></li>
+          <li><span class="name">Pistacija–malina</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">pistacija</span><span class="pr">6,00 € / kos</span></span></li>
         </ul>
       </div>
 
       <div class="ok-group rv" data-d="160">
-        <div class="ok-head"><h3>Torte brez glutenskih sestavin</h3><span>8 okusov</span></div>
+        <div class="ok-head"><h3>Kremne torte</h3><span>6 okusov</span></div>
+        <p class="ok-sub">En sloj biskvita ali piškotna podlaga, kremna polnitev, hladno stavljene.</p>
+        <ul class="ok-list">
+          <li><span class="name">Kokos Cheese Cake</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="pr">4,00 € / kos</span></span></li>
+          <li><span class="name">Piškot Cheese Cake</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="pr">4,00 € / kos</span></span></li>
+          <li><span class="name">Tiramisu</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">4,90 € / kos</span></span></li>
+          <li><span class="name">Malina</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Temna čokolada–višnja</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Temna čokolada–malina</span><span class="al"><span class="tag tag-a">gluten</span><span class="tag tag-a">soja</span><span class="pr">5,50 € / kos</span></span></li>
+        </ul>
+      </div>
+
+      <div class="ok-group rv" data-d="240">
+        <div class="ok-head"><h3>Torte brez glutenskih sestavin</h3><span>10 okusov</span></div>
         <p class="ok-sub">Na biskvitu brez glutenskih sestavin iz mandljev, orehov in kokosa; pripravljam jih do 10 kosov.</p>
         <ul class="ok-list">
-          <li><span class="name">Temna čokolada–jagoda</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="pr">po dogovoru</span></span></li>
           <li><span class="name">Čokoladna</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="pr">4,50 € / kos</span></span></li>
           <li><span class="name">Bounty BG</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="tag tag-a">orehi</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Malina–bela čokolada</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Snickers BG</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="tag tag-a">arašidi</span><span class="pr">5,00 € / kos</span></span></li>
+          <li><span class="name">Temna čokolada–jagoda</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Čokolada–malina</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="pr">5,00 € / kos</span></span></li>
           <li><span class="name">Lešnik–bela čokolada</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">lešniki</span><span class="tag tag-a">orehi</span><span class="pr">5,50 € / kos</span></span></li>
+          <li><span class="name">Malina čokolada</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="pr">5,50 € / kos</span></span></li>
           <li><span class="name">Pistacija BG</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="pr">6,00 € / kos</span></span></li>
           <li><span class="name">Pistacija–bela čokolada</span><span class="al"><span class="tag tag-g">brez glutenskih sestavin</span><span class="tag tag-a">soja</span><span class="tag tag-a">mandlji</span><span class="tag tag-a">orehi</span><span class="tag tag-a">pistacija</span><span class="pr">6,00 € / kos</span></span></li>
         </ul>

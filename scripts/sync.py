@@ -45,7 +45,8 @@ IME_AL = {
 }
 AL_VR = list(IME_AL.keys())
 
-CAT_ORDER = ['Čokoladni okusi', 'Sadni in kremni okusi', 'Torte brez glutenskih sestavin']
+CAT_ORDER = ['Čokoladni okusi', 'Sadni in kremni okusi', 'Kremne torte', 'Torte brez glutenskih sestavin']
+KAT_OPIS.setdefault('Kremne torte', 'En sloj biskvita ali piškotna podlaga, kremna polnitev, hladno stavljene.')
 
 
 def fmt_kos(c):
@@ -76,7 +77,8 @@ def torte():
             'ime':     ime,
             'cena':    float(cena),
             'bg':      bool(t.get('brezglutensko')),
-            'kremna':  t['ime'] in KREMNE,
+            # kremna = skupina artikla Cheesecake v ERP (vir resnice); KREMNE v configu le kot rezerva
+            'kremna':  t.get('skupina') == 'Cheesecake' or t['ime'] in KREMNE,
             'kode':    kode,
         })
     return out
@@ -127,16 +129,53 @@ def gen_kalk_opts(tt):
             f'{ht.escape(names)} <small style="opacity:.65;font-size:.85em">{fmt_kos(cena)}</small></div>'
         )
 
-    kremne = [t for t in tt if t['kremna'] and t['cena'] > 0]
-    if kremne:
-        krem_names = ' · '.join(KALK_IME.get(t['ime'], t['ime']) for t in kremne)
-        krem_cena  = kremne[0]['cena']
-        dp = f"{krem_cena:.1f}"
+    # kremne imajo različne cene (4–5,50 €) → po ceni, kot ostale
+    krem_by_price: dict = {}
+    for t in tt:
+        if t['kremna'] and t['cena'] > 0:
+            krem_by_price.setdefault(t['cena'], []).append(t)
+    for cena in sorted(krem_by_price):
+        grp   = sorted(krem_by_price[cena], key=lambda x: x['ime'])
+        names = ' · '.join(KALK_IME.get(t['ime'], t['ime']) for t in grp)
+        dp    = f"{cena:.1f}"
         divs.append(
             f'          <div class="calc-opt" data-price="{dp}">'
-            f'{ht.escape(krem_names)} (kremna) <small style="opacity:.65;font-size:.85em">{fmt_kos(krem_cena)}</small></div>'
+            f'{ht.escape(names)} (kremna) <small style="opacity:.65;font-size:.85em">{fmt_kos(cena)}</small></div>'
         )
     return '\n'.join(divs)
+
+
+# ── kremne (sekcija #kremne + okvirček pod cenikom) ─────────────────────────
+
+def gen_kremne_info(tt):
+    kr = sorted([t for t in tt if t['kremna'] and t['cena'] > 0], key=lambda x: (x['cena'], x['ime']))
+    if not kr:
+        return '      <p class="prod-desc">Kremne torte so trenutno po dogovoru.</p>'
+    cmin = min(t['cena'] for t in kr)
+    cmax = max(t['cena'] for t in kr)
+    cena = fmt_kos(cmin) if cmin == cmax else 'od ' + fmt_kos(cmin)
+    li = '\n'.join(
+        f'        <li>{ht.escape(t["ime"])}{" (brez glutenskih sestavin)" if t["bg"] else ""} — {fmt_kos(t["cena"])}</li>'
+        for t in kr)
+    return (
+        '      <h2 class="prod-name">Kremne torte in Cheese Cake</h2>\n'
+        '      <p class="prod-desc">Kremne torte z enim slojem biskvita, na piškotni podlagi ali brez glutenskih sestavin — hladno stavljene. Cena na kos je enaka za vse velikosti.</p>\n'
+        f'      <div class="prod-tags"><span class="tag tag-g">Kremna osnova</span><span class="tag tag-v">{len(kr)} okusov</span></div>\n'
+        f'      <div class="prod-price">{cena} na kos · naročilo vsaj 10 dni vnaprej</div>\n'
+        '      <ul class="prod-includes">\n'
+        f'{li}\n'
+        '        <li>Sestavine in alergeni na deklaraciji ob prevzemu</li>\n'
+        '      </ul>')
+
+
+def gen_kremne_dop(tt):
+    kr = [t for t in tt if t['kremna'] and t['cena'] > 0]
+    if not kr:
+        return '      <div><span>Kremne torte</span><b>Po dogovoru</b><p>Naročilo vsaj 10 dni vnaprej.</p></div>'
+    cmin = min(t['cena'] for t in kr); cmax = max(t['cena'] for t in kr)
+    razpon = fmt_kos(cmin) if cmin == cmax else fmt_kos(cmin).replace(' €', '') + '–' + fmt_kos(cmax)
+    return (f'      <div><span>Kremne torte</span><b>{razpon}/kos</b>'
+            f'<p>{len(kr)} okusov kremnih tort in Cheese Cake (seznam v razdelku Kremne torte). Naročilo vsaj 10 dni vnaprej.</p></div>')
 
 
 # ── okusi-grid ────────────────────────────────────────────────────────────────
@@ -144,10 +183,10 @@ def gen_kalk_opts(tt):
 def gen_okusi_grid(tt):
     cats: dict = {}
     for t in tt:
-        if t['kremna']:
-            continue
         if t['bg']:
             cat = 'Torte brez glutenskih sestavin'
+        elif t['kremna']:
+            cat = 'Kremne torte'
         else:
             cat = KATEGORIJA.get(t['ime'], 'Ostalo')
         cats.setdefault(cat, []).append(t)
@@ -215,6 +254,8 @@ ok = True
 ok &= patch(ponudba, 'cenik-tbody',      gen_cenik_tbody(tt))
 ok &= patch(ponudba, 'kalkulator-opts',  gen_kalk_opts(tt))
 ok &= patch(ponudba, 'okusi-grid',       gen_okusi_grid(tt))
+ok &= patch(ponudba, 'kremne-info',      gen_kremne_info(tt))
+ok &= patch(ponudba, 'kremne-dop',       gen_kremne_dop(tt))
 
 if not ok:
     print('NAPAKA: nekateri SYNC markerji niso bili najdeni — preveri ponudba/index.html')

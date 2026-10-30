@@ -1,17 +1,18 @@
 {
- "vir": "http://100.77.108.53:3000",
- "datum": "2026-10-22",
+ "vir": "http://127.0.0.1:3000",
+ "datum": "2026-10-30",
  "torte": [
   {
    "artikel_id": 46,
    "ime": "Bela Malina",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 6,
    "receptura_id": 59,
    "receptura_ime": "Bela Malina",
    "artikel_alergeni": "gluten,soja,oreski",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Malina sadje, Kokosovo mleko, BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Malina sadje, Kokosovo mleko, BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -67,6 +68,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -77,57 +82,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
-    }
-   ]
-  },
-  {
-   "artikel_id": 50,
-   "ime": "Beli mufin",
-   "brezglutensko": 0,
-   "cena_kos": 2.5,
-   "receptura_id": 75,
-   "receptura_ime": "Beli mufin",
-   "artikel_alergeni": "",
-   "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Rastlinska rama (margarina), Vanilin sladkor, Pecilni prašek",
-   "alergeni_text": "Gluten",
-   "alergeni_kode": [
-    "gluten"
-   ],
-   "alergeni_nepotrjeni": [],
-   "sestava_nepopolna": false,
-   "opozorila": [],
-   "bg_opozorilo": 0,
-   "sestavine": [
-    {
-     "ime": "Moka bela tip 550",
-     "alergeni": [
-      "gluten"
-     ]
-    },
-    {
-     "ime": "Rastlinsko mleko (ovseno)",
-     "alergeni": []
-    },
-    {
-     "ime": "Sladkor beli kristalni",
-     "alergeni": []
-    },
-    {
-     "ime": "Rastlinska rama (margarina)",
-     "alergeni": []
-    },
-    {
-     "ime": "Vanilin sladkor",
-     "alergeni": []
-    },
-    {
-     "ime": "Pecilni prašek",
-     "alergeni": []
     }
    ]
   },
@@ -135,12 +89,13 @@
    "artikel_id": 7,
    "ime": "Bounty",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 57,
    "receptura_ime": "Bounty",
    "artikel_alergeni": "gluten,soja",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, Granfrutta kokos pire (kokosova krema 58,6%, sladkor, glukozni sirup, kokosovi kosmiči 2,9%, maltodekstrin, rastlinska maščoba (kokos), alkohol, emulgatorji (E471, E477), zgoščevalci, sredstvo za uravnavanje kislosti (mlečna kislina), arome, grahove beljakovine, konzervans (kalijev sorbat). Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Kokosova moka, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, Granfrutta kokos pire (kokosova krema 58,6%, sladkor, glukozni sirup, kokosovi kosmiči 2,9%, maltodekstrin, rastlinska maščoba (kokos), alkohol, emulgatorji (E471, E477), zgoščevalci, sredstvo za uravnavanje kislosti (mlečna kislina), arome, grahove beljakovine, konzervans (kalijev sorbat). Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Kokosova moka, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -159,12 +114,6 @@
    ],
    "bg_opozorilo": 0,
    "sestavine": [
-    {
-     "ime": "Joycoverture DARK",
-     "alergeni": [
-      "soja"
-     ]
-    },
     {
      "ime": "Smetana/stepanje",
      "alergeni": [
@@ -212,7 +161,17 @@
      ]
     },
     {
+     "ime": "Joycoverture DARK",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
      "ime": "Kokosova moka",
+     "alergeni": []
+    },
+    {
+     "ime": "Sončnično olje",
      "alergeni": []
     },
     {
@@ -226,10 +185,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -237,6 +192,7 @@
    "artikel_id": 44,
    "ime": "Bounty BG",
    "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 5,
    "receptura_id": 62,
    "receptura_ime": "Bounty BG",
@@ -259,7 +215,7 @@
     "Surovina »Granfrutta kokos pire« morda vsebuje alergen »Pistacija«, a ni označen.",
     "Surovina »Kokosova moka« morda vsebuje alergen »Gluten«, a ni označen."
    ],
-   "bg_opozorilo": 0,
+   "bg_opozorilo": 1,
    "sestavine": [
     {
      "ime": "Kokosovo mleko",
@@ -313,12 +269,13 @@
    "artikel_id": 9,
    "ime": "Jafa (pomaranča)",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 5.5,
    "receptura_id": 70,
    "receptura_ime": "Jafa (pomaranča)",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Gluten, Lešniki, Mandlji, Soja",
    "alergeni_kode": [
     "gluten",
@@ -350,6 +307,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -368,10 +329,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -379,12 +336,13 @@
    "artikel_id": 11,
    "ime": "Jagoda čokolada",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 54,
    "receptura_ime": "Jagoda čokolada",
    "artikel_alergeni": "gluten,soja,oreski",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Jagoda sadje (zamrznjeno), Sladkor beli kristalni, Vanilin sladkor, JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Fruttidor jagodna marmelada 70% (jagode 70%, sladkor, voda, modificiran škrob, sredstvo za uravnavanje kislosti (E330), arome, konzervans (E202), barvilo (E120)), Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Jagoda sadje (zamrznjeno), Sladkor beli kristalni, Vanilin sladkor, JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -446,7 +404,7 @@
      ]
     },
     {
-     "ime": "Fruttidor jagodna marmelada 70%",
+     "ime": "Sončnično olje",
      "alergeni": []
     },
     {
@@ -460,10 +418,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -471,6 +425,7 @@
    "artikel_id": 12,
    "ime": "Kinder",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 5.5,
    "receptura_id": null,
    "receptura_ime": null,
@@ -481,12 +436,13 @@
    "artikel_id": 13,
    "ime": "Kinder Bueno",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 65,
    "receptura_ime": "Kinder Bueno",
    "artikel_alergeni": "gluten,soja,oreski",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, JOYPASTE NOCCIOLINA (LEŠNIK) 100% (pražene LEŠNIKE 100 %. Lahko vsebuje sledi drugih oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Sladkor beli kristalni, Vanilin sladkor, DROBLJENI LEŠNIKI, Rastlinska rama (margarina), SLADKOR MLETI, Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, JOYPASTE NOCCIOLINA (LEŠNIK) 100% (pražene LEŠNIKE 100 %. Lahko vsebuje sledi drugih oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Sladkor beli kristalni, Vanilin sladkor, DROBLJENI LEŠNIKI, Sončnično olje, Rastlinska rama (margarina), SLADKOR MLETI, Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -548,6 +504,10 @@
      ]
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -562,10 +522,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -573,12 +529,13 @@
    "artikel_id": 54,
    "ime": "Kokos Cheese Cake",
    "brezglutensko": 0,
+   "skupina": "Cheesecake",
    "cena_kos": 4,
    "receptura_id": 80,
    "receptura_ime": "Kokos Cheese Cake",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "Kokosova moka, SMETANA/STEPANJE, Kokosovo mleko, KEKSI PETIT, Spekulatius, JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Datelji, Kokosovo olje",
+   "sestavine_text": "SMETANA/STEPANJE, Kokosovo mleko, KEKSI PETIT, Spekulatius, Kokosova moka, JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Datelji, Kokosovo olje",
    "alergeni_text": "Soja, Gluten, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -593,10 +550,6 @@
    ],
    "bg_opozorilo": 0,
    "sestavine": [
-    {
-     "ime": "Kokosova moka",
-     "alergeni": []
-    },
     {
      "ime": "Smetana/stepanje",
      "alergeni": [
@@ -615,6 +568,10 @@
     },
     {
      "ime": "Spekulatius",
+     "alergeni": []
+    },
+    {
+     "ime": "Kokosova moka",
      "alergeni": []
     },
     {
@@ -639,16 +596,17 @@
    "artikel_id": 58,
    "ime": "Lešnik-bela čokolada BG",
    "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 5.5,
    "receptura_id": 84,
    "receptura_ime": "Lešnik-bela čokolada BG",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), SMETANA/STEPANJE, Kokosovo mleko, MLETI MANDLJI, OREHI MLETI, SLADKOR MLETI, Datelji, Kokosovo olje, JOYPASTE NOCCIOLINA (LEŠNIK) 100% (pražene LEŠNIKE 100 %. Lahko vsebuje sledi drugih oreščkov)",
-   "alergeni_text": "Mandlji, Soja, Orehi, Lešniki",
+   "sestavine_text": "SMETANA/STEPANJE, Kokosovo mleko, MLETI MANDLJI, OREHI MLETI, BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), SLADKOR MLETI, Datelji, Kokosovo olje, JOYPASTE NOCCIOLINA (LEŠNIK) 100% (pražene LEŠNIKE 100 %. Lahko vsebuje sledi drugih oreščkov)",
+   "alergeni_text": "Soja, Mandlji, Orehi, Lešniki",
    "alergeni_kode": [
-    "mandlji",
     "soja",
+    "mandlji",
     "orehi",
     "lesniki"
    ],
@@ -657,13 +615,6 @@
    "opozorila": [],
    "bg_opozorilo": 1,
    "sestavine": [
-    {
-     "ime": "Bela Čokolada",
-     "alergeni": [
-      "mandlji",
-      "soja"
-     ]
-    },
     {
      "ime": "Smetana/stepanje",
      "alergeni": [
@@ -687,6 +638,13 @@
      ]
     },
     {
+     "ime": "Bela Čokolada",
+     "alergeni": [
+      "mandlji",
+      "soja"
+     ]
+    },
+    {
      "ime": "SLADKOR MLETI",
      "alergeni": []
     },
@@ -707,9 +665,91 @@
    ]
   },
   {
-   "artikel_id": 16,
-   "ime": "Malina čokolada",
+   "artikel_id": 63,
+   "ime": "Malina",
    "brezglutensko": 0,
+   "skupina": "Cheesecake",
+   "cena_kos": 5,
+   "receptura_id": 90,
+   "receptura_ime": "Malina",
+   "artikel_alergeni": "",
+   "artikel_alergeni_potrjeno": 0,
+   "sestavine_text": "SMETANA/STEPANJE, Kokosovo mleko, Malina sadje, Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), AGAR-AGAR, Pecilni prašek, Vinski kamen",
+   "alergeni_text": "Soja, Gluten",
+   "alergeni_kode": [
+    "soja",
+    "gluten"
+   ],
+   "alergeni_nepotrjeni": [],
+   "sestava_nepopolna": false,
+   "opozorila": [],
+   "bg_opozorilo": 0,
+   "sestavine": [
+    {
+     "ime": "Smetana/stepanje",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Kokosovo mleko",
+     "alergeni": []
+    },
+    {
+     "ime": "Malina sadje",
+     "alergeni": []
+    },
+    {
+     "ime": "Fruttidor malina 70%",
+     "alergeni": []
+    },
+    {
+     "ime": "Moka bela tip 550",
+     "alergeni": [
+      "gluten"
+     ]
+    },
+    {
+     "ime": "Rastlinsko mleko (ovseno)",
+     "alergeni": []
+    },
+    {
+     "ime": "Sladkor beli kristalni",
+     "alergeni": []
+    },
+    {
+     "ime": "Vanilin sladkor",
+     "alergeni": []
+    },
+    {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
+     "ime": "Rastlinska rama (margarina)",
+     "alergeni": []
+    },
+    {
+     "ime": "AGAR-AGAR",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Pecilni prašek",
+     "alergeni": []
+    },
+    {
+     "ime": "Vinski kamen",
+     "alergeni": []
+    }
+   ]
+  },
+  {
+   "artikel_id": 16,
+   "ime": "Malina čokolada BG",
+   "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 5.5,
    "receptura_id": 63,
    "receptura_ime": "Malina Čokolada",
@@ -727,7 +767,7 @@
    "opozorila": [
     "Surovina »Kokosova moka« morda vsebuje alergen »Gluten«, a ni označen."
    ],
-   "bg_opozorilo": 0,
+   "bg_opozorilo": 1,
    "sestavine": [
     {
      "ime": "Smetana/stepanje",
@@ -777,17 +817,18 @@
    "artikel_id": 57,
    "ime": "Malina-bela čokolada BG",
    "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 5,
    "receptura_id": 83,
    "receptura_ime": "Malina-bela čokolada BG",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Kokosovo mleko, Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), MLETI MANDLJI, OREHI MLETI, Kokosova moka, Kokosovo olje, Datelji",
-   "alergeni_text": "Mandlji, Soja, Orehi",
+   "sestavine_text": "Kokosovo mleko, Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), MLETI MANDLJI, OREHI MLETI, BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Kokosova moka, Kokosovo olje, Datelji",
+   "alergeni_text": "Mandlji, Orehi, Soja",
    "alergeni_kode": [
     "mandlji",
-    "soja",
-    "orehi"
+    "orehi",
+    "soja"
    ],
    "alergeni_nepotrjeni": [],
    "sestava_nepopolna": false,
@@ -796,13 +837,6 @@
    ],
    "bg_opozorilo": 1,
    "sestavine": [
-    {
-     "ime": "Bela Čokolada",
-     "alergeni": [
-      "mandlji",
-      "soja"
-     ]
-    },
     {
      "ime": "Kokosovo mleko",
      "alergeni": []
@@ -824,6 +858,13 @@
      ]
     },
     {
+     "ime": "Bela Čokolada",
+     "alergeni": [
+      "mandlji",
+      "soja"
+     ]
+    },
+    {
      "ime": "Kokosova moka",
      "alergeni": []
     },
@@ -841,12 +882,13 @@
    "artikel_id": 17,
    "ime": "Mango",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 5,
    "receptura_id": 71,
    "receptura_ime": "Mango",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Granfrutta Mango (pasta, MEC 3) (Zmrznjen mango Alfonso pire (72 %), sladkor, glukozni sirup, rastlinske vlaknine (inulin), maltodekstrin, gostilo: tara gumi, ksantan gumi, sredstvo za uravnavanje kislosti: citronska kislina, jabolčna kislina, barvilo: kurkumin, izvleček paprike, naravne arome, konzervans: kalijev sorbat. Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Granfrutta Mango (pasta, MEC 3) (Zmrznjen mango Alfonso pire (72 %), sladkor, glukozni sirup, rastlinske vlaknine (inulin), maltodekstrin, gostilo: tara gumi, ksantan gumi, sredstvo za uravnavanje kislosti: citronska kislina, jabolčna kislina, barvilo: kurkumin, izvleček paprike, naravne arome, konzervans: kalijev sorbat. Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten",
    "alergeni_kode": [
     "soja",
@@ -891,6 +933,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -901,10 +947,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -912,6 +954,7 @@
    "artikel_id": 39,
    "ime": "Matilda",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 48,
    "receptura_ime": "Matilda",
@@ -988,12 +1031,13 @@
    "artikel_id": 45,
    "ime": "Maxi King",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 58,
    "receptura_ime": "Maxi King",
    "artikel_alergeni": "gluten,soja,oreski",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, Karamela, Sladkor beli kristalni, DROBLJENI LEŠNIKI, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, Karamela, Sladkor beli kristalni, DROBLJENI LEŠNIKI, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), JOYCOVERTURE DARK (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -1072,6 +1116,10 @@
      ]
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -1082,10 +1130,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -1093,12 +1137,13 @@
    "artikel_id": 21,
    "ime": "Pasijonka / Marakuja",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 5.5,
    "receptura_id": 68,
    "receptura_ime": "Pasijonka / Marakuja",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Granfrutta Marakuja (pasta, MEC 3) (Zmrznjena kaša marakuje (46,2 %), sladkor, glukozni sirup, maltodekstrin, rastlinske vlaknine (inulin), gostilo: pektin in tara gumi, naravne arome, sredstvo za uravnavanje kislosti: jabolčna kislina, konzervans: kalijev sorbat, barvila: karoteni. Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Granfrutta Marakuja (pasta, MEC 3) (Zmrznjena kaša marakuje (46,2 %), sladkor, glukozni sirup, maltodekstrin, rastlinske vlaknine (inulin), gostilo: pektin in tara gumi, naravne arome, sredstvo za uravnavanje kislosti: jabolčna kislina, konzervans: kalijev sorbat, barvila: karoteni. Lahko vsebuje sledi soje, mleka, jajc, MANDLJEV, LEŠNIKOV, OREHOV in PISTACIJ), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten",
    "alergeni_kode": [
     "soja",
@@ -1143,6 +1188,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -1153,10 +1202,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -1164,12 +1209,13 @@
    "artikel_id": 22,
    "ime": "Pistacija",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 6,
    "receptura_id": 28,
    "receptura_ime": "Pistacija",
    "artikel_alergeni": "gluten,soja,oreski",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, JOYPASTE PISTACIJA 100 % X 1 KG (pražene PISTACIJE 100 %. Lahko vsebuje sledi drugih oreščkov), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, JOYPASTE PISTACIJA 100 % X 1 KG (pražene PISTACIJE 100 %. Lahko vsebuje sledi drugih oreščkov), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Pistacija",
    "alergeni_kode": [
     "soja",
@@ -1216,6 +1262,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -1226,10 +1276,6 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
     }
    ]
   },
@@ -1237,6 +1283,7 @@
    "artikel_id": 43,
    "ime": "Pistacija BG",
    "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 6,
    "receptura_id": 56,
    "receptura_ime": "Pistacija BG",
@@ -1252,20 +1299,99 @@
    "sestavine": []
   },
   {
+   "artikel_id": 61,
+   "ime": "Pistacija- malina",
+   "brezglutensko": 0,
+   "skupina": "Torte",
+   "cena_kos": 6,
+   "receptura_id": 88,
+   "receptura_ime": "Pistacija- malina",
+   "artikel_alergeni": "",
+   "artikel_alergeni_potrjeno": 0,
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Kokosovo mleko, Sladkor beli kristalni, Vanilin sladkor, Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), Sončnično olje, JOYPASTE PISTACIJA 100 % X 1 KG (pražene PISTACIJE 100 %. Lahko vsebuje sledi drugih oreščkov), Rastlinska rama (margarina), Pecilni prašek, Vinski kamen",
+   "alergeni_text": "Soja, Gluten, Pistacija",
+   "alergeni_kode": [
+    "soja",
+    "gluten",
+    "pistacija"
+   ],
+   "alergeni_nepotrjeni": [],
+   "sestava_nepopolna": false,
+   "opozorila": [],
+   "bg_opozorilo": 0,
+   "sestavine": [
+    {
+     "ime": "Smetana/stepanje",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Moka bela tip 550",
+     "alergeni": [
+      "gluten"
+     ]
+    },
+    {
+     "ime": "Rastlinsko mleko (ovseno)",
+     "alergeni": []
+    },
+    {
+     "ime": "Kokosovo mleko",
+     "alergeni": []
+    },
+    {
+     "ime": "Sladkor beli kristalni",
+     "alergeni": []
+    },
+    {
+     "ime": "Vanilin sladkor",
+     "alergeni": []
+    },
+    {
+     "ime": "Fruttidor malina 70%",
+     "alergeni": []
+    },
+    {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
+     "ime": "JOYPASTE PISTACIJA 100 % x 1 KG",
+     "alergeni": [
+      "pistacija"
+     ]
+    },
+    {
+     "ime": "Rastlinska rama (margarina)",
+     "alergeni": []
+    },
+    {
+     "ime": "Pecilni prašek",
+     "alergeni": []
+    },
+    {
+     "ime": "Vinski kamen",
+     "alergeni": []
+    }
+   ]
+  },
+  {
    "artikel_id": 56,
    "ime": "Pistacija-bela čokolada BG",
    "brezglutensko": 1,
+   "skupina": "Torte",
    "cena_kos": 6,
    "receptura_id": 82,
    "receptura_ime": "Pistacija-bela čokolada",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), Kokosovo mleko, MLETI MANDLJI, OREHI MLETI, JOYPASTE PISTACIJA 100 % X 1 KG (pražene PISTACIJE 100 %. Lahko vsebuje sledi drugih oreščkov), Kokosova moka, Kokosovo olje, Datelji",
-   "alergeni_text": "Mandlji, Soja, Orehi, Pistacija",
+   "sestavine_text": "Kokosovo mleko, MLETI MANDLJI, OREHI MLETI, BELA ČOKOLADA (Kakavovo maslo, sladkor, maltodeksterin, MANDLJEV zdrob, emulator: lecitinsol, aroma vanilije), JOYPASTE PISTACIJA 100 % X 1 KG (pražene PISTACIJE 100 %. Lahko vsebuje sledi drugih oreščkov), Kokosova moka, Kokosovo olje, Datelji",
+   "alergeni_text": "Mandlji, Orehi, Soja, Pistacija",
    "alergeni_kode": [
     "mandlji",
-    "soja",
     "orehi",
+    "soja",
     "pistacija"
    ],
    "alergeni_nepotrjeni": [],
@@ -1275,13 +1401,6 @@
    ],
    "bg_opozorilo": 1,
    "sestavine": [
-    {
-     "ime": "Bela Čokolada",
-     "alergeni": [
-      "mandlji",
-      "soja"
-     ]
-    },
     {
      "ime": "Kokosovo mleko",
      "alergeni": []
@@ -1296,6 +1415,13 @@
      "ime": "Orehi mleti",
      "alergeni": [
       "orehi"
+     ]
+    },
+    {
+     "ime": "Bela Čokolada",
+     "alergeni": [
+      "mandlji",
+      "soja"
      ]
     },
     {
@@ -1322,6 +1448,7 @@
    "artikel_id": 55,
    "ime": "Piškot Cheese Cake",
    "brezglutensko": 0,
+   "skupina": "Cheesecake",
    "cena_kos": 4,
    "receptura_id": 81,
    "receptura_ime": "Piškot Cheese Cake",
@@ -1378,12 +1505,13 @@
    "artikel_id": 27,
    "ime": "Snikers",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 5,
    "receptura_id": 72,
    "receptura_ime": "Snikers",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), ARAŠIDOVO MASLO, Karamela, Sladkor beli kristalni, Vanilin sladkor, JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Rastlinska rama (margarina), ARAŠIDI, Pecilni prašek, Vinski kamen, Sončnično olje",
+   "sestavine_text": "SMETANA/STEPANJE, MOKA BELA TIP 550, Rastlinsko mleko (ovseno), ARAŠIDOVO MASLO, Karamela, Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, JOYCREAM BITTER COKOLADA (sladkor, rastlinska olja (sončnica), posnet kakav v prahu 19%, MANDLJI, LEŠNIKI, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in drugih oreščkov), Rastlinska rama (margarina), ARAŠIDI, Pecilni prašek, Vinski kamen",
    "alergeni_text": "Soja, Gluten, Arašidi, Lešniki, Mandlji",
    "alergeni_kode": [
     "soja",
@@ -1432,6 +1560,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Joycream Bitter cokolada",
      "alergeni": [
       "lesniki",
@@ -1456,9 +1588,82 @@
     {
      "ime": "Vinski kamen",
      "alergeni": []
+    }
+   ]
+  },
+  {
+   "artikel_id": 60,
+   "ime": "Snikers BG",
+   "brezglutensko": 1,
+   "skupina": "Cheesecake",
+   "cena_kos": 5,
+   "receptura_id": 87,
+   "receptura_ime": "Snikers BG",
+   "artikel_alergeni": "",
+   "artikel_alergeni_potrjeno": 0,
+   "sestavine_text": "Kokosovo mleko, ARAŠIDOVO MASLO, SMETANA/STEPANJE, Karamela, MLETI MANDLJI, OREHI MLETI, ARAŠIDI, Kokosova moka, Kokosovo olje, Datelji",
+   "alergeni_text": "Arašidi, Soja, Mandlji, Orehi",
+   "alergeni_kode": [
+    "arasidi",
+    "soja",
+    "mandlji",
+    "orehi"
+   ],
+   "alergeni_nepotrjeni": [],
+   "sestava_nepopolna": false,
+   "opozorila": [
+    "Surovina »Kokosova moka« morda vsebuje alergen »Gluten«, a ni označen."
+   ],
+   "bg_opozorilo": 1,
+   "sestavine": [
+    {
+     "ime": "Kokosovo mleko",
+     "alergeni": []
     },
     {
-     "ime": "Sončnično olje",
+     "ime": "Arašidovo maslo",
+     "alergeni": [
+      "arasidi"
+     ]
+    },
+    {
+     "ime": "Smetana/stepanje",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Karamela",
+     "alergeni": []
+    },
+    {
+     "ime": "Mleti mandlji",
+     "alergeni": [
+      "mandlji"
+     ]
+    },
+    {
+     "ime": "Orehi mleti",
+     "alergeni": [
+      "orehi"
+     ]
+    },
+    {
+     "ime": "Arašidi",
+     "alergeni": [
+      "arasidi"
+     ]
+    },
+    {
+     "ime": "Kokosova moka",
+     "alergeni": []
+    },
+    {
+     "ime": "Kokosovo olje",
+     "alergeni": []
+    },
+    {
+     "ime": "Datelji",
      "alergeni": []
     }
    ]
@@ -1467,7 +1672,8 @@
    "artikel_id": 59,
    "ime": "Temna Čokolada-Jagoda BG",
    "brezglutensko": 1,
-   "cena_kos": 0,
+   "skupina": "Cheesecake",
+   "cena_kos": 5,
    "receptura_id": 86,
    "receptura_ime": "Temna Čokolada-Jagoda",
    "artikel_alergeni": "",
@@ -1533,10 +1739,177 @@
    ]
   },
   {
-   "artikel_id": 47,
-   "ime": "Tiramisu torta",
+   "artikel_id": 62,
+   "ime": "Temna čokolada-Malina",
    "brezglutensko": 0,
-   "cena_kos": 4,
+   "skupina": "Cheesecake",
+   "cena_kos": 5.5,
+   "receptura_id": 89,
+   "receptura_ime": "Temna čokolada-Malina",
+   "artikel_alergeni": "",
+   "artikel_alergeni_potrjeno": 0,
+   "sestavine_text": "SMETANA/STEPANJE, Kokosovo mleko, Fruttidor malina 70% (maline 70%, sladkor, voda, modificiran škrob, naravne arome, sredstvo za uravnavanje kislosti (E330), konzervans (E202)), TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), AGAR-AGAR, Pecilni prašek, Vinski kamen",
+   "alergeni_text": "Soja, Gluten",
+   "alergeni_kode": [
+    "soja",
+    "gluten"
+   ],
+   "alergeni_nepotrjeni": [],
+   "sestava_nepopolna": false,
+   "opozorila": [],
+   "bg_opozorilo": 0,
+   "sestavine": [
+    {
+     "ime": "Smetana/stepanje",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Kokosovo mleko",
+     "alergeni": []
+    },
+    {
+     "ime": "Fruttidor malina 70%",
+     "alergeni": []
+    },
+    {
+     "ime": "Temna cokolada",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Moka bela tip 550",
+     "alergeni": [
+      "gluten"
+     ]
+    },
+    {
+     "ime": "Rastlinsko mleko (ovseno)",
+     "alergeni": []
+    },
+    {
+     "ime": "Sladkor beli kristalni",
+     "alergeni": []
+    },
+    {
+     "ime": "Vanilin sladkor",
+     "alergeni": []
+    },
+    {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
+     "ime": "Rastlinska rama (margarina)",
+     "alergeni": []
+    },
+    {
+     "ime": "AGAR-AGAR",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Pecilni prašek",
+     "alergeni": []
+    },
+    {
+     "ime": "Vinski kamen",
+     "alergeni": []
+    }
+   ]
+  },
+  {
+   "artikel_id": 64,
+   "ime": "Temna čokolada-Višnja",
+   "brezglutensko": 0,
+   "skupina": "Cheesecake",
+   "cena_kos": 5,
+   "receptura_id": 91,
+   "receptura_ime": "Temna čokolada-Višnja",
+   "artikel_alergeni": "",
+   "artikel_alergeni_potrjeno": 0,
+   "sestavine_text": "SMETANA/STEPANJE, Kokosovo mleko, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Fruttidor Višnja (amarena) 70% (amarene (višnje) 70%, sladkor, voda), MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), AGAR-AGAR, Pecilni prašek, Vinski kamen",
+   "alergeni_text": "Soja, Gluten",
+   "alergeni_kode": [
+    "soja",
+    "gluten"
+   ],
+   "alergeni_nepotrjeni": [],
+   "sestava_nepopolna": false,
+   "opozorila": [],
+   "bg_opozorilo": 0,
+   "sestavine": [
+    {
+     "ime": "Smetana/stepanje",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Kokosovo mleko",
+     "alergeni": []
+    },
+    {
+     "ime": "Temna cokolada",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Fruttidor Višnja (amarena) 70%",
+     "alergeni": []
+    },
+    {
+     "ime": "Moka bela tip 550",
+     "alergeni": [
+      "gluten"
+     ]
+    },
+    {
+     "ime": "Rastlinsko mleko (ovseno)",
+     "alergeni": []
+    },
+    {
+     "ime": "Sladkor beli kristalni",
+     "alergeni": []
+    },
+    {
+     "ime": "Vanilin sladkor",
+     "alergeni": []
+    },
+    {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
+     "ime": "Rastlinska rama (margarina)",
+     "alergeni": []
+    },
+    {
+     "ime": "AGAR-AGAR",
+     "alergeni": [
+      "soja"
+     ]
+    },
+    {
+     "ime": "Pecilni prašek",
+     "alergeni": []
+    },
+    {
+     "ime": "Vinski kamen",
+     "alergeni": []
+    }
+   ]
+  },
+  {
+   "artikel_id": 47,
+   "ime": "Tiramisu",
+   "brezglutensko": 0,
+   "skupina": "Cheesecake",
+   "cena_kos": 4.9,
    "receptura_id": 67,
    "receptura_ime": "Tiramisu torta",
    "artikel_alergeni": "",
@@ -1578,12 +1951,13 @@
    "artikel_id": 30,
    "ime": "Višnja čokolada",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 36,
    "receptura_ime": "Višnja čokolada",
    "artikel_alergeni": "gluten,soja",
    "artikel_alergeni_potrjeno": 1,
-   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje, SMETANA/STEPANJE, Fruttidor Višnja (amarena) 70% (amarene (višnje) 70%, sladkor, voda)",
+   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, SMETANA/STEPANJE, Fruttidor Višnja (amarena) 70% (amarene (višnje) 70%, sladkor, voda)",
    "alergeni_text": "Gluten, Soja",
    "alergeni_kode": [
     "gluten",
@@ -1619,6 +1993,10 @@
      ]
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -1628,10 +2006,6 @@
     },
     {
      "ime": "Vinski kamen",
-     "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
      "alergeni": []
     },
     {
@@ -1650,12 +2024,13 @@
    "artikel_id": 40,
    "ime": "Višnjeva torta",
    "brezglutensko": 0,
+   "skupina": "Torte",
    "cena_kos": 4.9,
    "receptura_id": 53,
    "receptura_ime": "Višnjeva torta",
    "artikel_alergeni": "",
    "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Sončnično olje, Fruttidor Višnja (amarena) 70% (amarene (višnje) 70%, sladkor, voda), SMETANA/STEPANJE",
+   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Vanilin sladkor, Sončnično olje, Rastlinska rama (margarina), Pecilni prašek, Vinski kamen, Fruttidor Višnja (amarena) 70% (amarene (višnje) 70%, sladkor, voda), SMETANA/STEPANJE",
    "alergeni_text": "Gluten, Soja",
    "alergeni_kode": [
     "gluten",
@@ -1685,6 +2060,10 @@
      "alergeni": []
     },
     {
+     "ime": "Sončnično olje",
+     "alergeni": []
+    },
+    {
      "ime": "Rastlinska rama (margarina)",
      "alergeni": []
     },
@@ -1694,10 +2073,6 @@
     },
     {
      "ime": "Vinski kamen",
-     "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
      "alergeni": []
     },
     {
@@ -1716,6 +2091,7 @@
    "artikel_id": 42,
    "ime": "Čokolada Malina BG",
    "brezglutensko": 1,
+   "skupina": "Cheesecake",
    "cena_kos": 5,
    "receptura_id": 55,
    "receptura_ime": "Čokolada Malina",
@@ -1734,6 +2110,7 @@
    "artikel_id": 33,
    "ime": "Čokoladna torta BG",
    "brezglutensko": 1,
+   "skupina": "Cheesecake",
    "cena_kos": 5,
    "receptura_id": 45,
    "receptura_ime": "Čokoladna torta",
@@ -1747,68 +2124,6 @@
    "opozorila": [],
    "bg_opozorilo": 1,
    "sestavine": []
-  },
-  {
-   "artikel_id": 51,
-   "ime": "Čokoladni mufin",
-   "brezglutensko": 0,
-   "cena_kos": 2.5,
-   "receptura_id": 76,
-   "receptura_ime": "Čokoladni mufin",
-   "artikel_alergeni": "",
-   "artikel_alergeni_potrjeno": 0,
-   "sestavine_text": "MOKA BELA TIP 550, Rastlinsko mleko (ovseno), Sladkor beli kristalni, Sončnično olje, TEMNA COKOLADA (rastlinske maščobe (kokos), sladkor, posnet kakav v prahu 12,5%, emulgator: SOJIN lecitin, arome. Lahko vsebuje sledi mleka in oreščkov), RAMA KOCKA 250G, Kakav 100% v prahu, Vanilin sladkor, Pecilni prašek",
-   "alergeni_text": "Gluten, Soja",
-   "alergeni_kode": [
-    "gluten",
-    "soja"
-   ],
-   "alergeni_nepotrjeni": [],
-   "sestava_nepopolna": false,
-   "opozorila": [],
-   "bg_opozorilo": 0,
-   "sestavine": [
-    {
-     "ime": "Moka bela tip 550",
-     "alergeni": [
-      "gluten"
-     ]
-    },
-    {
-     "ime": "Rastlinsko mleko (ovseno)",
-     "alergeni": []
-    },
-    {
-     "ime": "Sladkor beli kristalni",
-     "alergeni": []
-    },
-    {
-     "ime": "Sončnično olje",
-     "alergeni": []
-    },
-    {
-     "ime": "Temna cokolada",
-     "alergeni": [
-      "soja"
-     ]
-    },
-    {
-     "ime": "RAMA KOCKA 250G",
-     "alergeni": []
-    },
-    {
-     "ime": "Kakav 100% v prahu",
-     "alergeni": []
-    },
-    {
-     "ime": "Vanilin sladkor",
-     "alergeni": []
-    },
-    {
-     "ime": "Pecilni prašek",
-     "alergeni": []
-    }
-   ]
   }
  ]
 }

@@ -1,7 +1,12 @@
 {
-  "izkljuci": ["Beli mufin", "Čokoladni mufin"],
-  "kremne": ["Kokos Cheese Cake", "Piškot Cheese Cake"],
-
+  "izkljuci": [
+    "Beli mufin",
+    "Čokoladni mufin"
+  ],
+  "kremne": [
+    "Kokos Cheese Cake",
+    "Piškot Cheese Cake"
+  ],
   "ime_popravki": {
     "Snikers": "Snickers",
     "Bela Malina": "Bela malina",
@@ -14,14 +19,17 @@
     "Malina-bela čokolada BG": "Malina–bela čokolada",
     "Lešnik-bela čokolada BG": "Lešnik–bela čokolada",
     "Pistacija BG": "Pistacija BG",
-    "Pistacija-bela čokolada BG": "Pistacija–bela čokolada"
+    "Pistacija-bela čokolada BG": "Pistacija–bela čokolada",
+    "Pistacija- malina": "Pistacija–malina",
+    "Snikers BG": "Snickers BG",
+    "Malina čokolada BG": "Malina čokolada",
+    "Temna čokolada-Višnja": "Temna čokolada–višnja",
+    "Temna čokolada-Malina": "Temna čokolada–malina"
   },
-
   "cena_override": {
-    "Tiramisu torta": 4.90,
-    "Čokoladna torta BG": 4.50
+    "Tiramisu torta": 4.9,
+    "Čokoladna torta BG": 4.5
   },
-
   "kategorija": {
     "Bounty": "Čokoladni okusi",
     "Jagoda čokolada": "Čokoladni okusi",
@@ -38,15 +46,14 @@
     "Mango": "Sadni in kremni okusi",
     "Pasijonka (marakuja)": "Sadni in kremni okusi",
     "Pistacija": "Sadni in kremni okusi",
-    "Bela malina": "Sadni in kremni okusi"
+    "Bela malina": "Sadni in kremni okusi",
+    "Pistacija–malina": "Sadni in kremni okusi"
   },
-
   "kat_opis": {
     "Čokoladni okusi": "Od čokolade in karamele do kokosa in sadnih kombinacij. Biskvit izberete po želji.",
     "Sadni in kremni okusi": "Sadje, pistacija, bela čokolada in kava — z biskvitom po vaši izbiri.",
     "Torte brez glutenskih sestavin": "Na biskvitu brez glutenskih sestavin iz mandljev, orehov in kokosa; pripravljam jih do 10 kosov."
   },
-
   "kalkulator_ime": {
     "Bounty": "Bounty",
     "Jagoda čokolada": "Jagoda čok.",
@@ -56,7 +63,7 @@
     "Višnja čokolada": "Višnja",
     "Snickers": "Snickers",
     "Kinder": "Kinder",
-    "Malina čokolada": "Malina čok.",
+    "Malina čokolada": "Malina čok. BG",
     "Jafa (pomaranča)": "Jafa",
     "Višnjeva torta": "Višnjeva",
     "Tiramisu": "Tiramisu",
@@ -72,9 +79,14 @@
     "Pistacija BG": "Pistacija BG",
     "Pistacija–bela čokolada": "Pistacija–bela čok. BG",
     "Kokos Cheese Cake": "Kokos Cheese",
-    "Piškot Cheese Cake": "Piškot Cheese"
+    "Piškot Cheese Cake": "Piškot Cheese",
+    "Pistacija–malina": "Pistacija–malina",
+    "Temna čokolada–višnja": "Čok.–višnja",
+    "Temna čokolada–malina": "Čok.–malina",
+    "Temna čokolada–jagoda": "Čok.–jagoda BG",
+    "Malina": "Malina",
+    "Snickers BG": "Snickers BG"
   },
-
   "cenik_opis": {
     "4.9": "Klasike in čokoladne kombinacije",
     "5.0": "Karamela, arašidi in sadje",
