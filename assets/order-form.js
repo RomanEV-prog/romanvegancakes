@@ -16,6 +16,7 @@
     narocilo: 'Torta po naročilu (sestavim sam)',
     bg: 'Torta brez glutenskih sestavin',
     presna: 'Presna torta',
+    nadstropna: 'Nadstropna torta',
     dogodek: 'Več tort / dogodek',
     drugo: 'Drugo / vprašanje'
   };
@@ -36,7 +37,7 @@
 
   function minDays() {
     var days = 10;
-    // Vsaka torta 10 dni; samo dogodek ali več tort 21 dni (Roman, 13. 10. 2026).
+    // Vsaka torta 10 dni; samo dogodek ali večja naročila 21 dni.
     if (type.value === V.dogodek || size.value === 'Več kosov (po dogovoru)') days = 21;
     return days;
   }
@@ -67,18 +68,19 @@
 
   function update() {
     var t = type.value;
-    var cake = t === V.ponudba || t === V.narocilo || t === V.bg;
+    var cake = t === V.ponudba || t === V.narocilo || t === V.bg || t === V.nadstropna;
     var gf = t === V.bg || allergens.value === 'Brez glutenskih sestavin';
 
-    // Okus: torta iz ponudbe in BG torta; torta po naročilu ima kreme namesto okusa.
+    // Okus: torta iz ponudbe in BG torta; torta po naročilu in nadstropna imata kreme namesto okusa.
     show(boxFlavor, t === V.ponudba || t === V.bg || t === V.presna || t === V.dogodek || t === '');
-    show(boxCreams, t === V.narocilo);
-    show(boxSponge, t === V.ponudba || t === V.narocilo || t === '');
+    show(boxCreams, t === V.narocilo || t === V.nadstropna);
+    show(boxSponge, t === V.ponudba || t === V.narocilo || t === V.nadstropna || t === '');
     flavor.required = t === V.ponudba || t === V.bg;
-    cream1.required = t === V.narocilo;
+    cream1.required = t === V.narocilo || t === V.nadstropna;
     if (flavorHint) {
       flavorHint.textContent = t === V.bg ? 'Brez glutenskih sestavin pripravljam čokoladno, čokolada–malino, Bounty in pistacijo, do 10 kosov.'
         : t === V.presna ? 'Presne torte po dogovoru; želeni okus opišite v sporočilu.'
+        : t === V.nadstropna ? 'Izberite okus za posamezno nadstropje ali opišite v sporočilu.'
         : t === V.dogodek ? 'Izberite okus ali želje opišite v sporočilu.'
         : 'Torta iz ponudbe ima kremo po receptu, izberete le biskvit.';
     }
