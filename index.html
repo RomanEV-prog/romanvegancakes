@@ -121,6 +121,15 @@
 .loc-v{font-size:14.5px;color:var(--cream);line-height:1.5}
 .loc-v a:hover{color:var(--gold)}
 .loc-s{font-size:12.5px;color:var(--cream3)}
+/* VEGAN CONFIRM */
+.vc-bar{background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
+.vc-inner{display:flex;align-items:center;gap:clamp(16px,4vw,56px);flex-wrap:wrap}
+.vc-pill{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:50px;padding:9px 18px;white-space:nowrap;flex-shrink:0}
+.vc-pill svg{flex-shrink:0}
+.vc-pill b{font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.vc-text{font-size:14.5px;color:var(--cream2);line-height:1.6}
+.vc-text strong{color:var(--cream)}
+@media(max-width:600px){.vc-inner{flex-direction:column;align-items:flex-start;gap:14px}}
 /* FOTO BREAK */
 .foto-break{position:relative;height:clamp(260px,38vw,480px);overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .foto-break img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52) saturate(.85)}
@@ -253,6 +262,19 @@
   <div class="strip-inner">
     <span class="strip-item">Torte po naročilu</span><span class="strip-item">Brez jajc &amp; mlečnih izdelkov</span><span class="strip-item">Brez laktoze</span><span class="strip-item">Primerno za alergike na jajca</span><span class="strip-item">Torte brez glutenskih sestavin</span><span class="strip-item">Presne torte</span><span class="strip-item">Torte z jedilno sliko</span><span class="strip-item">Rezine &amp; pecivo</span><span class="strip-item">Prevzem v Mariboru</span>
     <span class="strip-item">Torte po naročilu</span><span class="strip-item">Brez jajc &amp; mlečnih izdelkov</span><span class="strip-item">Brez laktoze</span><span class="strip-item">Primerno za alergike na jajca</span><span class="strip-item">Torte brez glutenskih sestavin</span><span class="strip-item">Presne torte</span><span class="strip-item">Torte z jedilno sliko</span><span class="strip-item">Rezine &amp; pecivo</span><span class="strip-item">Prevzem v Mariboru</span>
+  </div>
+</div>
+
+<!-- VEGAN CONFIRM -->
+<div class="vc-bar">
+  <div class="wrap">
+    <div class="vc-inner">
+      <div class="vc-pill">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#c9a84c" stroke-width="1.2"/><path d="M5 9l3 3 5-5" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <b>Brez jajc &amp; brez mleka</b>
+      </div>
+      <p class="vc-text"><strong>Da — vsaka torta je 100 % rastlinska.</strong> Niti kaplja mleka, niti eno jajce — in niste prvi, ki vprašate. Roman peče tako od leta 2013: z rastlinskimi masli, kremami na bazi kokosa in mandljev ter biskviti brez živalskih sestavin.</p>
+    </div>
   </div>
 </div>
 
