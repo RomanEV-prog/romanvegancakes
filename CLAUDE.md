@@ -134,12 +134,16 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 - obrazec: kljukica »seznanjen s pogoji + soglasje zasebnost« (required)
 - ob uvedbi analitike/Meta piksla → pasica s privolitvijo PREJ
 
-## Stanje strani (29. 10. 2026)
+## Stanje strani (6. 11. 2026)
 
 - **Navigacija**: index.html + 8 podstrani + b2b/ imajo v nav (desktop + mobilni) in footerju: Ponudba · Naroči · O nas · Dogodki · Za podjetja · Kontakt.
 - **B2B stran** (`b2b/index.html`): hero + prednosti + 3-koraki + kontaktni obrazec. Obrazec je SKRIT (`display:none`) — prikazano je "Obrazec prihaja kmalu" + gumba za e-pošto in telefon. Ko Roman potrdi aktivacijo, odstrani `div style="display:none"` okoli forme.
 - **Pogoji** (`pogoji/index.html`): §10 B2B — partner mora imeti HACCP (Uredba (ES) 852/2004), ZVPot-1 za B2B ne velja, pogoji se dogovorijo pisno.
-- **Poročne torte** (`ponudba/#porocne`): obstoječ prod-row z 2×2 galerijo (torta-porocna-lavanda.webp + torta-porocna-vrtnice-zgoraj.webp + torta-porocna-bela.webp). Brez cen (po dogovoru). Kalkulator naslov spremenjen v "Izračunajte svojo ceno."
+- **Poročne torte** (`ponudba/#porocne`): prod-row #08 z 2×2 galerijo (torta-porocna-lavanda.webp + torta-porocna-vrtnice-zgoraj.webp + torta-porocna-bela.webp). Brez cen (po dogovoru).
+- **Nadstropne torte** (`ponudba/#nadstropne`): prod-row #07, cena po dogovoru, rok 10 dni, 2 fotografiji (torta-nadstropna.webp + torta-nadstropna-zgoraj.webp). Vrsta "Nadstropna torta" dodana v obrazec (`kontakt/`, `assets/order-form.js`).
+- **"Brez mleka in jajc" vegan bar** (`index.html`): zlat callout med `.strip` in `<!-- MNENJA -->` — odgovarja na najpogostejše vprašanje obiskovalcev.
+- **Google Maps embed** (index.html, lokacija sekcija): `<iframe>` v `.loc-img`. **Pozor:** `.loc-img img { position:absolute;... }` ne velja za `iframe` — iframe potrebuje te stile **inline**: `style="position:absolute;inset:0;width:100%;height:100%;border:0"`.
+- **Google recenzije**: 11 kart (8× Google, 3× ostale platforme). Zadnje dodane: Amy Smith, Andreja Š., Vanesa P. (6. 11. 2026).
 
 ## ERP → spletna stran (sync sistem, od 30. 10. 2026)
 
@@ -159,4 +163,5 @@ V živo: `curl -sI https://romancakes.com/` (200), `gh api repos/RomanEV-prog/ro
 - `.claude/commands/formsubmit-obrazec.md` — aktivacija, `_cc` v Gmail, priloge, prava testna oddaja; past `curl -F` + šumniki
 - `.claude/commands/headless-chrome-test.md` — posnetki in testi brez Chrome MCP, mobilni pogled prek iframe
 - `.claude/commands/batch-nav-update.md` — Python recept za batch posodobitev nav na vseh statičnih straneh; past `re.sub` + footer
+- `.claude/commands/google-reviews-update.md` — scraping Google Maps recenzij prek Chrome MCP, DOM selektorji, HTML vzorec za kartico
 - `~/.claude/commands/neoserv-domenca-dns.md` — kje so domene (Domenca) in DNS zona (cPanel Neoserv), UAPI recepti
