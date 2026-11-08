@@ -121,6 +121,17 @@
   }
   form.addEventListener('submit', function (e) {
     checkDate();
+    var question = type.value === V.drugo;
+    if (!question) {
+      var days = minDays();
+      var minD = new Date(); minD.setHours(0, 0, 0, 0); minD.setDate(minD.getDate() + days);
+      if (!date.value || parseLocal(date.value) < minD) {
+        e.preventDefault();
+        warn.hidden = false;
+        date.focus();
+        return;
+      }
+    }
     if (!date.validity.valid) { e.preventDefault(); date.focus(); date.reportValidity(); return; }
     form.querySelector('input[name=_subject]').value = subject();
   });
