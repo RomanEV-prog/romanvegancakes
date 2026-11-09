@@ -133,6 +133,20 @@
       }
     }
     if (!date.validity.valid) { e.preventDefault(); date.focus(); date.reportValidity(); return; }
+    try {
+      var napEl = document.getElementById('napis');
+      sessionStorage.setItem('rc_narocilo', JSON.stringify({
+        vrsta: type.value,
+        kosi: size.disabled ? '' : size.value,
+        okus: flavor.disabled ? '' : flavor.value,
+        krema1: cream1.disabled ? '' : cream1.value,
+        krema2: cream2.disabled ? '' : cream2.value,
+        biskvit: sponge.disabled ? '' : sponge.value,
+        dekoracija: decoration.disabled ? '' : decoration.value,
+        napis: (napEl && !napEl.disabled) ? napEl.value : '',
+        datum: date.value
+      }));
+    } catch (x) {}
     form.querySelector('input[name=_subject]').value = subject();
   });
   update();

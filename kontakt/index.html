@@ -135,6 +135,7 @@
               <input type="hidden" name="_cc" value="romanvegancakes@gmail.com">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_next" id="next-url" value="">
+              <input type="hidden" name="_autoresponse" value="Hvala za povpraševanje! Naročilo sem prejel in se oglasim v treh dneh s potrditvijo, ceno in podrobnostmi prevzema. Za nujno zadevo pokličite 040 758 582. — Roman's Cakes, Maribor">
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="form-row">
@@ -269,7 +270,11 @@
           <div class="form-success" id="form-success" role="status">
             <div class="form-success-icon">✦</div>
             <h2>Povpraševanje poslano</h2>
-            <p>Hvala. Odgovorim v <strong style="color:var(--gold)">treh dneh</strong> s ponudbo, v kateri so datum, končna cena, prevzem ali dostava in <strong style="color:var(--gold)">alergeni izbrane kombinacije</strong>. Naročilo velja, ko dogovorjene podrobnosti potrdite.<br>Za dodatna vprašanja me pokličite na <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+            <p>Hvala. Odgovorim v <strong style="color:var(--gold)">treh dneh</strong> s ponudbo, v kateri so datum, končna cena, prevzem ali dostava in <strong style="color:var(--gold)">alergeni izbrane kombinacije</strong>. Naročilo velja, ko dogovorjene podrobnosti potrdite.<br>Na vaš e-mail ste prejeli potrdilo o oddanem povpraševanju. Za dodatna vprašanja me pokličite na <a href="tel:+38640758582" style="color:var(--gold)">040 758 582</a>.</p>
+            <div id="narocilo-povzetek" style="display:none;margin:24px 0;text-align:left;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:20px 24px">
+              <div style="font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Povzetek vašega naročila</div>
+              <div id="narocilo-vrstice"></div>
+            </div>
             <a href="../ponudba/" class="btn btn-o" style="margin-top:28px">Nazaj na ponudbo →</a>
           </div>
         </div>
@@ -347,18 +352,38 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
-<script src="../assets/order-form.js?v=6" defer></script>
+<script src="../assets/order-form.js?v=7" defer></script>
 <script>
 (function(){
-  // Povratni naslov po uspešni oddaji (FormSubmit preusmeri sem z ?poslano=1)
   var base=location.origin+location.pathname.replace(/[^/]*$/,'');
   document.getElementById('next-url').value=base+'?poslano=1';
-  // Stanje »poslano«
+
   if(/[?&]poslano=1/.test(location.search)){
     document.getElementById('form-body').style.display='none';
     document.getElementById('form-success').classList.add('show');
     document.getElementById('obrazec').scrollIntoView({block:'start'});
+    // Povzetek iz sessionStorage
+    try {
+      var d=JSON.parse(sessionStorage.getItem('rc_narocilo')||'null');
+      if(d){
+        sessionStorage.removeItem('rc_narocilo');
+        var rows=[
+          ['Vrsta',d.vrsta],['Število kosov',d.kosi],['Okus',d.okus],
+          ['Krema 1',d.krema1],['Krema 2',d.krema2&&d.krema2!=='Samo ena krema'?d.krema2:''],
+          ['Biskvit',d.biskvit],['Dekoracija',d.dekoracija],['Napis',d.napis],
+          ['Datum prevzema',d.datum?(function(s){var p=s.split('-');return p[2]+'. '+p[1]+'. '+p[0];})(d.datum):'']
+        ].filter(function(r){return r[1];});
+        if(rows.length){
+          var html=rows.map(function(r){
+            return '<div class="lt-item"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>';
+          }).join('');
+          document.getElementById('narocilo-vrstice').innerHTML=html;
+          document.getElementById('narocilo-povzetek').style.display='block';
+        }
+      }
+    }catch(e){}
   }
+
   var f=document.getElementById('order-form');
   f.addEventListener('submit',function(){var b=document.getElementById('submit-btn');b.disabled=true;b.textContent='Pošiljam …'});
 })();
