@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css?v=2">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 .b2b-hero{min-height:86svh;display:grid;grid-template-columns:1fr 1fr;position:relative}
 .b2h-left{background:var(--bg1);display:flex;flex-direction:column;justify-content:center;padding:150px 80px 80px;position:relative}
@@ -217,6 +218,8 @@
           Seznanjen/-a sem s <a href="../pogoji/" target="_blank">splošnimi pogoji</a> in <a href="../zasebnost/" target="_blank">politiko zasebnosti</a>.
         </label>
 
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAF7ZjhfrTVBktWE5" data-theme="dark" style="margin-bottom:16px"></div>
+
         <button type="submit" class="form-submit">Pošlji povpraševanje →</button>
       </form>
   </div>
@@ -247,7 +250,9 @@
 (function(){
   var form = document.getElementById('b2b-form');
   if (!form) return;
-  form.addEventListener('submit', function(){
+  form.addEventListener('submit', function(e){
+    var token=form.querySelector('[name="cf-turnstile-response"]');
+    if(!token||!token.value){e.preventDefault();return;}
     var firma = document.getElementById('b2b-firma').value.trim();
     document.getElementById('b2b-subject').value = 'B2B povpraševanje' + (firma ? ': ' + firma : '');
   });

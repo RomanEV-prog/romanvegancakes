@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css?v=2">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start;margin-top:60px}
 .form-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
@@ -262,6 +263,8 @@
 
               <label class="consent"><input type="checkbox" name="Soglasje" value="da" required><span>Seznanjen/a sem s <a href="../pogoji/">splošnimi pogoji</a> in soglašam, da Roman Adler s.p. moje podatke, vključno z morebitno navedbo alergij, uporabi za pripravo in izvedbo naročila, kot je opisano v <a href="../zasebnost/">politiki zasebnosti</a>. *</span></label>
 
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAF7ZjhfrTVBktWE5" data-theme="dark" style="margin-bottom:16px"></div>
+
               <button type="submit" class="form-submit" id="submit-btn">Pošljite povpraševanje &nbsp;→</button>
               <p class="note" style="margin-top:14px;text-align:center">Obrazec ne deluje? Pišite na <a href="mailto:info@romancakes.com?subject=Naro%C4%8Dilo%20torte" style="color:var(--gold)">info@romancakes.com</a> ali pokličite.</p>
             </form>
@@ -385,7 +388,11 @@
   }
 
   var f=document.getElementById('order-form');
-  f.addEventListener('submit',function(){var b=document.getElementById('submit-btn');b.disabled=true;b.textContent='Pošiljam …'});
+  f.addEventListener('submit',function(e){
+    var token=f.querySelector('[name="cf-turnstile-response"]');
+    if(!token||!token.value){e.preventDefault();return;}
+    var b=document.getElementById('submit-btn');b.disabled=true;b.textContent='Pošiljam …';
+  });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ed55e5bab9a4c5582dab059dba5359e"}'></script><!-- End Cloudflare Web Analytics -->
